@@ -12,7 +12,7 @@
             alt="GoDoc"></a>
 </p>
 
-中文 | [English](./README-en.md)
+中文 | [English](./README-EN.md)
 
 ##### 注意：
 本项目只作为新型数据库技术理论验证使用，当前不具备任何生产可用性。
@@ -20,12 +20,30 @@
 ##### 简介
 P2PDB（p2p数据库），一个去中心化、分布式、点对点数据库、P2PDB使用IPFS-libp2p构建分布式网络和IPFS-pubsub与对等节点同步数据。P2PDB期望打造一个去中心化的分布式数据库，使P2PDB 成为线下实体店离线应用程序，去中心化应用程序(dApps)、和边缘计算应用数据存储的绝佳选择, P2PDB基于[白皮书](doc/zh-cn/%E7%99%BD%E7%9A%AE%E4%B9%A6.md)实现
 
-P2PDB包含以下功能：
-- `sql`: 一个基于sqlite,  使用CRDT协议，实现最终一致性 （探索中，未有明确计划）
-- `p2pdb-log`: 基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)协议实现的不可篡改日志组件，(开发中）
+P2PDB主要由以下模块构成：
 
+- `p2pdb-server`: 一个mysql 语法的服务器端, 兼容90%mysql 语法，可使用任一一种mysql 客户端连接,包括PHP、JAVA、GO、RUBY、PYTHON等主流语言的兼容（测试中）
+
+- `p2pdb-log`: 基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)协议实现的不可篡改日志组件（开发中）
+
+
+- `p2pdb-pubsub`: 基于[libp2p-pubsub](github.com/libp2p/go-libp2p-pubsub)实现的消息广播组件,用于对等节点中数据的主动传播,采用了Gossip流言广播算法（计划中）。
+
+
+- `p2pdb-crdt`: 基于[crdt](https://github.com/kkguan/p2pdb/blob/main/doc/zh-cn/CRDT%E5%8D%8F%E8%AE%AE.md)协议的用于消息顺序一致性判断的组件,主要用于当事件没有因果关系时（并发）,作为排序判断的模块，集成了常用的顺序判断规则，如内置规则无法满足，你也可以根据该模块规范增加新的协议（开发中）。
+
+
+- `p2pdb-dns`: p2pdb-dns 是对等节点的服务发现注册,用于检索对等节点,基于[libp2p](https://github.com/libp2p/go-libp2p)的mdns模块实现（计划中）。
+
+
+- `p2pdb-store`: [p2pdb-store](https://github.com/kkguan/p2pdb-store) 用于数据实际存储的模块,类似mysql的数据存储一样，提供索引检索,数据的增删改查等,这是一个抽象的模块,目的是将来如果mysql无法满足你的存储需求，可以提供更多的DB驱动如clickhouse、postgresql、TDngine等数据库存储(计划中)。
+
+### p2pdb-log
 p2pdb基于[p2pdb-log](https://github.com/kkguan/p2pdb-log)之上实现，p2pdb-log是一种只允许追加写入日志，并且不可窜改。基于操作的无冲突复制数据结构 (CRDT)与Merkle DAG（有向无环图）实现。如果所有 P2PDB 数据库类型都不符合您的需求和/或您需要特定于案例的功能，您可以轻松使用日志模块实现您想要的数据库。
 
+### p2pdb-server
+[p2pdb-server](https://github.com/kkguan/p2pdb-server) 可以理解为一个mysql 的服务器端，用于执行mysql的指令,
+被p2pdb-server执行的指令都会记录在p2pdb-log中,并广播到所有对等节点,p2pdb-server模拟了mysql协议的实现，因此你可以使用任何一种mysql的客户端进行连接,甚至是编程语言。
 
 
 ## 内容列表
@@ -48,7 +66,7 @@ p2pdb基于[p2pdb-log](https://github.com/kkguan/p2pdb-log)之上实现，p2pdb-
 - [使用许可](#使用许可)
 
 ## 背景
-P2PDB最早源于KK集团离线收银项目的研发，早期采用了Raft协议+Sqlite 实现一个轻量级的分布式数据库，随着对Raft协议的深入研究，发现Raft协议对于离线场景存在较大缺陷（故障节点数量大于50%，整个集群无法工作）,随后开启了深入研究分布式数据库协议的道路,在一年后发现基于默克尔有向无环图+CRDT实现的逻辑时钟[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)可以实现最终一致性的去中心化、分布式、点对点数据库，并且针对离线场景做了充分的支持。
+P2PDB最早源于KK集团离线收银项目的研发，早期采用了Raft 强一致性的协议+Sqlite 实现一个轻量级的分布式数据库，随着对Raft协议的深入研究，发现Raft协议对于离线场景存在较大缺陷（故障节点数量大于50%，整个集群无法工作）,随后开启了深入研究分布式数据库协议的道路,在一年后发现基于默克尔有向无环图+CRDT实现的逻辑时钟[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)可以实现最终一致性的去中心化、分布式、点对点数据库，并且针对离线场景做了充分的支持。
 
 
 P2PDB 是一个点对点数据库，这意味着每个对等点都有自己的特定数据库实例。数据库在对等点之间自动复制，从而在任何对等点更新时生成数据库的最新视图。也就是说，数据库被拉到客户端。
@@ -85,7 +103,7 @@ P2PDB 是一个点对点数据库，这意味着每个对等点都有自己的�
 
 ## 特性
 
-1. 兼容Sql语法支持，完全兼容sqlite语法
+1. 兼容mysql 90%以上语法支持，你可以使用任何mysql 客户端连接
 2. 去中心化，无中心服务器
 3. 历史数据一旦生成，无法窜改
 4. 数据加密传输，公私钥加解密，授权支持到字段级别
@@ -96,8 +114,7 @@ P2PDB 是一个点对点数据库，这意味着每个对等点都有自己的�
 
 ## 架构
 
-#### 架构设计图
-![avatar](./doc/zh-cn/architecture.png)
+
 #### 目录分层设计
 ```
 interface 接口层
@@ -118,36 +135,7 @@ Infrastructure	基础设施层
 --------log
 ```
 
-<!-- 
-##安装
 
-这个项目使用 [golang](hhttps://golang.org) 请确保你本地安装了它。
-
-
-初始化项目
-```sh
-go mod tidy
-```
-
-编译kv数据库
-```sh
-go build ./interface/cli/kv/kv.go
-```
-
-使用
-```sh
-./kv
-```
-## 示例
-
-```go
-Commands:
-
-> list               -> list items in the store
-> get <key>          -> get value for a key
-> put <key> <value>  -> store value on a key
-> exit               -> quit
-``` -->
 
 
 ## 文档
@@ -164,6 +152,7 @@ p2pdb 采用了纯golang 语言实现, 如果你的技术栈以Javascript为主,
 
 - [libp2p](https://github.com/libp2p/go-libp2p) 
 - [ipfs](https://github.com/ipfs/go-ipfs)
+说明:由于本项目使用到的ipfs,libp2p等代码,引用的代码部分遵循代码相关协议,感谢协议实验室为去中心化网络做出的贡献
 
 ## 维护者
 
