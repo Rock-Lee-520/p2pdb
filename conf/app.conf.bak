@@ -1,0 +1,5 @@
+
+bstrAddress = /ip4/127.0.0.1/tcp/4001/ipfs/12D3KooWMVdnQXeh97noZrUavoULs7GA2qQYhHTFRueDAmyprRaH
+topicName   = p2pdb
+netTopic    = p2pdb-topic
+config      = p2pdb-example
