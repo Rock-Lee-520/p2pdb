@@ -24,7 +24,7 @@ function compareClock(array $a, array $b){
     */
     if($a['nodeId']==$b['nodeId']){
          $maxId=getMaxId($a['id'],$b['id']);
-         return $maxId;
+         return $maxId+1;
     }
 
     /*
@@ -50,10 +50,10 @@ function compareClock(array $a, array $b){
          * 不同节点，都是发送 或者都是接收的请求
          * 按照last-writer-win 收敛
          */
-        $maxId=getMaxIdByRid($a['receivingId'],$b['receivingId'],$a['id'],$b['id']);
+        $maxId=getMaxIdByRid($a['receivingId'],$b['receivingId'],$a['id'],$b['id'])+1;
         return $maxId;
     }else{
-        $maxId=getMaxIdByTimestamp($a['timestamp'],$b['timestamp'],$a['id'],$b['id']);
+        $maxId=getMaxIdByTimestamp($a['timestamp'],$b['timestamp'],$a['id'],$b['id'])+1;
         return $maxId; 
     }
 }
