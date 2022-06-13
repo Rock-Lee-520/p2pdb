@@ -7,7 +7,9 @@ import (
 
 	idp "berty.tech/go-ipfs-log/identityprovider"
 
+	log "berty.tech/go-ipfs-log"
 	"berty.tech/go-ipfs-log/keystore"
+	debug "github.com/favframework/debug"
 	"github.com/ipfs/go-datastore"
 	dssync "github.com/ipfs/go-datastore/sync"
 	config "github.com/ipfs/go-ipfs-config"
@@ -19,8 +21,6 @@ import (
 	"github.com/libp2p/go-libp2p-core/host"
 	"github.com/libp2p/go-libp2p-core/peer"
 	pstore "github.com/libp2p/go-libp2p-peerstore"
-
-	log "berty.tech/go-ipfs-log"
 )
 
 var (
@@ -49,6 +49,8 @@ func newRepo() (ipfs_repo.Repo, error) {
 		//"/ip4/10.209.144.6/tcp/4001/p2p/12D3KooWRtdFu6pJ9kTXTAxzCsmGdoPGzRdm5akw2Bp4wzTz14Gr",
 		//"/ip4/10.209.144.5/tcp/4001/p2p/12D3KooWR2Ab6nMFSdAtKEHeoFgJe2TepnCSu6fJforMBLyGubk6",
 	}
+
+	debug.Dump(cfg)
 
 	return &ipfs_repo.Mock{
 		D: dssync.MutexWrap(datastore.NewMapDatastore()),

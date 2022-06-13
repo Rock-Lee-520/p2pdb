@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	berty.tech/go-ipfs-log v1.5.0
+	github.com/favframework/debug v0.0.0-20150708094948-5c7e73aafb21
 	github.com/ipfs/go-datastore v0.4.5
 	github.com/ipfs/go-ipfs v0.9.1
 	github.com/ipfs/go-ipfs-config v0.14.0
