@@ -168,7 +168,7 @@ p2pdb 采用了纯golang 语言实现, 如果你的技术栈以Javascript为主,
 
 ## 如何贡献
 
-非常欢迎你的加入！[提一个 Issue](https://github.com/Rock-liyi/ptwopdb) 或者提交一个 Pull Request。
+非常欢迎你的加入！[提一个 Issue](https://github.com/Rock-liyi/p2pdb) 或者提交一个 Pull Request。
 
 
 标准 Readme 遵循 [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) 行为规范。

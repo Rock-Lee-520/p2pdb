@@ -18,12 +18,12 @@ import (
 	"log"
 	"time"
 
-	sqle "github.com/kkguan/p2pdb-server"
-	"github.com/kkguan/p2pdb-server/auth"
-	"github.com/kkguan/p2pdb-server/memory"
-	"github.com/kkguan/p2pdb-server/server"
-	"github.com/kkguan/p2pdb-server/sql"
-	"github.com/kkguan/p2pdb-server/sql/information_schema"
+	sqle "github.com/Rock-liyi/p2pdb-server"
+	"github.com/Rock-liyi/p2pdb-server/auth"
+	"github.com/Rock-liyi/p2pdb-server/memory"
+	"github.com/Rock-liyi/p2pdb-server/server"
+	"github.com/Rock-liyi/p2pdb-server/sql"
+	"github.com/Rock-liyi/p2pdb-server/sql/information_schema"
 )
 
 // Example of how to implement a MySQL server based on a Engine:
