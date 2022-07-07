@@ -1,4 +1,4 @@
-module github.com/kkguan/p2pdb
+module github.com/Rock-liyi/p2pdb
 
 go 1.17
 
@@ -58,7 +58,7 @@ require (
 	github.com/ipfs/go-log v1.0.5 // indirect
 	github.com/jackpal/go-nat-pmp v1.0.2 // indirect
 	github.com/jbenet/go-temp-err-catcher v0.1.0 // indirect
-	github.com/kkguan/p2pdb-server v0.1.1
+	github.com/Rock-liyi/p2pdb-server v0.1.1
 	github.com/klauspost/compress v1.13.6 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
 	github.com/koron/go-ssdp v0.0.2 // indirect
