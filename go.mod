@@ -146,3 +146,18 @@ require (
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
+
+
+replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
+
+replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
+
+replace github.com/Rock-liyi/p2pdb-log => ../p2pdb-log
+
+replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
+
+replace github.com/Rock-liyi/p2pdb-discovery => ../p2pdb-discovery
+
+
+
+replace github.com/Rock-liyi/p2pdb-store/sqlite; => ../p2pdb-store/sqlite
