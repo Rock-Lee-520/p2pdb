@@ -37,7 +37,7 @@ P2PDB主要由以下模块构成：
 - `p2pdb-discovery`: [p2pdb-discovery](https://github.com/Rock-liyi/p2pdb-discovery) 是对等节点的服务发现注册,用于检索对等节点,基于[libp2p](https://github.com/libp2p/go-libp2p)的mdns模块实现（开发中）。
 
 
-- `p2pdb-store`: [p2pdb-store](https://github.com/Rock-liyi/p2pdb-store) 用于数据实际存储的模块,类似mysql的数据存储一样，提供索引检索,数据的增删改查等,这是一个抽象的模块,目的是将来如果mysql无法满足你的存储需求，可以提供更多的DB驱动如clickhouse、postgresql、TDngine等数据库存储(已实现)。
+- `p2pdb-store`: [p2pdb-store](https://github.com/Rock-liyi/p2pdb-store) 用于数据实际存储的模块,类似mysql的数据存储一样，提供索引检索,数据的增删改查等,这是一个抽象的模块,目的是将来如果当前的存储引擎无法满足你的存储需求,可以提供更多的DB驱动如clickhouse、postgresql、TDngine等数据库，当前提供内存存储（开发模式使用）以及文件存储（生产使用）(已实现)。
 
 
 
