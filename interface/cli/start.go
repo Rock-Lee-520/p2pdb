@@ -2,7 +2,7 @@ package main
 
 import (
 	conf "github.com/Rock-liyi/p2pdb-server/config"
-	//"github.com/Rock-liyi/p2pdb/application/service"
+	"github.com/Rock-liyi/p2pdb/application/service"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -20,5 +20,5 @@ func init() {
 
 func main() {
 
-	service.startNewService()
+	service.StartNewService()
 }

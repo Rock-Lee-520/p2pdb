@@ -49,6 +49,17 @@ p2pdb基于[p2pdb-log](https://github.com/Rock-liyi/p2pdb-log)之上实现，p2p
 被p2pdb-server执行的指令都会记录在p2pdb-log中,并广播到所有对等节点,p2pdb-server模拟了mysql协议的实现，因此你可以使用任何一种mysql的客户端进行连接,甚至是编程语言。
 
 
+### 快速使用
+```
+git  clone  https://github.com/kkguan/p2pdb.git
+
+```
+需要安装golang 1.6及以上环境
+
+```
+go run  interface/cli/start.go
+
+```
 
 
 ## 内容列表

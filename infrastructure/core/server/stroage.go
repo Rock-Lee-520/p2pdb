@@ -3,13 +3,14 @@ package server
 import (
 	//"log"
 
+	"time"
+
 	"github.com/Rock-liyi/p2pdb-store/memory"
 	"github.com/Rock-liyi/p2pdb-store/sql"
 	"github.com/Rock-liyi/p2pdb-store/sqlite"
 )
 
-
-func createSqliteDatabase(dbName string, tableName string) *sqlite.Database {
+func CreateSqliteDatabase(dbName string, tableName string) *sqlite.Database {
 
 	db := sqlite.NewDatabase(dbName)
 	table := sqlite.NewTable(tableName, sql.NewPrimaryKeySchema(sql.Schema{
@@ -31,7 +32,7 @@ func createSqliteDatabase(dbName string, tableName string) *sqlite.Database {
 	return db
 }
 
-func  createMemoryDatabase(dbName string, tableName string) *memory.Database {
+func CreateMemoryDatabase(dbName string, tableName string) *memory.Database {
 
 	db := memory.NewDatabase(dbName)
 	table := memory.NewTable(tableName, sql.NewPrimaryKeySchema(sql.Schema{
@@ -39,7 +40,7 @@ func  createMemoryDatabase(dbName string, tableName string) *memory.Database {
 		{Name: "email2", Type: sql.Text, Nullable: false, Source: tableName},
 		{Name: "id", Type: sql.Int64, Nullable: false, Source: tableName},
 		{Name: "phone_numbers", Type: sql.JSON, Nullable: false, Source: tableName},
-		{Name: "created_at", Type: sql.Timestamp, Nullable: false, Source: tableName}
+		{Name: "created_at", Type: sql.Timestamp, Nullable: false, Source: tableName},
 	}))
 	// debug.Dump(table)
 	db.AddTable(tableName, table)

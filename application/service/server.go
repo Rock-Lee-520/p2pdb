@@ -1,12 +1,14 @@
 package service
 
-//"log"
+import (
+	server "github.com/Rock-liyi/p2pdb/infrastructure/core/server"
+)
 
 const (
 	dbName    = "test"
 	tableName = "p2pdb-example"
 )
 
-func startNewService() {
-	print("123")
+func StartNewService() {
+	server.StartNewService(dbName, tableName)
 }

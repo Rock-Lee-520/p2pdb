@@ -13,16 +13,16 @@ import (
 )
 
 type engine interface {
-	createSqliteDatabase(dbName string, tableName string) *sqlite.Database
+	CreateSqliteDatabase(dbName string, tableName string) *sqlite.Database
 
-	createMemoryDatabase(dbName string, tableName string) *memory.Database
+	CreateMemoryDatabase(dbName string, tableName string) *memory.Database
 }
 
-func startNewService(dbName string, tableName string) {
+func StartNewService(dbName string, tableName string) {
 
 	engine := sqle.NewDefault(
 		sql.NewDatabaseProvider(
-			createMemoryDatabase(dbName, tableName), //choose createMemoryDatabase or createSqliteDatabase
+			CreateMemoryDatabase(dbName, tableName), //choose createMemoryDatabase or createSqliteDatabase
 			information_schema.NewInformationSchemaDatabase(),
 		))
 
