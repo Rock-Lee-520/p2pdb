@@ -3,6 +3,7 @@ module github.com/Rock-liyi/p2pdb
 go 1.17
 
 require (
+	github.com/Rock-liyi/p2pdb-store v0.0.6
 	github.com/astaxie/beego v1.12.3
 	github.com/gdamore/tcell/v2 v2.4.1-0.20210905002822-f057f0a857a1
 	github.com/ipfs/go-log/v2 v2.4.0
@@ -12,22 +13,25 @@ require (
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
 	github.com/multiformats/go-multiaddr v0.4.1
 	github.com/rivo/tview v0.0.0-20211202162923-2a6de950f73b
+	github.com/sirupsen/logrus v1.8.1
 )
 
 require (
+	github.com/caarlos0/env/v6 v6.9.1 // indirect
 	github.com/cespare/xxhash v1.1.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dolthub/vitess v0.0.0-20211215165926-1490f8c93e81 // indirect
+	github.com/favframework/debug v0.0.0-20150708094948-5c7e73aafb21 // indirect
 	github.com/go-kit/kit v0.12.0 // indirect
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b // indirect
 	github.com/google/uuid v1.3.0 // indirect
+	github.com/joho/godotenv v1.4.0 // indirect
 	github.com/lestrrat-go/strftime v1.0.5 // indirect
 	github.com/mitchellh/hashstructure v1.1.0 // indirect
 	github.com/oliveagle/jsonpath v0.0.0-20180606110733-2e52cf6e6852 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
-	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/src-d/go-oniguruma v1.1.0 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
 	google.golang.org/genproto v0.0.0-20210917145530-b395a37504d4 // indirect
@@ -37,6 +41,7 @@ require (
 )
 
 require (
+	github.com/Rock-liyi/p2pdb-server v0.1.1
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/btcsuite/btcd v0.22.0-beta // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
@@ -58,7 +63,6 @@ require (
 	github.com/ipfs/go-log v1.0.5 // indirect
 	github.com/jackpal/go-nat-pmp v1.0.2 // indirect
 	github.com/jbenet/go-temp-err-catcher v0.1.0 // indirect
-	github.com/Rock-liyi/p2pdb-server v0.1.1
 	github.com/klauspost/compress v1.13.6 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.9 // indirect
 	github.com/koron/go-ssdp v0.0.2 // indirect
@@ -147,8 +151,9 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
 
-
 replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
+
+replace github.com/Rock-liyi/p2pdb => ../p2pdb
 
 replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
 
@@ -157,7 +162,5 @@ replace github.com/Rock-liyi/p2pdb-log => ../p2pdb-log
 replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
 
 replace github.com/Rock-liyi/p2pdb-discovery => ../p2pdb-discovery
-
-
 
 replace github.com/Rock-liyi/p2pdb-store/sqlite; => ../p2pdb-store/sqlite
