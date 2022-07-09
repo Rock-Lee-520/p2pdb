@@ -51,7 +51,7 @@ p2pdb基于[p2pdb-log](https://github.com/Rock-liyi/p2pdb-log)之上实现，p2p
 
 ### 快速使用
 ```
-git  clone  https://github.com/kkguan/p2pdb.git
+git  clone  https://github.com/Rock-liyi/p2pdb.git
 
 ```
 需要安装golang 1.6及以上环境,默认端口3306,ip 127.0.0.1,可以使用任意一种mysql 客户端进行链接
