@@ -57,6 +57,8 @@ git  clone  https://github.com/kkguan/p2pdb.git
 需要安装golang 1.6及以上环境,默认端口3306,ip 127.0.0.1,可以使用任意一种mysql 客户端进行链接
 
 ```
+go init 
+go mod 
 go run  interface/cli/start.go
 
 ```
