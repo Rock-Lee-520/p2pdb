@@ -6,8 +6,11 @@ require (
 	github.com/Rock-liyi/p2pdb-server v0.1.2
 	github.com/Rock-liyi/p2pdb-store v0.1.0
 	github.com/astaxie/beego v1.12.3
+	github.com/caarlos0/env/v6 v6.9.3
+	github.com/favframework/debug v0.0.0-20150708094948-5c7e73aafb21
 	github.com/gdamore/tcell/v2 v2.5.1
 	github.com/ipfs/go-log/v2 v2.5.1
+	github.com/joho/godotenv v1.4.0
 	github.com/libp2p/go-libp2p v0.20.3
 	github.com/libp2p/go-libp2p-core v0.16.1
 	github.com/libp2p/go-libp2p-mplex v0.8.0 // indirect
@@ -24,3 +27,9 @@ require (
 	github.com/rivo/tview v0.0.0-20220703182358-a13d901d3386
 	github.com/sirupsen/logrus v1.8.1
 )
+
+// replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
+
+// replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
+
+// replace github.com/Rock-liyi/p2pdb-log => ../p2pdb-log
