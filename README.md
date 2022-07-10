@@ -31,7 +31,7 @@ P2PDB主要由以下模块构成：
 - `p2pdb-pubsub`: 基于[libp2p-pubsub](github.com/libp2p/go-libp2p-pubsub)实现的消息广播组件,用于对等节点中数据的主动传播,采用了Gossip流言广播算法（开发中）。
 
 
-- `p2pdb-consistency`: 基于[crdt](https://github.com/Rock-liyi/p2pdb/blob/main/doc/zh-cn/CRDT%E5%8D%8F%E8%AE%AE.md)，ot等协议用于消息顺序一致性判断的组件,主要用于当事件没有因果关系时（并发）,作为排序判断的模块，集成了常用的顺序判断规则，如内置规则无法满足，你也可以根据该模块规范增加新的协议（开发中）。
+- `p2pdb-consistency`: 基于[crdt](https://github.com/Rock-liyi/p2pdb/blob/main/doc/zh-cn/CRDT%E5%8D%8F%E8%AE%AE.md)，ot等协议用于消息顺序一致性判断的组件,主要用于当事件没有因果关系时（并发）,作为全序判断的模块，集成了常用的顺序判断规则，如内置规则无法满足，你也可以根据该模块规范增加新的协议（开发中）。
 
 
 - `p2pdb-discovery`: [p2pdb-discovery](https://github.com/Rock-liyi/p2pdb-discovery) 是对等节点的服务发现注册,用于检索对等节点,基于[libp2p](https://github.com/libp2p/go-libp2p)的mdns模块实现（开发中）。
@@ -57,8 +57,8 @@ git  clone  https://github.com/Rock-liyi/p2pdb.git
 需要安装golang 1.6及以上环境,默认端口3306,ip 127.0.0.1,可以使用任意一种mysql 客户端进行链接
 
 ```
-go init 
-go mod 
+go mod init 
+go mod tidy
 go run  interface/cli/start.go
 
 ```
