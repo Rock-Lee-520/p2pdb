@@ -15,7 +15,7 @@
 中文 | [English](./README-EN.md)
 
 
-##### 简介
+### 简介
 P2PDB,一个为了web3.0 时代的而产生的去中心化、分布式、点对点数据库、它是传统数据库技术融合区块链技术产生的新一代数据库,P2PDB基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文,使用IPFS-libp2p构建分布式网络和IPFS-pubsub与对等节点同步数据。P2PDB愿景是打造一个工业级别的去中心化式数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和边缘计算应用程序数据存储的绝佳选择, P2PDB基于[白皮书](doc/zh-cn/%E7%99%BD%E7%9A%AE%E4%B9%A6.md)实现
 
 P2PDB主要由以下模块构成：
@@ -40,11 +40,12 @@ P2PDB主要由以下模块构成：
 - `p2pdb-store`: [p2pdb-store](https://github.com/Rock-liyi/p2pdb-store) 用于数据实际存储的模块,类似mysql的数据存储一样，提供索引检索,数据的增删改查等,这是一个抽象的模块,目的是将来如果当前的存储引擎无法满足你的存储需求,可以提供更多的DB驱动如clickhouse、postgresql、TDngine等数据库，当前提供内存存储（开发模式使用）以及文件存储（生产使用）(已实现)。
 
 
+### 核心模块解释
 
-### p2pdb-log
+#### p2pdb-log
 p2pdb基于[p2pdb-log](https://github.com/Rock-liyi/p2pdb-log)之上实现，p2pdb-log是一种只允许追加写入日志，并且不可窜改。基于操作的无冲突复制数据结构 (CRDT)与Merkle DAG（有向无环图）实现。如果所有 P2PDB 数据库类型都不符合您的需求和/或您需要特定于案例的功能，您可以轻松使用日志模块实现您想要的数据库(开发中)。
 
-### p2pdb-server
+#### p2pdb-server
 [p2pdb-server](https://github.com/Rock-liyi/p2pdb-server) 可以理解为一个mysql 的服务器端，用于执行mysql的指令,
 被p2pdb-server执行的指令都会记录在p2pdb-log中,并广播到所有对等节点,p2pdb-server模拟了mysql协议的实现，因此你可以使用任何一种mysql的客户端进行连接,甚至是编程语言。
 
@@ -83,7 +84,7 @@ go run  interface/cli/start.go
 - [如何贡献](#如何贡献)
 - [使用许可](#使用许可) -->
 
-## 背景
+### 背景
 P2PDB最早源于某集团离线收银项目的研发，早期采用了Raft 强一致性的协议+Sqlite 实现一个轻量级的分布式数据库，随着对Raft协议的深入研究，发现Raft协议对于离线场景存在较大缺陷（故障节点数量大于50%，整个集群无法工作）,随后开启了深入研究分布式数据库协议的道路,在一年后发现基于默克尔有向无环图+CRDT实现的逻辑时钟[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)可以实现最终一致性的去中心化、分布式、点对点数据库，并且针对离线场景做了充分的支持。
 
 
@@ -101,7 +102,7 @@ P2PDB 是一个点对点数据库，这意味着每个对等点都有自己的�
 
 
 
-## 目标
+### 目标
  这个数据库的目标是：
 
 1. 一个**Dapp应用数据存储解决方案**
@@ -120,7 +121,7 @@ P2PDB 是一个点对点数据库，这意味着每个对等点都有自己的�
 * 8、更多.........
 
 
-## 特性
+### 特性
 
 1. 兼容mysql 90%以上语法支持，你可以使用任何mysql 客户端连接
 2. 去中心化，无中心服务器
@@ -131,10 +132,8 @@ P2PDB 是一个点对点数据库，这意味着每个对等点都有自己的�
 7. 版本证明，类似区块链算法，保证数据一旦生成永不丢失。
 
 
-## 架构
 
-
-#### 目录分层设计
+### 目录分层设计
 遵循DDD领域驱动分层架构
 ```
 interface 接口层
@@ -158,24 +157,24 @@ data 文件数据存储目录
 
 
 
-## 相关文档
+### 相关文档
 - [文档](https://github.com/Rock-liyi/p2pdb/tree/master/doc)
 
 
 
-## 本数据库使用到的部分仓库
+### 本数据库使用到的部分仓库
 
 - [libp2p](https://github.com/libp2p/go-libp2p) 
 - [ipfs](https://github.com/ipfs/go-ipfs)
 说明:由于本项目使用到的ipfs,libp2p等代码,引用的代码部分遵循代码相关协议,感谢协议实验室为去中心化网络做出的贡献
 
-## 维护者
+### 维护者
 
 [@Rock](https://github.com/Rock-liyi)
 [@Panda](https://github.com/PandaLIU-1111)
 [@CbYip](https://github.com/CbYip)
 
-## 如何贡献
+### 如何贡献
 
 非常欢迎你的加入！[提一个 Issue](https://github.com/Rock-liyi/p2pdb) 或者提交一个 Pull Request。
 
@@ -186,7 +185,7 @@ data 文件数据存储目录
 <a href="graphs/contributors"><img src="https://opencollective.com/standard-readme/contributors.svg?width=890&button=false" /></a> -->
 
 
-## 使用许可
+### 使用许可
 
 Apache License Version 2.0 see http://www.apache.org/licenses/LICENSE-2.0.html
 
