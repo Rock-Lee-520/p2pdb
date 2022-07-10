@@ -10,9 +10,9 @@ import (
 	"github.com/Rock-liyi/p2pdb-store/sqlite"
 )
 
-func CreateSqliteDatabase(dbName string, tableName string) *sqlite.Database {
+func CreateSqliteDatabase(DBName string, tableName string) *sqlite.Database {
 
-	db := sqlite.NewDatabase(dbName)
+	db := sqlite.NewDatabase(DBName)
 	table := sqlite.NewTable(tableName, sql.NewPrimaryKeySchema(sql.Schema{
 		{Name: "name2", Type: sql.Text, Nullable: false, Source: tableName},
 		{Name: "email2", Type: sql.Text, Nullable: false, Source: tableName},
@@ -32,9 +32,9 @@ func CreateSqliteDatabase(dbName string, tableName string) *sqlite.Database {
 	return db
 }
 
-func CreateMemoryDatabase(dbName string, tableName string) *memory.Database {
+func CreateMemoryDatabase(DBName string, tableName string) *memory.Database {
 
-	db := memory.NewDatabase(dbName)
+	db := memory.NewDatabase(DBName)
 	table := memory.NewTable(tableName, sql.NewPrimaryKeySchema(sql.Schema{
 		{Name: "name2", Type: sql.Text, Nullable: false, Source: tableName},
 		{Name: "email2", Type: sql.Text, Nullable: false, Source: tableName},

@@ -15,26 +15,26 @@ import (
 )
 
 type engine interface {
-	CreateSqliteDatabase(dbName string, tableName string) *sqlite.Database
+	CreateSqliteDatabase(DBName string, tableName string) *sqlite.Database
 
-	CreateMemoryDatabase(dbName string, tableName string) *memory.Database
+	CreateMemoryDatabase(DBName string, tableName string) *memory.Database
 }
 
-func StartNewService(dbName string, tableName string) {
+func StartNewService(DBName string, tableName string, DBHost string, port string) {
 
 	engine := sqle.NewDefault(
 		sql.NewDatabaseProvider(
-			CreateMemoryDatabase(dbName, tableName), //choose createMemoryDatabase or createSqliteDatabase
+			CreateMemoryDatabase(DBName, tableName), //choose createMemoryDatabase or createSqliteDatabase
 			information_schema.NewInformationSchemaDatabase(),
 		))
 
 	config := ser.Config{
 		Protocol: "tcp",
-		Address:  "localhost:3306",
+		Address:  DBHost + ":" + port,
 		Auth:     auth.NewNativeSingle("root", "", auth.AllPermissions),
 	}
 
-	log.Printf("ip: %s,port:%s", "localhost", "3306")
+	log.Printf("the server host is: %s,the server port is: %s", DBHost, port)
 	s, err := ser.NewDefaultServer(config, engine)
 	if err != nil {
 		panic(err)
