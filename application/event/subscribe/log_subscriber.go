@@ -30,7 +30,7 @@ func init() {
 			select {
 			case data := <-chanEvent:
 				go execute(data)
-				// default:  it will be caused endless loop
+				//=default:  it will be caused endless loop
 			}
 
 		}

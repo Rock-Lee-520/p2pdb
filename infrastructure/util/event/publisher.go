@@ -28,7 +28,7 @@ func PublishEvent(eventType string, data []byte) {
 	if eventType == LogTopic {
 		publisherFactory = &publish.LogPublisherFactory{}
 	}
-	data = []byte{8, 0, 0, 0}
+	//data = []byte{8, 0, 0, 0}
 	message := publisherFactory.NewMessage(eventType, data)
 	publisherFactory.Publish(message)
 }
