@@ -2,6 +2,7 @@ package main
 
 import (
 	conf "github.com/Rock-liyi/p2pdb-server/config"
+	_ "github.com/Rock-liyi/p2pdb/application/event/subscribe" //注册事件监听
 	"github.com/Rock-liyi/p2pdb/application/service"
 	log "github.com/sirupsen/logrus"
 )
@@ -16,6 +17,7 @@ func init() {
 		// The TextFormatter is default, you don't actually have to do this.
 		log.SetLevel(log.DebugLevel)
 	}
+
 }
 
 func main() {
