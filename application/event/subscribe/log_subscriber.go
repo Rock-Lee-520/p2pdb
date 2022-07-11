@@ -25,14 +25,16 @@ func init() {
 	chanEvent := make(chan event.DataEvent)
 	eventFunc.Register(topic, chanEvent)
 	log.Printf("subscribe Register is ok, topic is %s", topic)
-	for {
-		select {
-		case data := <-chanEvent:
-			go execute(data)
-		default:
-		}
+	go func() {
+		for {
+			select {
+			case data := <-chanEvent:
+				go execute(data)
+				// default:  it will be caused endless loop
+			}
 
-	}
+		}
+	}()
 }
 
 func execute(data event.DataEvent) {

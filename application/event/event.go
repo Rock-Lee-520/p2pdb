@@ -43,7 +43,7 @@ func (e *EventFuncs) PrintDataEvent(ch string, data DataEvent) {
 	fmt.Printf("Channel: %s; Topic: %s; DataEvent %v\n", ch, data.Topic, data.Data)
 }
 
-func (e *EventFuncs) PublishEvent(topic string, message string) {
+func (e *EventFuncs) PublishEvent(topic string, message interface{}) {
 	for {
 		eb.Publish(topic, message)
 		time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
