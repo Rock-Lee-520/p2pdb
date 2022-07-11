@@ -34,13 +34,18 @@ func (e *EventFuncs) NewEvent(topic string) {
 	eb.Subscribe(topic, chanEvent)
 }
 
+type Message struct {
+	Messagetype string
+	Data        []byte
+}
+
 func (e *EventFuncs) PrintDataEvent(ch string, data DataEvent) {
 	fmt.Printf("Channel: %s; Topic: %s; DataEvent %v\n", ch, data.Topic, data.Data)
 }
 
-func (e *EventFuncs) PublishEvent(topic string, data interface{}) {
+func (e *EventFuncs) PublishEvent(topic string, message string) {
 	for {
-		eb.Publish(topic, data)
+		eb.Publish(topic, message)
 		time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
 	}
 }
