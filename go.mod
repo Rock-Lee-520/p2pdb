@@ -20,15 +20,11 @@ require (
 	github.com/sirupsen/logrus v1.8.1
 )
 
+replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
 
-// replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
+replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
 
-// replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
-
-// replace github.com/Rock-liyi/p2pdb-log => ../p2pdb-log
-
-
-
+replace github.com/Rock-liyi/p2pdb-log => ../p2pdb-log
 
 require (
 	github.com/benbjohnson/clock v1.3.0 // indirect
@@ -149,7 +145,7 @@ require (
 	golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4 // indirect
 	golang.org/x/mod v0.4.2 // indirect
 	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2 // indirect
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
+	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f // indirect
 	golang.org/x/sys v0.0.0-20220422013727-9388b58f7150 // indirect
 	golang.org/x/term v0.0.0-20210220032956-6a3ed077a48d // indirect
 	golang.org/x/text v0.3.7 // indirect
@@ -164,4 +160,3 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	lukechampine.com/blake3 v1.1.7 // indirect
 )
-

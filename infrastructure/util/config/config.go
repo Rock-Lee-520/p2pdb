@@ -2,9 +2,13 @@ package config
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/caarlos0/env/v6"
+	log "github.com/sirupsen/logrus"
+
 	//"github.com/dolthub/vitess/go/vt/log"
+
 	"github.com/joho/godotenv"
 	_ "github.com/joho/godotenv/autoload"
 )
@@ -24,13 +28,17 @@ const projectDirName = "p2pdb-store" // change to relevant project name
 
 func init() {
 	// projectName := regexp.MustCompile(`^(.*` + projectDirName + `)`)
-	// currentWorkDirectory, _ := os.Getwd()
+
 	// rootPath := projectName.Find([]byte(currentWorkDirectory))
 	// fmt.Printf("%+v\n", rootPath)
 	// err := godotenv.Load(string(rootPath) + `/.env`)
-	err := godotenv.Load(`../.env`)
+	//filenames = godotenv.Load(filenames)
+
+	currentWorkDirectory, _ := os.Getwd()
+
+	err := godotenv.Load(currentWorkDirectory + `/.env`)
 	if err != nil {
-		//log.Error("Error loading .env file")
+		log.Error("p2pdb -> Error loading .env file")
 	}
 }
 
