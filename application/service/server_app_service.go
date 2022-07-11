@@ -26,5 +26,10 @@ func StartNewService() {
 		DBTableName = "test"
 	}
 
-	server.StartNewService(DBName, DBTableName, DBHost, port)
+	storageEngine := config.GetStorageEngine()
+	if storageEngine == "" {
+		storageEngine = "memory"
+	}
+
+	server.StartNewService(DBName, DBTableName, DBHost, port, storageEngine)
 }

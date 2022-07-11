@@ -20,13 +20,23 @@ type engine interface {
 	CreateMemoryDatabase(DBName string, tableName string) *memory.Database
 }
 
-func StartNewService(DBName string, tableName string, DBHost string, port string) {
+func StartNewService(DBName string, tableName string, DBHost string, port string, storageEngine string) {
 
-	engine := sqle.NewDefault(
-		sql.NewDatabaseProvider(
-			CreateMemoryDatabase(DBName, tableName), //choose createMemoryDatabase or createSqliteDatabase
-			information_schema.NewInformationSchemaDatabase(),
-		))
+	var engine *sqle.Engine
+
+	if storageEngine == "file" {
+		engine = sqle.NewDefault(
+			sql.NewDatabaseProvider(
+				CreateSqliteDatabase(DBName, tableName), //choose createMemoryDatabase or createSqliteDatabase
+				information_schema.NewInformationSchemaDatabase(),
+			))
+	} else {
+		engine = sqle.NewDefault(
+			sql.NewDatabaseProvider(
+				CreateMemoryDatabase(DBName, tableName), //choose createMemoryDatabase or createSqliteDatabase
+				information_schema.NewInformationSchemaDatabase(),
+			))
+	}
 
 	config := ser.Config{
 		Protocol: "tcp",
