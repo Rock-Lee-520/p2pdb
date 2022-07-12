@@ -4,26 +4,23 @@ import (
 	"github.com/Rock-liyi/p2pdb/application/event/publish"
 )
 
-type Event struct {
-	Type string `json:"type"`
-	Data string `json:"data"`
-}
+// type Event struct {
+// 	Type string `json:"type"`
+// 	Data string `json:"data"`
+// }
 
-type EventType struct {
-	LOG       string
-	DISCOVERY string
-}
+// type EventType struct {
+// 	LOG       string
+// 	DISCOVERY string
+// }
 
-func New() EventType {
-	return EventType{
-		LOG: "log", DISCOVERY: "discover"}
-}
-
-const (
-	LogTopic = "log"
-)
+// func New() EventType {
+// 	return EventType{
+// 		LOG: "log", DISCOVERY: "discover"}
+// }
 
 func PublishEvent(eventType string, data []byte) {
+
 	var publisherFactory = &publish.LogPublisherFactory{}
 	if eventType == LogTopic {
 		publisherFactory = &publish.LogPublisherFactory{}

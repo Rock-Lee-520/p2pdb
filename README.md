@@ -43,11 +43,11 @@ P2PDB主要由以下模块构成：
 ### 核心模块解释
 
 #### p2pdb-log
-p2pdb基于[p2pdb-log](https://github.com/Rock-liyi/p2pdb-log)之上实现，p2pdb-log是一种只允许追加写入日志，并且不可窜改。基于操作的无冲突复制数据结构 (CRDT)与Merkle DAG（有向无环图）实现。如果所有 P2PDB 数据库类型都不符合您的需求和/或您需要特定于案例的功能，您可以轻松使用日志模块实现您想要的数据库(开发中)。
+p2pdb基于[p2pdb-log](https://github.com/Rock-liyi/p2pdb-log)之上实现，p2pdb-log是一种只允许追加写入日志，并且不可窜改。基于操作的无冲突复制数据结构 (CRDT)与Merkle DAG（有向无环图）实现。如果所有 P2PDB 数据库类型都不符合您的需求和/或您需要特定于案例的功能，您可以轻松使用日志模块实现您想要的数据库。
 
 #### p2pdb-server
 [p2pdb-server](https://github.com/Rock-liyi/p2pdb-server) 可以理解为一个mysql 的服务器端，用于执行mysql的指令,
-被p2pdb-server执行的指令都会记录在p2pdb-log中,并广播到所有对等节点,p2pdb-server模拟了mysql协议的实现，因此你可以使用任何一种mysql的客户端进行连接,甚至是编程语言。
+被p2pdb-server执行的指令都会记录在p2pdb-log中,并广播到所有对等节点,p2pdb-server模拟了mysql协议的实现，因此你可以使用任何一种支持mysql的客户端或编程语言进行链接。
 
 
 ### 快速使用
@@ -55,7 +55,7 @@ p2pdb基于[p2pdb-log](https://github.com/Rock-liyi/p2pdb-log)之上实现，p2p
 git  clone  https://github.com/Rock-liyi/p2pdb.git
 
 ```
-需要安装golang 1.6及以上环境,默认端口3306,ip 127.0.0.1,可以使用任意一种mysql 客户端进行链接
+需要安装golang 1.6及以上环境,默认端口3306,ip 127.0.0.1 [查看链接例子](https://github.com/Rock-liyi/p2pdb-server/blob/master/SUPPORTED_CLIENTS.md)
 
 ```
 go mod init 
