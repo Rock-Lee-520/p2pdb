@@ -10,12 +10,12 @@ func main() {
 	d := new(event.Driver)
 
 	// Register a callback named OnSkill
-	event.RegisterEvent("OnSkill", d.OnEvent)
+	event.RegisterSyncEvent("OnSkill", d.OnEvent)
 
 	// Register the global events on the OnSkill again
-	event.RegisterEvent("OnSkill", event.GlobalEvent)
+	event.RegisterSyncEvent("OnSkill", event.GlobalSyncEvent)
 
 	// Call the event, and all of the registered functions with the same name are called
-	event.CallEvent("OnSkill", 100)
+	event.CallSyncEvent("OnSkill", 100)
 
 }

@@ -12,12 +12,12 @@ func (a *Driver) OnEvent(param interface{}) {
 	fmt.Println("actor event:", param)
 }
 
-func GlobalEvent(param interface{}) {
+func GlobalSyncEvent(param interface{}) {
 
 	fmt.Println("global event:", param)
 }
 
-func CallEvent(name string, param interface{}) {
+func CallSyncEvent(name string, param interface{}) {
 
 	// Find the list of events by the name
 	list := eventByName[name]
@@ -35,7 +35,7 @@ func CallEvent(name string, param interface{}) {
 var eventByName = make(map[string][]func(interface{}))
 
 // Register the events, providing the event name and the callback function
-func RegisterEvent(name string, callback func(interface{})) {
+func RegisterSyncEvent(name string, callback func(interface{})) {
 
 	// Find the list of events by the name
 	list := eventByName[name]
