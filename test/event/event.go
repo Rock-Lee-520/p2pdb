@@ -16,6 +16,6 @@ func main() {
 	event.RegisterSyncEvent("OnSkill", event.GlobalSyncEvent)
 
 	// Call the event, and all of the registered functions with the same name are called
-	event.CallSyncEvent("OnSkill", 100)
+	event.PublishAsyncEvent("OnSkill", 100)
 
 }

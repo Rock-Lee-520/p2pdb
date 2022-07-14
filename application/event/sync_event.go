@@ -17,7 +17,7 @@ func GlobalSyncEvent(param interface{}) {
 	fmt.Println("global event:", param)
 }
 
-func CallSyncEvent(name string, param interface{}) {
+func PublishAsyncEvent(name string, param interface{}) {
 
 	// Find the list of events by the name
 	list := eventByName[name]
