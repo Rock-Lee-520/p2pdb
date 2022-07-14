@@ -8,10 +8,10 @@ import (
 )
 
 type Event interface {
-	NewEvent(topic string)
-	Register(topic string)
-	PrintDataEvent(ch string, data DataEvent)
-	PublishEvent(topic string, data interface{})
+	NewAsyncEvent(topic string)
+	RegisterAsyncEvent(topic string)
+	PrintDataAsyncEvent(ch string, data DataEvent)
+	PublishAsyncEvent(topic string, data interface{})
 }
 
 type EventFuncs struct {
@@ -21,17 +21,17 @@ var eb = &EventBus{
 	subscribers: map[string]DatachannelSlice{},
 }
 
-func (e *EventFuncs) Register(topic string, chanEvent chan DataEvent) {
+func (e *EventFuncs) RegisterAsyncEvent(topic string, chanEvent chan DataEvent) {
 	//	chanEvent := make(chan DataEvent)
 
-	eb.Subscribe(topic, chanEvent)
+	eb.SubscribeAsyncEvent(topic, chanEvent)
 
 }
 
-func (e *EventFuncs) NewEvent(topic string) {
+func (e *EventFuncs) NewAsyncEvent(topic string) {
 	chanEvent := make(chan DataEvent)
 
-	eb.Subscribe(topic, chanEvent)
+	eb.SubscribeAsyncEvent(topic, chanEvent)
 }
 
 type Message struct {
@@ -39,14 +39,14 @@ type Message struct {
 	Data        []byte
 }
 
-func (e *EventFuncs) PrintDataEvent(ch string, data DataEvent) {
+func (e *EventFuncs) PrintDataAsyncEvent(ch string, data DataEvent) {
 	fmt.Printf("Channel: %s; Topic: %s; DataEvent %v\n", ch, data.Topic, data.Data)
 }
 
-func (e *EventFuncs) PublishEvent(topic string, message interface{}) {
+func (e *EventFuncs) PublishAsyncEvent(topic string, message interface{}) {
 	//for {
 
-	eb.Publish(topic, message)
+	eb.PublishAsyncEvent(topic, message)
 	time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
 	//}
 }
@@ -65,7 +65,7 @@ type EventBus struct {
 	rm          sync.RWMutex
 }
 
-func (eb *EventBus) Subscribe(topic string, ch DataChannel) {
+func (eb *EventBus) SubscribeAsyncEvent(topic string, ch DataChannel) {
 	eb.rm.Lock()
 	if prev, found := eb.subscribers[topic]; found {
 		eb.subscribers[topic] = append(prev, ch)
@@ -75,7 +75,7 @@ func (eb *EventBus) Subscribe(topic string, ch DataChannel) {
 	eb.rm.Unlock()
 }
 
-func (eb *EventBus) Publish(topic string, data interface{}) {
+func (eb *EventBus) PublishAsyncEvent(topic string, data interface{}) {
 
 	eb.rm.RLock()
 	if chans, found := eb.subscribers[topic]; found {

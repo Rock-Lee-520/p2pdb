@@ -7,23 +7,23 @@ import (
 )
 
 type LogPublisherInterface interface {
-	Publish(msg *LogMessage) (bool, error)
-	NewMessage(msg *LogMessage) *LogMessage
+	PublishAsyncEvent(msg *LogAsyncEventMessage) (bool, error)
+	NewAsyncEventMessage(msg *LogAsyncEventMessage) *LogAsyncEventMessage
 }
 
-type LogEvent struct {
+type LogAsyncEvent struct {
 	Topic string
 }
 
-type LogMessage struct {
+type LogAsyncEventMessage struct {
 	Topic string
 	Data  []byte
 }
 
 type LogPublisherFactory struct{}
 
-func (m *LogPublisherFactory) NewMessage(topic string, data []byte) *LogMessage {
-	return &LogMessage{
+func (m *LogPublisherFactory) NewMessage(topic string, data []byte) *LogAsyncEventMessage {
+	return &LogAsyncEventMessage{
 		Topic: topic,
 		Data:  data,
 	}
@@ -32,7 +32,7 @@ func (m *LogPublisherFactory) NewMessage(topic string, data []byte) *LogMessage 
 var topic = "log"
 var eventFunc = &event.EventFuncs{}
 
-func (m *LogPublisherFactory) Publish(msg *LogMessage) (bool, error) {
+func (m *LogPublisherFactory) PublishAsyncEvent(msg *LogAsyncEventMessage) (bool, error) {
 	if msg.Topic == "" {
 		return false, fmt.Errorf("empty topic")
 	}
@@ -45,6 +45,6 @@ func (m *LogPublisherFactory) Publish(msg *LogMessage) (bool, error) {
 		return false, fmt.Errorf("empty data")
 	}
 
-	eventFunc.PublishEvent(topic, msg.Data)
+	eventFunc.PublishAsyncEvent(topic, msg.Data)
 	return true, nil
 }

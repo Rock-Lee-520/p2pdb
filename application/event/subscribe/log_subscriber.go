@@ -23,7 +23,7 @@ var eventFunc = &event.EventFuncs{}
 
 func init() {
 	chanEvent := make(chan event.DataEvent)
-	eventFunc.Register(topic, chanEvent)
+	eventFunc.RegisterAsyncEvent(topic, chanEvent)
 	log.Printf("subscribe Register is ok, topic is %s", topic)
 	go func() {
 		for {
@@ -38,5 +38,5 @@ func init() {
 }
 
 func execute(data event.DataEvent) {
-	go eventFunc.PrintDataEvent(topic, data)
+	go eventFunc.PrintDataAsyncEvent(topic, data)
 }

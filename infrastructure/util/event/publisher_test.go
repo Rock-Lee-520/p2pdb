@@ -41,7 +41,7 @@ func randUpString(l int) []byte {
 
 }
 
-func TestPublishEvent(t *testing.T) {
+func TestPublishAsyncEvent(t *testing.T) {
 	data := randUpString(19)
-	PublishEvent("log", data)
+	PublishAsyncEvent("log", data)
 }
