@@ -1,6 +1,6 @@
 package event
 
-//event+module name+topic name
+//module name+topic name+event
 
 //p2pdb-log EventType
 const (
@@ -11,15 +11,15 @@ const (
 //p2pdb-store EventType
 const (
 	//DML
-	StoreSqlUpdateEvent = "store_sql_update_event"
-	StoreSqlDeleteEvent = "store_sql_delete_event"
-	StoreSqlInsertEvent = "store_sql_insert_event"
+	StoreUpdateEvent    = "store_update_event"
+	StoreSqlDeleteEvent = "store_delete_event"
+	StoreSqlInsertEvent = "store_insert_event"
 	//DDL table
-	StoreSqlCreateTableEvent   = "store_sql_create_table_event"
-	StoreSqlAlterTableEvent    = "store_sql_alter_table_event"
-	StoreSqlDropTableEvent     = "store_sql_drop_table_event"
-	StoreSqlTruncateTableEvent = "store_sql_truncate_table_event"
+	StoreCreateTableEvent   = "store_create_table_event"
+	StoreAlterTableEvent    = "store_alter_table_event"
+	StoreDropTableEvent     = "store_drop_table_event"
+	StoreTruncateTableEvent = "store_truncate_table_event"
 	//DDL database
-	StoreSqlDropDatabaseEvent   = "store_sql_drop_database_event"
-	StoreSqlCreateDatabaseEvent = "store_sql_create_database_event"
+	StoreDropDatabaseEvent   = "store_drop_database_event"
+	StoreCreateDatabaseEvent = "store_create_database_event"
 )

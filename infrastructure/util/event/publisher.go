@@ -14,3 +14,5 @@ func PublishAsyncEvent(eventType string, data []byte) {
 	message := publisherFactory.NewMessage(eventType, data)
 	publisherFactory.PublishAsyncEvent(message)
 }
+
+func su
