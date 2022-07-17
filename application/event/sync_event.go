@@ -11,12 +11,12 @@ type Driver struct {
 
 // Add an event-processing function for function
 func (a *Driver) OnEvent(param interface{}) {
-
+	debug.Dump("call OnEvent======")
 	fmt.Println("actor event:", param)
 }
 
 func GlobalSyncEvent(param interface{}) {
-
+	debug.Dump("call GlobalSyncEvent======")
 	fmt.Println("global event:", param)
 }
 
@@ -39,7 +39,7 @@ var eventByName = make(map[string][]func(interface{}))
 
 // Register the events, providing the event name and the callback function
 func RegisterSyncEvent(name string, callback func(interface{})) {
-	debug.Dump("call RegisterSyncEvent======")
+	//debug.Dump("call RegisterSyncEvent======")
 	// Find the list of events by the name
 	list := eventByName[name]
 

@@ -2,36 +2,28 @@ package subscribe
 
 import (
 	"github.com/Rock-liyi/p2pdb/application/event"
+	common_event "github.com/Rock-liyi/p2pdb/domain/common/event"
 	debug "github.com/favframework/debug"
 )
 
-// type selector struct {
-// 	name string
-// }
-
-// type subscribe struct {
-// 	selector
-// }
-//  func (s *subscribe) String() string {
-// 	//     return s.name
-
-// }
-
 func init() {
 	debug.Dump("new event.Driver======")
-	d := new(event.Driver)
+	//d := new(event.Driver)
+	for i := 0; i < len(common_event.StoreEventType); i++ {
+		println(common_event.StoreEventType[i])
+		// Register a callback named OnSkill
+		event.RegisterSyncEvent(common_event.StoreEventType[i], ExecuteLogFunc)
 
-	// Register a callback named OnSkill
-	event.RegisterSyncEvent("OnSkill", d.OnEvent)
-
-	// Register the global events on the OnSkill again
-	event.RegisterSyncEvent("OnSkill", event.GlobalSyncEvent)
+		// Register the global events on the OnSkill again
+		//event.RegisterSyncEvent(common_event.StoreEventType[i], event.GlobalSyncEvent)
+	}
 
 	// Call the event, and all of the registered functions with the same name are called
-	event.PublishSyncEvent("OnSkill", 100)
+	//	event.PublishSyncEvent("OnSkill", 100)
 
 }
 
-func sync_log_execute(data event.DataEvent) {
-
+func ExecuteLogFunc(param interface{}) {
+	debug.Dump("call ExecuteLogFunc, param is ")
+	debug.Dump(param)
 }

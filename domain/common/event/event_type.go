@@ -11,9 +11,9 @@ const (
 //p2pdb-store EventType
 const (
 	//DML
-	StoreUpdateEvent    = "store_update_event"
-	StoreSqlDeleteEvent = "store_delete_event"
-	StoreSqlInsertEvent = "store_insert_event"
+	StoreUpdateEvent = "store_update_event"
+	StoreDeleteEvent = "store_delete_event"
+	StoreInsertEvent = "store_insert_event"
 	//DDL table
 	StoreCreateTableEvent   = "store_create_table_event"
 	StoreAlterTableEvent    = "store_alter_table_event"
@@ -23,3 +23,17 @@ const (
 	StoreDropDatabaseEvent   = "store_drop_database_event"
 	StoreCreateDatabaseEvent = "store_create_database_event"
 )
+
+var StoreEventType = [...]string{
+	//DML
+	StoreUpdateEvent,
+	StoreDeleteEvent,
+	StoreInsertEvent,
+	//DDL table
+	StoreCreateTableEvent,
+	StoreAlterTableEvent,
+	StoreDropTableEvent,
+	StoreTruncateTableEvent,
+	StoreDropDatabaseEvent,
+	StoreCreateDatabaseEvent,
+}
