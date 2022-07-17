@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/Rock-liyi/p2pdb-server v0.1.2
-	github.com/Rock-liyi/p2pdb-store v0.1.0
+	github.com/Rock-liyi/p2pdb-store v0.1.2
 	github.com/astaxie/beego v1.12.3
 	github.com/caarlos0/env/v6 v6.9.3
 	github.com/favframework/debug v0.0.0-20150708094948-5c7e73aafb21
@@ -45,7 +45,7 @@ require (
 	github.com/elastic/gosigar v0.12.0 // indirect
 	github.com/flynn/noise v1.0.0 // indirect
 	github.com/francoispqt/gojay v1.2.13 // indirect
-	github.com/fsnotify/fsnotify v1.4.9 // indirect
+	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/gdamore/encoding v1.0.0 // indirect
 	github.com/go-kit/kit v0.12.0 // indirect
 	github.com/go-task/slim-sprig v0.0.0-20210107165309-348f09dbbbc0 // indirect
@@ -57,7 +57,7 @@ require (
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/hashicorp/golang-lru v0.5.4 // indirect
-	github.com/huin/goupnp v1.0.0 // indirect
+	github.com/huin/goupnp v1.0.2 // indirect
 	github.com/ipfs/go-cid v0.1.0 // indirect
 	github.com/ipfs/go-ipfs-util v0.0.2 // indirect
 	github.com/ipfs/go-log v1.0.5 // indirect
@@ -65,7 +65,7 @@ require (
 	github.com/jbenet/go-temp-err-catcher v0.1.0 // indirect
 	github.com/klauspost/compress v1.15.1 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.12 // indirect
-	github.com/koron/go-ssdp v0.0.0-20191105050749-2e1c40ed0b5d // indirect
+	github.com/koron/go-ssdp v0.0.2 // indirect
 	github.com/lestrrat-go/strftime v1.0.6 // indirect
 	github.com/libp2p/go-buffer-pool v0.0.2 // indirect
 	github.com/libp2p/go-cidranger v1.1.0 // indirect

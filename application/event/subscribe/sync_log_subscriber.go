@@ -1,11 +1,24 @@
-package main
+package subscribe
 
 import (
 	"github.com/Rock-liyi/p2pdb/application/event"
+	debug "github.com/favframework/debug"
 )
 
-func main() {
+// type selector struct {
+// 	name string
+// }
 
+// type subscribe struct {
+// 	selector
+// }
+//  func (s *subscribe) String() string {
+// 	//     return s.name
+
+// }
+
+func init() {
+	debug.Dump("new event.Driver======")
 	d := new(event.Driver)
 
 	// Register a callback named OnSkill
@@ -16,5 +29,9 @@ func main() {
 
 	// Call the event, and all of the registered functions with the same name are called
 	event.PublishSyncEvent("OnSkill", 100)
+
+}
+
+func sync_log_execute(data event.DataEvent) {
 
 }

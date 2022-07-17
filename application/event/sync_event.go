@@ -1,8 +1,11 @@
 package event
 
-import "fmt"
+import (
+	"fmt"
 
-// 声明角色的结构体
+	debug "github.com/favframework/debug"
+)
+
 type Driver struct {
 }
 
@@ -17,7 +20,7 @@ func GlobalSyncEvent(param interface{}) {
 	fmt.Println("global event:", param)
 }
 
-func PublishAsyncEvent(name string, param interface{}) {
+func PublishSyncEvent(name string, param interface{}) {
 
 	// Find the list of events by the name
 	list := eventByName[name]
@@ -36,7 +39,7 @@ var eventByName = make(map[string][]func(interface{}))
 
 // Register the events, providing the event name and the callback function
 func RegisterSyncEvent(name string, callback func(interface{})) {
-
+	debug.Dump("call RegisterSyncEvent======")
 	// Find the list of events by the name
 	list := eventByName[name]
 
