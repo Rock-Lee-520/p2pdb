@@ -173,9 +173,7 @@ p2pdb 是一个从0到1的项目，也是较早研究去中心化数据库领域
 
 ### 维护说明
 
-[@Rock](https://github.com/Rock-liyi)
-[@Panda](https://github.com/PandaLIU-1111)
-[@CbYip](https://github.com/CbYip)
+维护人员：[@Rock](https://github.com/Rock-liyi) [@Panda](https://github.com/PandaLIU-1111) [@CbYip](https://github.com/CbYip)
 
 当前维护p2pdb项目的是[kkguan](https://github.com/kkguan)这个组织,由于某些原因,仓库暂为private状态
 
