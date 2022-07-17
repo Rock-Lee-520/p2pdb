@@ -43,20 +43,21 @@ func main() {
 		panic(err)
 	}
 
-	for {
-		time.Sleep(1 * time.Second)
-		input := DataMessage{
-			Message:    "123",
-			SenderID:   "123",
-			SenderNick: "1233",
-		}
-
-		msgBytes, err := json.Marshal(input)
-		if err != nil {
-			panic(err)
-		}
-		topic.Publish(ctx, msgBytes)
+	//for {
+	time.Sleep(1 * time.Second)
+	input := DataMessage{
+		Message:    "123",
+		SenderID:   "123",
+		SenderNick: "1233",
 	}
+
+	msgBytes, err := json.Marshal(input)
+	if err != nil {
+		panic(err)
+	}
+	topic.Publish(ctx, msgBytes)
+	//time.Sleep(2 * time.Second)
+	//}
 
 }
 

@@ -20,11 +20,11 @@ require (
 	github.com/sirupsen/logrus v1.8.1
 )
 
-// replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
+replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
 
-// replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
+replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
 
-// replace github.com/Rock-liyi/p2pdb-log => ../p2pdb-log
+replace github.com/Rock-liyi/p2pdb-log => ../p2pdb-log
 
 require (
 	github.com/benbjohnson/clock v1.3.0 // indirect
