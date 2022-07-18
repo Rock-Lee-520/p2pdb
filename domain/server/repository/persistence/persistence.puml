@@ -1,0 +1,62 @@
+
+
+@startuml
+
+class Node <<Entity>> {
+    - NodeId  // 节点ID,一个原子事件一个节点
+    - Type // 节点类型 默认log
+    - ClockTime //兰伯特时钟
+    - ReceiveTimestamp // 本机接收到事件时间
+    - ReceivingDate // 本机接收到事件时间
+    - SendingDate //对等节点发送事件时间
+    - SendingTimestamp //对等节点发送事件时间
+    - LastNodeId //因果关系事件id(上一个关联事件id) 为空代表没有因果关系                 
+}
+
+
+class Data <<Entity>> {
+    - DataId  // 数据ID  一个节点包含多个数据对象
+    - CreatedTimestamp //本机创建时间戳
+    - CreatedDate //本机创建时间戳
+    - Operation //自定义操作信息
+    - Propertie //自定义属性信息                 
+}
+
+class Link <<Entity>> {
+    - LinkId   // 链接id
+    - LastNodeId  // 上一个节点CID
+    - NodeId //当前节点id
+    - Size //数据大小
+    - createdTimestamp //本机创建时间戳
+    - createdDate //本机创建时间戳
+}
+
+
+class DatabaseInfomation <<Entity>> {
+    - DatabaseName   // 数据库名字
+    - LocalPeerId  // 本地对等节点
+    - GlobalClockTime //数据库全局兰伯特时钟
+}
+
+
+class TableInfomation <<Entity>> {
+    - TableName   // 表名字
+    - ClockTime //表兰伯特时钟
+    - Version //表 cas 版本号（预留）
+    - Schema //建表语句
+
+}
+
+
+class SyncInfomation <<Entity>> {
+    //对等节点同步数据时,记录表
+    - DatabaseName   // 数据库名字
+    - TableName //表名字
+    - LocalPeerId  // 本地对等节点
+    - RemotePeerId //远程对等节点地址 与LocalPeerId是一对多关系
+    - LastDagMergeNodeId //最后一次dag 合并时的节点id
+}
+
+
+
+@enduml
