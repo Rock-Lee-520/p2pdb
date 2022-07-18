@@ -7,10 +7,10 @@ import (
 )
 
 func init() {
-	debug.Dump("new event.Driver======")
+	//	debug.Dump("new event.Driver======")
 	//d := new(event.Driver)
 	for i := 0; i < len(common_event.StoreEventType); i++ {
-		println(common_event.StoreEventType[i])
+		//println(common_event.StoreEventType[i])
 		// Register a callback named OnSkill
 		event.RegisterSyncEvent(common_event.StoreEventType[i], ExecuteLogFunc)
 
