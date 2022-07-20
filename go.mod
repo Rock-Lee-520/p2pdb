@@ -3,6 +3,7 @@ module github.com/Rock-liyi/p2pdb
 go 1.17
 
 require (
+	github.com/Rock-liyi/p2pdb-log v0.0.0-20220710152438-0fcbd2cb401f
 	github.com/Rock-liyi/p2pdb-server v0.1.2
 	github.com/Rock-liyi/p2pdb-store v0.1.2
 	github.com/astaxie/beego v1.12.3
@@ -10,6 +11,7 @@ require (
 	github.com/favframework/debug v0.0.0-20150708094948-5c7e73aafb21
 	github.com/gdamore/tcell/v2 v2.5.1
 	github.com/ipfs/go-log/v2 v2.5.1
+	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.4.0
 	github.com/libp2p/go-libp2p v0.20.3
 	github.com/libp2p/go-libp2p-core v0.16.1
@@ -18,13 +20,15 @@ require (
 	github.com/multiformats/go-multiaddr v0.5.0
 	github.com/rivo/tview v0.0.0-20220703182358-a13d901d3386
 	github.com/sirupsen/logrus v1.8.1
+	gorm.io/driver/sqlite v1.3.6
+	gorm.io/gorm v1.23.8
 )
 
-replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
+// replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
 
-replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
+// replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
 
-replace github.com/Rock-liyi/p2pdb-log => ../p2pdb-log
+// replace github.com/Rock-liyi/p2pdb-log => ../p2pdb-log
 
 require (
 	github.com/benbjohnson/clock v1.3.0 // indirect
@@ -63,6 +67,8 @@ require (
 	github.com/ipfs/go-log v1.0.5 // indirect
 	github.com/jackpal/go-nat-pmp v1.0.2 // indirect
 	github.com/jbenet/go-temp-err-catcher v0.1.0 // indirect
+	github.com/jinzhu/inflection v1.0.0 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/klauspost/compress v1.15.1 // indirect
 	github.com/klauspost/cpuid/v2 v2.0.12 // indirect
 	github.com/koron/go-ssdp v0.0.2 // indirect

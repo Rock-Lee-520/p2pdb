@@ -177,11 +177,11 @@ p2pdb是一个从0到1的项目，也是较早研究去中心化数据库领域�
 
 当前维护p2pdb项目的是`kkguan`这个组织,由于某些原因考虑,仓库暂为private状态
 
-注意：项目仍然属于快速迭代阶段，意味着大部分的API都有被重构的风险, 当前可作为学习跟研究使用，不建议运用在生产上,开发团队会尽最大的努力去推进1.0.0版本的发布，但是我们无法预期什么时候发布稳定版本。
+注意：项目仍然属于快速迭代阶段，意味着大部分的API都有被重构的风险, 当前可作为学习跟研究使用，不建议运用在生产上,开发团队会尽最大的努力去推进1.0.0版本的发布，但是我们无法预估什么时候发布稳定版本。
 
 ### 如何贡献
 
-非常欢迎你的加入！[提一个 Issue](https://github.com/Rock-liyi/p2pdb) 或者提交一个 Pull Request。
+非常欢迎你的加入！[提一个 Issue](https://github.com/Rock-liyi/p2pdb/issues) 或者提交一个 Pull Request。
 
 标准 Readme 遵循 [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) 行为规范。
 
