@@ -34,11 +34,6 @@ func (e *EventFuncs) NewAsyncEvent(topic string) {
 	eb.SubscribeAsyncEvent(topic, chanEvent)
 }
 
-type Message struct {
-	Messagetype string
-	Data        []byte
-}
-
 func (e *EventFuncs) PrintDataAsyncEvent(ch string, data DataEvent) {
 	fmt.Printf("Channel: %s; Topic: %s; DataEvent %v\n", ch, data.Topic, data.Data)
 }

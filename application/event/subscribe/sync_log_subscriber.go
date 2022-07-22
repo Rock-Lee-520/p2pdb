@@ -23,7 +23,7 @@ func init() {
 
 }
 
-func ExecuteLogFunc(param interface{}) {
-	debug.Dump("call ExecuteLogFunc, param is ")
-	debug.Dump(param)
+func ExecuteLogFunc(message event.Message) {
+	debug.Dump("call ExecuteLogFunc, message is ")
+	debug.Dump(message)
 }

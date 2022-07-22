@@ -7,6 +7,7 @@ import (
 	"time"
 
 	_ "github.com/Rock-liyi/p2pdb/application/event/subscribe" //注册事件监听
+	"github.com/Rock-liyi/p2pdb/domain/common/event"
 )
 
 func randInt(min int, max int) byte {
@@ -44,4 +45,9 @@ func randUpString(l int) []byte {
 func TestPublishAsyncEvent(t *testing.T) {
 	data := randUpString(19)
 	PublishAsyncEvent("log", data)
+}
+
+func TestPublishSyncEvent(t *testing.T) {
+	data := "StoreDeleteEvent"
+	PublishSyncEvent(event.StoreDeleteEvent, data)
 }

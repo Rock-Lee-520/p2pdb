@@ -9,6 +9,11 @@ import (
 type Driver struct {
 }
 
+type Message struct {
+	Type string
+	Data interface{}
+}
+
 // Add an event-processing function for function
 func (a *Driver) OnEvent(param interface{}) {
 	debug.Dump("call OnEvent======")
@@ -20,7 +25,7 @@ func GlobalSyncEvent(param interface{}) {
 	fmt.Println("global event:", param)
 }
 
-func PublishSyncEvent(name string, param interface{}) {
+func PublishSyncEvent(name string, message Message) {
 
 	// Find the list of events by the name
 	list := eventByName[name]
@@ -29,16 +34,16 @@ func PublishSyncEvent(name string, param interface{}) {
 	for _, callback := range list {
 
 		//The incoming parameter calls a callback
-		callback(param)
+		callback(message)
 	}
 
 }
 
 // Inantiate a map that slices from a mapping function through a string
-var eventByName = make(map[string][]func(interface{}))
+var eventByName = make(map[string][]func(Message))
 
 // Register the events, providing the event name and the callback function
-func RegisterSyncEvent(name string, callback func(interface{})) {
+func RegisterSyncEvent(name string, callback func(Message)) {
 	//debug.Dump("call RegisterSyncEvent======")
 	// Find the list of events by the name
 	list := eventByName[name]

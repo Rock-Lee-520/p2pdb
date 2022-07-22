@@ -37,3 +37,8 @@ var StoreEventType = [...]string{
 	StoreDropDatabaseEvent,
 	StoreCreateDatabaseEvent,
 }
+
+//p2pdb-pubsub EventType
+const (
+	PubsubStartEvent = "pubsub_start_event"
+)

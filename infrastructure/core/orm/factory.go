@@ -5,7 +5,6 @@ import (
 	"path/filepath"
 
 	conf "github.com/Rock-liyi/p2pdb-log/config"
-	debug "github.com/favframework/debug"
 	"gorm.io/gorm"
 )
 
@@ -58,7 +57,7 @@ func (db *CreateDBFactory) InitDB() DBconnect {
 
 	//get db name
 	dataName := conf.GetDBName()
-	debug.Dump(dataName)
+	//debug.Dump(dataName)
 
 	if dataName == "" {
 		panic("dbname does not exits in .env file")
@@ -71,7 +70,7 @@ func (db *CreateDBFactory) InitDB() DBconnect {
 	}
 
 	address := dataPath + dataName + ".db"
-	debug.Dump(address)
+	//debug.Dump(address)
 	connect.Init(address, 0, "", "")
 	connect.Connect()
 
