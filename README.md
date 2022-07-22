@@ -18,9 +18,7 @@
 ### 简介
 P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点数据库、它是传统数据库技术与区块链技术的结合,P2PDB基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文,使用IPFS-libp2p构建去中心化网络和IPFS-pubsub与对等节点同步数据。P2PDB愿景是打造一个工业级别的去中心化式数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和边缘计算应用程序数据存储的绝佳选择, P2PDB基于[白皮书](doc/zh-cn/%E7%99%BD%E7%9A%AE%E4%B9%A6.md)实现
 
-P2PDB主要由以下模块构成：
 
-![alt 属性文本](./p2pdb.png)
 
 
 - `p2pdb-server`: [p2pdb-server](https://github.com/Rock-liyi/p2pdb-server)一个mysql 语法的服务器端, 兼容90%mysql 语法，可使用任一一种mysql 客户端连接,包括PHP、JAVA、GO、RUBY、PYTHON等主流语言的兼容（已实现）
@@ -48,6 +46,12 @@ p2pdb基于[p2pdb-log](https://github.com/Rock-liyi/p2pdb-log)之上实现，p2p
 #### p2pdb-server
 [p2pdb-server](https://github.com/Rock-liyi/p2pdb-server) 可以理解为一个mysql 的服务器端，用于执行mysql的指令,
 被p2pdb-server执行的指令都会记录在p2pdb-log中,并广播到所有对等节点,p2pdb-server模拟了mysql协议的实现，因此你可以使用任何一种支持mysql的客户端或编程语言进行链接。
+
+
+
+#### P2PDB核心流程：
+
+![alt 属性文本](./p2pdb_core_flowchart.png)
 
 
 ### 快速使用

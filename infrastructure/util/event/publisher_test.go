@@ -47,6 +47,9 @@ func TestPublishAsyncEvent(t *testing.T) {
 	PublishAsyncEvent("log", data)
 }
 
+
+
+
 func TestPublishSyncEvent(t *testing.T) {
 	data := "StoreDeleteEvent"
 	PublishSyncEvent(event.StoreDeleteEvent, data)
