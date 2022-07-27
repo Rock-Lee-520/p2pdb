@@ -8,5 +8,9 @@ func InitSub() {
 
 	var sub ps.PubSub
 	sub.SetType("p2pdb")
-	go sub.Sub()
+	var subscription, err = sub.Sub()
+	if err != nil {
+		panic(err)
+	}
+	go sub.StartNewSubscribeService(subscription)
 }
