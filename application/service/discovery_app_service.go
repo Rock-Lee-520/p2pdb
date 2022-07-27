@@ -14,3 +14,10 @@ func InitSub() {
 	}
 	go sub.StartNewSubscribeService(subscription)
 }
+
+func InitPub() {
+
+	var pub ps.PubSub
+	pub.SetType("p2pdb")
+	go pub.InitPub()
+}

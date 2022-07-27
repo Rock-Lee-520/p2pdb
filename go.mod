@@ -4,8 +4,8 @@ go 1.17
 
 require (
 	github.com/Rock-liyi/p2pdb-log v0.0.0-20220718124543-0bcc189e2a66
-	github.com/Rock-liyi/p2pdb-pubsub v0.0.3
-	github.com/Rock-liyi/p2pdb-server v0.1.3
+	github.com/Rock-liyi/p2pdb-pubsub v0.0.4
+	github.com/Rock-liyi/p2pdb-server v0.1.2
 	github.com/Rock-liyi/p2pdb-store v0.1.2
 	github.com/astaxie/beego v1.12.3
 	github.com/caarlos0/env/v6 v6.9.3
@@ -34,7 +34,7 @@ require (
 // replace github.com/Rock-liyi/p2pdb-discovery => ../p2pdb-discovery
 
 require (
-	github.com/Rock-liyi/p2pdb-discovery v0.0.0-20220722063818-588bb555997d // indirect
+	github.com/Rock-liyi/p2pdb-discovery v0.0.1 // indirect
 	github.com/benbjohnson/clock v1.3.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/btcsuite/btcd v0.22.1 // indirect
