@@ -43,21 +43,21 @@ func main() {
 		panic(err)
 	}
 
-	//for {
-	time.Sleep(1 * time.Second)
-	input := DataMessage{
-		Message:    "123",
-		SenderID:   "123",
-		SenderNick: "1233",
-	}
+	for {
+		time.Sleep(1 * time.Second)
+		input := DataMessage{
+			Message:    "123",
+			SenderID:   "123",
+			SenderNick: "1233",
+		}
 
-	msgBytes, err := json.Marshal(input)
-	if err != nil {
-		panic(err)
+		msgBytes, err := json.Marshal(input)
+		if err != nil {
+			panic(err)
+		}
+		topic.Publish(ctx, msgBytes)
+		time.Sleep(1 * time.Second)
 	}
-	topic.Publish(ctx, msgBytes)
-	//time.Sleep(2 * time.Second)
-	//}
 
 }
 
@@ -69,7 +69,7 @@ type DataMessage struct {
 }
 
 func topicName(Name string) string {
-	return "chat-room:" + Name
+	return Name
 }
 
 // discoveryNotifee gets notified when we find a new peer via mDNS discovery

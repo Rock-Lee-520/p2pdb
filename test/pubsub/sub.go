@@ -80,7 +80,7 @@ type DataMessage struct {
 }
 
 func topicName(Name string) string {
-	return "chat-room:" + Name
+	return Name
 }
 
 func sub() {

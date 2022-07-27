@@ -1,6 +1,7 @@
 package main
 
 import (
+	ps "github.com/Rock-liyi/p2pdb-pubsub"
 	_ "github.com/Rock-liyi/p2pdb/application/event/subscribe" //注册事件监听
 	"github.com/Rock-liyi/p2pdb/application/service"
 	conf "github.com/Rock-liyi/p2pdb/infrastructure/util/config"
@@ -21,6 +22,11 @@ func init() {
 }
 
 func main() {
+	//start a pubsub  server
+	var sub ps.PubSub
+	sub.SetType("p2pdb")
+	go sub.Sub()
 
+	//start a mysql server
 	service.StartNewService()
 }
