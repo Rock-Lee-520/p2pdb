@@ -21,11 +21,17 @@ func init() {
 
 }
 
-func main() {
-	//start a pubsub  server
+func initSub() {
+
 	var sub ps.PubSub
 	sub.SetType("p2pdb")
-	go sub.Sub()
+	sub.Sub()
+
+}
+
+func main() {
+
+	go initSub()
 
 	//start a mysql server
 	service.StartNewService()
