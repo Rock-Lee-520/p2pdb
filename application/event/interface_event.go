@@ -13,3 +13,8 @@ type SyncEvent interface {
 	PublishSyncEvent(name string, message Message)
 	RegisterSyncEvent(name string, callback func(Message))
 }
+
+type Message struct {
+	Type string
+	Data interface{}
+}

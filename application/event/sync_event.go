@@ -9,11 +9,6 @@ import (
 type Driver struct {
 }
 
-type Message struct {
-	Type string
-	Data interface{}
-}
-
 // Add an event-processing function for function
 func (a *Driver) OnEvent(param interface{}) {
 	debug.Dump("call OnEvent======")
