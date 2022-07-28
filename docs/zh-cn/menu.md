@@ -2,6 +2,7 @@
 
   * [项目介绍](zh-cn/README.md)
   * [白皮书](zh-cn/whitebook.md)
+  * [贡献指南](en/CONTRIBUTING.md)
 * 安装使用
 
   * [安装](zh-cn/install/install.md)
@@ -10,8 +11,8 @@
 
 
 * 核心模块
-  * [p2pdb-server](zh-cn/install/install.md)
-  * [p2pdb-log](#)
+  * [p2pdb-server](zh-cn/p2pdb-server/introduce.md)
+  * [p2pdb-log](zh-cn/p2pdb-log/introduce.md)
   * [p2pdb-pubsub](#)
   * [p2pdb-consistency](#)
   * [p2pdb-discovery](#)
