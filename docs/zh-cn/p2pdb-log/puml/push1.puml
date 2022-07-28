@@ -1,0 +1,29 @@
+@startuml
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "dag-service-two" as e01 {
+  *id : text  <<hash>>
+  *cid : text  <<hash>>
+  *event_id : text <<hash>>
+  pcid : text  <<hash>>
+  --
+  ext  : text <<content>>
+}
+
+entity "dag-service-one" as e02 {
+  *id : text  <<hash>>
+  *cid : text  <<hash>>
+  *event_id : text <<hash>>
+  pcid : text  <<hash>>
+  --
+  ext  : text <<content>>
+}
+
+e01 <-- e02
+
+
+@enduml

@@ -1,0 +1,32 @@
+
+@startuml
+start
+:merkle-crdt 通用反熵算法;
+note left: 定义R-a和R-b是两个完整merkle-crdt的副本,\n M-a和M-b分别作为它们当前的merkle-CRDT的DAG
+:为R-b DAG创建新的根节点;
+note left: 将其作为新的根节点添加到其R-b的DAG中，以备后续发出新的有效信息，即M-b
+:R-b DAG将M-b 的根节点的cid广播网络中的其余副本,如R-a中;
+:R-a接收M-b的根节点cid,之后通过M-b的cid 去检索整个M-b,它通过从M-b的根节点cid开始遍历,向下查找以获取到
+所有不再M-a的节点;
+:同时在Cid-set数组中收集差异的cid集合,记作D,如果已经存在M-a中就直接跳过。
+:R-a必须获取到所有根R-b的dag 差集的cid,也就是R-b 集合是R-a的子集,记作 Rb⊆ Rα;
+if(如果D为空)
+
+stop
+
+else(否)
+:使用merkle-clock提供的顺序对D中的cid进行排序;
+:R-a开始处理D中的所有Cid以及Cid关联的有效信息;
+
+if(如果M-a可以处理所有的D)
+
+:M-b作为新的M-a,既M-b=M-a;
+stop
+
+else(M-a无法处理所有的D)
+:M-a跟M-b的cid都可能作为R-a的根cid,也就是同时存在两个根节点（并发并且无因果关系时,无法区分谁先谁后）;
+
+:业务在读取dag时自行使用p2pdb-consistency 内置规则来决定排序;
+
+end
+@enduml
