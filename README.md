@@ -15,27 +15,28 @@
 中文 | [English](./README-EN.md)
 
 
+
 ### 简介
-P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点数据库、它是传统数据库技术与区块链技术的结合,P2PDB基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文,使用IPFS-libp2p构建去中心化网络和IPFS-pubsub与对等节点同步数据。P2PDB愿景是打造一个工业级别的去中心化式数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和边缘计算应用程序数据存储的绝佳选择, P2PDB基于[白皮书](doc/zh-cn/%E7%99%BD%E7%9A%AE%E4%B9%A6.md)实现
+P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点数据库、它是传统数据库技术与区块链技术的结合,P2PDB基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文,使用IPFS-libp2p构建去中心化网络和IPFS-pubsub与对等节点同步数据。P2PDB愿景是打造一个工业级别的去中心化式数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和边缘计算应用程序数据存储的绝佳选择, P2PDB基于[白皮书](docs/zh-cn/%E7%99%BD%E7%9A%AE%E4%B9%A6.md)实现
 
 
 
 
-- `p2pdb-server`: [p2pdb-server](https://github.com/Rock-liyi/p2pdb-server)一个mysql 语法的服务器端, 兼容90%mysql 语法，可使用任一一种mysql 客户端连接,包括PHP、JAVA、GO、RUBY、PYTHON等主流语言的兼容（已实现）
+- :white_check_mark: `p2pdb-server`: [p2pdb-server](https://github.com/Rock-liyi/p2pdb-server)一个mysql 语法的服务器端, 兼容90%mysql 语法，可使用任一一种mysql 客户端连接,包括PHP、JAVA、GO、RUBY、PYTHON等主流语言的兼容 
 
-- `p2pdb-log`: 基于[merker-crdt](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)协议实现的不可篡改日志组件（已实现）
-
-
-- `p2pdb-pubsub`: 基于[libp2p-pubsub](github.com/libp2p/go-libp2p-pubsub)实现的消息广播组件,用于对等节点中数据的主动传播,采用了Gossip流言广播算法（开发中）,同时它也是一个具备扩展性的模块，可以根据该模块提供的接口，进行二次开发，对接到如elasticsearch、kakfa等第三方库，以满足更多的业务场景。
+- :white_check_mark: `p2pdb-log`: 基于[merker-crdt](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)协议实现的不可篡改日志组件
 
 
-- `p2pdb-consistency`: 基于[crdt](https://github.com/Rock-liyi/p2pdb/blob/main/doc/zh-cn/CRDT%E5%8D%8F%E8%AE%AE.md)，ot等协议用于消息顺序一致性判断的组件,主要用于当事件没有因果关系时（并发）,作为全序判断的模块，集成了常用的顺序判断规则，如内置规则无法满足，你也可以根据该模块规范增加新的协议（开发中）。
+- :white_check_mark:  `p2pdb-pubsub`: 基于[libp2p-pubsub](github.com/libp2p/go-libp2p-pubsub)实现的消息广播组件,用于对等节点中数据的主动传播,采用了Gossip流言广播算法（开发中）,同时它也是一个具备扩展性的模块，可以根据该模块提供的接口，进行二次开发，对接到如elasticsearch、kakfa等第三方库，以满足更多的业务场景。
 
 
-- `p2pdb-discovery`: [p2pdb-discovery](https://github.com/Rock-liyi/p2pdb-discovery) 是对等节点的服务发现注册,用于检索对等节点,基于[libp2p](https://github.com/libp2p/go-libp2p)的mdns模块实现（开发中）。
+- :black_square_button:  `p2pdb-consistency`: 基于[crdt](https://github.com/Rock-liyi/p2pdb/blob/main/doc/zh-cn/CRDT%E5%8D%8F%E8%AE%AE.md)，ot等协议用于消息顺序一致性判断的组件,主要用于当事件没有因果关系时（并发）,作为全序判断的模块，集成了常用的顺序判断规则，如内置规则无法满足，你也可以根据该模块规范增加新的协议x。
 
 
-- `p2pdb-store`: [p2pdb-store](https://github.com/Rock-liyi/p2pdb-store) 用于数据实际存储的模块,类似mysql的数据存储一样，提供索引检索,数据的增删改查等,这是一个抽象的模块,目的是将来如果当前的存储引擎无法满足你的存储需求,可以提供更多的DB驱动如clickhouse、postgresql、TDngine等数据库，当前提供内存存储（开发模式使用）以及文件存储（生产使用）(已实现)。
+- :white_check_mark:  `p2pdb-discovery`: [p2pdb-discovery](https://github.com/Rock-liyi/p2pdb-discovery) 是对等节点的服务发现注册,用于检索对等节点,基于[libp2p](https://github.com/libp2p/go-libp2p)的mdns模块实现。
+
+
+- :white_check_mark:  `p2pdb-store`: [p2pdb-store](https://github.com/Rock-liyi/p2pdb-store) 用于数据实际存储的模块,类似mysql的数据存储一样，提供索引检索,数据的增删改查等,这是一个抽象的模块,目的是将来如果当前的存储引擎无法满足你的存储需求,可以提供更多的DB驱动如clickhouse、postgresql、TDngine等数据库，当前提供内存存储（开发模式使用）以及文件存储（生产使用）。
 
 
 ### 核心模块解释
@@ -52,6 +53,10 @@ p2pdb基于[p2pdb-log](https://github.com/Rock-liyi/p2pdb-log)之上实现，p2p
 #### P2PDB核心流程：
 
 ![alt 属性文本](./p2pdb_core_flowchart.png)
+
+
+### 文档
+[查看文档](https://rock-liyi.github.io/p2pdb/)
 
 
 ### 快速使用
@@ -163,12 +168,13 @@ data 文件数据存储目录
 
 
 
-### 本数据库使用到的部分仓库
+### 本数据库使用到的部分仓库的关联引用组织
 
-- [libp2p](https://github.com/libp2p/go-libp2p) 
-- [ipfs](https://github.com/ipfs/go-ipfs)
+- [libp2p](https://github.com/libp2p) 
+- [ipfs](https://github.com/ipfs)
+- [dolthub](https://github.com/dolthub)
+- [berty](https://github.com/berty/go-ipfs-log)
 说明:由于本项目使用到的ipfs,libp2p等代码,引用的代码部分遵循代码相关协议,感谢协议实验室为web3.0做出的贡献,其余在独立模块中引用的代码，或者使用代码均在独立模块的LICENSE包含引用说明
-
 
 
 ### 引用说明
