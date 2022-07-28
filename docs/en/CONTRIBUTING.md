@@ -22,7 +22,7 @@ GitHub issues.
 ## How to Contribute
 
 Pull Requests (PRs) are the exclusive way to contribute code to
-go-mysql-server.  In order for a PR to be accepted it needs to pass a
+p2pdb.  In order for a PR to be accepted it needs to pass a
 list of requirements:
 
 - The contribution must be correctly explained with natural language
@@ -39,11 +39,11 @@ list of requirements:
     - If the PR is a new feature, it has to come with a suite of unit
       tests, that tests the new functionality.
     - In any case, all the PRs have to pass the personal evaluation of
-      at least one of the [maintainers](MAINTAINERS) of the project.
+      at least one of the maintainers of the project.
 
 ### Getting started
 
 If you are a new contributor to the project, reading
-[ARCHITECTURE.md](/ARCHITECTURE.md) is highly recommended, as it
+[ARCHITECTURE.md](zh-cn/p2pdb-server/ARCHITECTURE.md) is highly recommended, as it
 contains all the details about the architecture of go-mysql-server and
 its components.
