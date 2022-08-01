@@ -1,6 +1,3 @@
-## CRDT——实现最终一致性数据库的协议
-
-
 
 ### 概述
 
@@ -17,7 +14,6 @@
 * merge: update在远端副本的合并操作
 
 一个数据结构符合CRDT的条件是update操作和merge操作需满足交换律、结合律和幂等律，具体证明见附录[1]，在此不做赘述。如果update操作本身满足以上三律，merge操作仅需要对update操作进行回放即可，这种形式称为op-based CRDT，最简单的例子是集合求并集。
-
 
 
 ![avatar](https://cdn.nlark.com/lark/0/2018/png/85645/1535631477767-045052b6-7caa-4ce6-8e43-13aab3f7a159.png)

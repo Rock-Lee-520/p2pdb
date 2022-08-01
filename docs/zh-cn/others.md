@@ -5,3 +5,5 @@
 [兰伯特逻辑时钟](https://lamport.azurewebsites.net/pubs/time-clocks.pdf)
 
     
+
+[什么是去中心化数据库](https://zhuanlan.zhihu.com/p/35540721)
