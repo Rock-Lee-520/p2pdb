@@ -5,8 +5,7 @@
   * [贡献指南](en/CONTRIBUTING.md)
 * 安装使用
 
-  * [安装](zh-cn/install/install.md)
-  * [快速开始](#)
+  * [快速开始](zh-cn/install/start.md)
   * [常见问题](#)
 
 
@@ -22,7 +21,4 @@
   * [权限控制](zh-cn/safety/authority.md)
   
 * 其它资料
-  * [CAP定理](#)
-  * [CRDT协议](#)
-  * [兰伯特逻辑时钟](#)
-  * [参考文献](#)
+  * [其它资料](zh-cn/others.md)
