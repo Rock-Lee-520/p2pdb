@@ -1,0 +1,110 @@
+
+
+@startuml
+
+class MerkleDAGNode <<Entity>> {
+    - NodeId  // 节点ID,一个原子事件一个节点
+    - RequestId //  请求ID,用于幂等验证
+    - Type // 节点类型 默认log
+    - ClockTime //兰伯特时钟
+    - ReceiveTimestamp // 本机接收到事件时间
+    - ReceivingDate // 本机接收到事件时间
+    - SendingDate //对等节点发送事件时间
+    - SendingTimestamp //对等节点发送事件时间
+    - LastNodeId //因果关系事件id(上一个关联事件id) 为空代表没有因果关系                 
+}
+
+
+class MerkleDAGData <<Entity>> {
+    - DataId  // 数据ID  一个节点包含多个数据对象
+    - CreatedTimestamp //本机创建时间戳
+    - CreatedDate //本机创建时间戳
+    - Operation //自定义操作信息
+    - Propertie //自定义属性信息                 
+}
+
+class MerkleDAGLink <<Entity>> {
+    - LinkId   // 链接id
+    - LastNodeId  // 上一个节点CID
+    - NodeId //当前节点id
+    - DatabaseId   // 数据库id
+    - InstanceId   // 实例id
+    - TableId   // 表id
+    - Size //数据大小
+    - createdTimestamp //本机创建时间戳
+    - createdDate //本机创建时间戳
+}
+
+
+class DatabaseInfomation <<Entity>> {
+    //数据库信息
+    - DatabaseId   // 数据库id
+    - InstanceId   // 实例id
+    - DatabaseName   // 数据库名字
+    - LocalPeerId  // 本地对等节点
+    - GlobalClockTime //数据库全局兰伯特时钟
+}
+
+
+class TableInfomation <<Entity>> {
+    //表信息
+    - TableID   // 表id 
+    - DatabaseID   // 数据库id 
+    - InstanceId   // 实例id
+    - TableName   // 表名字
+    - ClockTime //表兰伯特时钟
+    - Version //表 cas 版本号（预留）
+    - Schema //建表语句
+
+}
+
+
+class PeerNodeInfomation <<Entity>> {
+    //对等节点信息记录表
+    - DatabaseId   // 数据库id
+    - TableId //表id
+    - LocalPeerId  // 本地对等节点
+    - RemotePeerId //远程对等节点地址 与LocalPeerId是一对多关系
+    - LastDagMergeNodeId //最后一次dag 合并时的节点id
+}
+
+
+
+' class NodeSyncInfomation <<Entity>> {
+'     //节点同步信息
+'     - DatabaseId   // 数据库Id
+'     - TableId //表名字
+'     - LocalPeerId  // 本地对等节点
+'     - RemotePeerId //远程对等节点地址 与LocalPeerId是一对多关系
+'     - LastDagMergeNodeId //最后一次dag 合并时的节点id
+' }
+
+
+
+class InstanceInformation <<Entity>> {
+    //实例配置信息
+    - InstanceId  // 实例id  全局唯一
+    - LocalPeerId  // 本地对等节点 
+    - LocalHost //本地host
+    - globalClockTime //实例全局时钟
+
+}
+
+
+
+InstanceInformation --> PeerNodeInfomation : 存储对等节点信息
+' note on link #red: note that is red
+
+
+' PeerNodeInfomation --> NodeSyncInfomation : A link
+MerkleDAGNode --> MerkleDAGData : 存储merkle-dag 节点信息及数据信息
+' note right on link #blue
+' this is my note on right link
+' end note
+
+MerkleDAGData --> MerkleDAGLink : 存储merkle-dag 的边,用于递归遍历生成dag树结构
+' note right on link #blue
+' this is my note on right link
+' end note
+DatabaseInfomation --> TableInfomation :存储实例的数据库、表结构信息
+@enduml
