@@ -6,7 +6,7 @@ class MerkleDAGNode <<Entity>> {
     - NodeId  // 节点ID,一个原子事件一个节点
     - RequestId //  请求ID,用于幂等验证
     - Type // 节点类型 默认log
-    - ClockTime //兰伯特时钟
+    - LogicalClock //逻辑时钟
     - ReceiveTimestamp // 本机接收到事件时间
     - ReceivingDate // 本机接收到事件时间
     - SendingDate //对等节点发送事件时间
@@ -42,7 +42,7 @@ class DatabaseInfomation <<Entity>> {
     - InstanceId   // 实例id
     - DatabaseName   // 数据库名字
     - LocalPeerId  // 本地对等节点
-    - GlobalClockTime //数据库全局兰伯特时钟
+    - LogicalClock //数据库逻辑时钟
 }
 
 
@@ -52,7 +52,7 @@ class TableInfomation <<Entity>> {
     - DatabaseID   // 数据库id 
     - InstanceId   // 实例id
     - TableName   // 表名字
-    - ClockTime //表兰伯特时钟
+    - LogicalClock //逻辑时钟
     - Version //表 cas 版本号（预留）
     - Schema //建表语句
 
@@ -86,7 +86,7 @@ class InstanceInformation <<Entity>> {
     - InstanceId  // 实例id  全局唯一
     - LocalPeerId  // 本地对等节点 
     - LocalHost //本地host
-    - globalClockTime //实例全局时钟
+    - GlobalLogicalClock //全局逻辑时钟
 
 }
 
