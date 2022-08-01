@@ -1,2 +1,2 @@
 
-![alt 属性文本](persistence.png)
+![alt 属性文本](./persistence.png)
