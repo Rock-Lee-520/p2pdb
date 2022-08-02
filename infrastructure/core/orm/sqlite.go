@@ -84,11 +84,11 @@ func (db *SqliteDB) Where(query interface{}, args ...interface{}) *gorm.DB {
 // }
 
 func (db *SqliteDB) Migrator() gorm.Migrator {
-	type Product struct {
-		gorm.Model
-		Code  string
-		Price uint
-	}
+	// type Product struct {
+	// 	gorm.Model
+	// 	Code  string
+	// 	Price uint
+	// }
 	return db.OrmDB.Migrator()
 }
 

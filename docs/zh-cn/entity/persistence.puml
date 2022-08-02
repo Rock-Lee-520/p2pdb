@@ -7,18 +7,12 @@ class MerkleDAGNode <<Entity>> {
     - RequestId //  请求ID,用于幂等验证
     - Type // 节点类型 默认log
     - LogicalClock //逻辑时钟
-    - ReceiveTimestamp // 本机接收到事件时间
-    - ReceivingDate // 本机接收到事件时间
-    - SendingDate //对等节点发送事件时间
-    - SendingTimestamp //对等节点发送事件时间
     - LastNodeId //因果关系事件id(上一个关联事件id) 为空代表没有因果关系                 
 }
 
 
 class MerkleDAGData <<Entity>> {
     - DataId  // 数据ID  一个节点包含多个数据对象
-    - CreatedTimestamp //本机创建时间戳
-    - CreatedDate //本机创建时间戳
     - Operation //自定义操作信息
     - Propertie //自定义属性信息                 
 }
@@ -31,8 +25,6 @@ class MerkleDAGLink <<Entity>> {
     - InstanceId   // 实例id
     - TableId   // 表id
     - Size //数据大小
-    - createdTimestamp //本机创建时间戳
-    - createdDate //本机创建时间戳
 }
 
 
@@ -64,27 +56,23 @@ class PeerNodeInfomation <<Entity>> {
     - DatabaseId   // 数据库id
     - TableId //表id
     - LocalPeerId  // 本地对等节点
+    - LocalInstanceId  // 本地实例id
     - RemotePeerId //远程对等节点地址 与LocalPeerId是一对多关系
+    - RemoteHost //远程对等节点Host 
+    - RemoteInstanceId //远程对等节点实例id 与LocalPeerId是一对多关系
     - LastDagMergeNodeId //最后一次dag 合并时的节点id
+    - ProtocolId  //defualt /ipfs/id/1.0.0
 }
 
 
 
-' class NodeSyncInfomation <<Entity>> {
-'     //节点同步信息
-'     - DatabaseId   // 数据库Id
-'     - TableId //表名字
-'     - LocalPeerId  // 本地对等节点
-'     - RemotePeerId //远程对等节点地址 与LocalPeerId是一对多关系
-'     - LastDagMergeNodeId //最后一次dag 合并时的节点id
-' }
 
 
 
 class InstanceInformation <<Entity>> {
     //实例配置信息
     - InstanceId  // 实例id  全局唯一
-    - LocalPeerId  // 本地对等节点 
+    - LocalPeerId  // 本地对等节点  ,新的会覆盖旧的
     - LocalHost //本地host
     - GlobalLogicalClock //全局逻辑时钟
 

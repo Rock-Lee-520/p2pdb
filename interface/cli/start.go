@@ -22,10 +22,8 @@ func init() {
 
 func main() {
 
-	//start a pubsub server
-	//service.InitPub()
-
-	service.InitSub()
+	//start a discovery server
+	service.InitDiscovery()
 
 	//start a mysql server
 	service.StartNewService()
