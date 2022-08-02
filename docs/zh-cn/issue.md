@@ -8,7 +8,7 @@ MAJOR.MINOR.PATCH
 #### 中文版
 主版本号.次版本号.修订号
 
-版本号递增规则
+#### 版本号递增规则
 - 主版本号(MAJOR Version): 出现不兼容的API变化
 - 次版本号(MINOR Version): 新增向后兼容的功能
 - 修订号(补丁版本号, PATCH Version): 向后兼容的bug
