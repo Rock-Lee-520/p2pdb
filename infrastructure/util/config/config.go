@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
+	log "github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 	"github.com/caarlos0/env/v6"
-	log "github.com/sirupsen/logrus"
 
 	//"github.com/dolthub/vitess/go/vt/log"
 
@@ -37,53 +37,60 @@ func init() {
 	currentWorkDirectory, _ := os.Getwd()
 
 	err := godotenv.Load(currentWorkDirectory + `/.env`)
+
 	if err != nil {
-		log.Error("p2pdb -> Error loading .env file")
+		currentWorkDirectory = os.Getenv("GOPATH") + "/src/p2pdb"
+		err = godotenv.Load(currentWorkDirectory + `/.env`)
+		if err != nil {
+			log.Error("p2pdb -> Error loading .env file, the path is" + currentWorkDirectory + `/.env`)
+		}
 	}
 }
 
 func IsDebug() bool {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		fmt.Printf("%+v\n", err)
+		log.Error(fmt.Printf("%+v\n", err))
 	}
-	fmt.Printf("%+v\n", conf)
+
+	//log.Info(conf)
+	//fmt.Printf("%+v\n", conf)
 	return conf.DEBUG
 }
 
 func GetEnv() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		fmt.Printf("%+v\n", err)
+		log.Error(fmt.Printf("%+v\n", err))
 	}
-	fmt.Printf("%+v\n", conf)
+	log.Info(conf)
 	return conf.ENV
 }
 
 func GetDataPath() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		fmt.Printf("%+v\n", err)
+		log.Error(fmt.Printf("%+v\n", err))
 	}
-	fmt.Printf("%+v\n", conf)
+	//fmt.Printf("%+v\n", conf)
 	return conf.DATAPATH
 }
 
 func GetDBTableName() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		fmt.Printf("%+v\n", err)
+		log.Error(fmt.Printf("%+v\n", err))
 	}
-	fmt.Printf("%+v\n", conf)
+	//fmt.Printf("%+v\n", conf)
 	return conf.DBTABLENAME
 }
 
 func GetDBName() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		fmt.Printf("%+v\n", err)
+		log.Error(fmt.Printf("%+v\n", err))
 	}
-	fmt.Printf("%+v\n", conf)
+	//fmt.Printf("%+v\n", conf)
 	return conf.DBNAME
 }
 
@@ -92,7 +99,7 @@ func GetStorageEngine() string {
 	if err := env.Parse(&conf); err != nil {
 		fmt.Printf("%+v\n", err)
 	}
-	fmt.Printf("%+v\n", conf)
+	//fmt.Printf("%+v\n", conf)
 	return conf.STORAGE_ENGINE
 }
 
@@ -101,7 +108,7 @@ func GetDBHost() string {
 	if err := env.Parse(&conf); err != nil {
 		fmt.Printf("%+v\n", err)
 	}
-	fmt.Printf("%+v\n", conf)
+	//fmt.Printf("%+v\n", conf)
 	return conf.DBHOUST
 }
 
@@ -110,6 +117,6 @@ func GetPort() string {
 	if err := env.Parse(&conf); err != nil {
 		fmt.Printf("%+v\n", err)
 	}
-	fmt.Printf("%+v\n", conf)
+	//fmt.Printf("%+v\n", conf)
 	return conf.PORT
 }

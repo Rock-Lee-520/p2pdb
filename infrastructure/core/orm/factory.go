@@ -31,6 +31,7 @@ type DBconnect interface {
 	// CreateTable(dst ...interface{}) error
 	//AutoMigrate(dst ...interface{}) error
 	Migrator() gorm.Migrator
+	InsertIgnore(value interface{}) error
 }
 
 type CreateDBFactory struct {

@@ -17,7 +17,6 @@ func InitSub() {
 }
 
 func InitPub() {
-
 	var pub ps.PubSub
 	pub.SetType("p2pdb")
 	go pub.InitPub()
@@ -26,8 +25,4 @@ func InitPub() {
 func InitDiscovery() {
 	DiscoveryService.InitInstanceInformation()
 	DiscoveryService.InitPeerNodeInfomation()
-
-	//start a sub service
-	InitSub()
-	//InitPub()
 }

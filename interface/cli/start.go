@@ -22,9 +22,12 @@ func init() {
 
 func main() {
 
-	//start a discovery server
+	//resgister a discovery config for the application
 	service.InitDiscovery()
 
-	//start a mysql server
+	//start a subscribe service	 for the application
+	service.InitSub()
+
+	//start a mysql service	 for the application
 	service.StartNewService()
 }

@@ -1,9 +1,7 @@
 package server
 
 import (
-	//"log"
-
-	"log"
+	log "github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 
 	sqle "github.com/Rock-liyi/p2pdb-server"
 	"github.com/Rock-liyi/p2pdb-server/auth"
@@ -44,7 +42,7 @@ func StartNewService(DBName string, tableName string, DBHost string, port string
 		Auth:     auth.NewNativeSingle("root", "", auth.AllPermissions),
 	}
 
-	log.Printf("the server host is: %s,the server port is: %s", DBHost, port)
+	log.Info("The server host is: " + DBHost + ",the server port is: " + port)
 	s, err := ser.NewDefaultServer(config, engine)
 	if err != nil {
 		panic(err)

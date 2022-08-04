@@ -60,19 +60,9 @@ github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAE
 github.com/PuerkitoBio/goquery v1.5.1/go.mod h1:GsLWisAFVj4WgDibEWF4pvYnkVQBpKBKeU+7zCJoLcc=
 github.com/Rock-liyi/p2pdb v0.0.0-20220711143833-23a667524d1a/go.mod h1:vLogQFON3I4/Ao4Vau5dAZWS7W9z+TMAtZf2O5GBNtQ=
 github.com/Rock-liyi/p2pdb v0.0.3/go.mod h1:slsRiM56dNQCT5KfJAjw7i1752bIkTSbazXv3IGEuj0=
-github.com/Rock-liyi/p2pdb-discovery v0.0.0-20220722063818-588bb555997d/go.mod h1:/R2QYuoOl4lI3j0rP6dtQOFES5R4IoFz51/6hyNAk+Q=
-github.com/Rock-liyi/p2pdb-discovery v0.0.1 h1:eFcv3XxoBF1s8x1R/sRZCSBUfpEz6sv31RPfqxDym88=
-github.com/Rock-liyi/p2pdb-discovery v0.0.1/go.mod h1:/R2QYuoOl4lI3j0rP6dtQOFES5R4IoFz51/6hyNAk+Q=
 github.com/Rock-liyi/p2pdb-log v0.0.0-20220710152438-0fcbd2cb401f/go.mod h1:3sRgrrWCZ0v/9OFdd5cdXAM1LtkjBUlb5y0tYTEQVXU=
 github.com/Rock-liyi/p2pdb-log v0.0.0-20220718124543-0bcc189e2a66 h1:1WUjJsfS7b1fAxPk9B1vVM3gFlbYS2fplDirx040vz0=
 github.com/Rock-liyi/p2pdb-log v0.0.0-20220718124543-0bcc189e2a66/go.mod h1:382zjlMJyya4LWy5nwZJnX1CXohxouPy0sHnBNG/7AM=
-github.com/Rock-liyi/p2pdb-pubsub v0.0.4 h1:ji6HigtIbmBZ0sU4qUKQWSxcwjuAXgWEMtVRziZwk1E=
-github.com/Rock-liyi/p2pdb-pubsub v0.0.4/go.mod h1:Txhz6RD4YKZvzqFPa9gl87x96R4m/A3PP29QzQzUPYc=
-github.com/Rock-liyi/p2pdb-server v0.1.2 h1:WnWOoW7ktkEi8IgV6sHChxwKWwlNGuAvC23AT+Ck2mc=
-github.com/Rock-liyi/p2pdb-server v0.1.2/go.mod h1:chCGBC9tGlpv8Oo27CLkyKQlpVGSRrJWgFXQk4Z6Ooc=
-github.com/Rock-liyi/p2pdb-store v0.1.0/go.mod h1:a6ONL/QOz18Z0EEJM/niNjAfZUqd7zHbG8DAMdzFp6g=
-github.com/Rock-liyi/p2pdb-store v0.1.2 h1:sHxz+i0yMjD8A6Da/scCODI9A1JXte/TwLqXvALWy+E=
-github.com/Rock-liyi/p2pdb-store v0.1.2/go.mod h1:Fy2jeEzhc6TII0K6mC4PtyU0oAJI9dxTW+KZRLkA268=
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
 github.com/Shopify/sarama v1.30.0/go.mod h1:zujlQQx1kzHsh4jfV1USnptCQrHAEZ2Hk8fTKCulPVs=
 github.com/Shopify/toxiproxy v2.1.4+incompatible/go.mod h1:OXgGpZ6Cli1/URJOF1DMxUHB2q5Ap20/P/eIdh4G0pI=
@@ -1328,7 +1318,6 @@ github.com/mattn/go-sqlite3 v1.14.0/go.mod h1:JIl7NbARA7phWnGvh0LKTyg7S9BA+6gx71
 github.com/mattn/go-sqlite3 v1.14.6/go.mod h1:NyWgC/yNuGj7Q9rpYnZvas74GogHl5/Z4A/KQRfk6bU=
 github.com/mattn/go-sqlite3 v1.14.8/go.mod h1:NyWgC/yNuGj7Q9rpYnZvas74GogHl5/Z4A/KQRfk6bU=
 github.com/mattn/go-sqlite3 v1.14.12/go.mod h1:NyWgC/yNuGj7Q9rpYnZvas74GogHl5/Z4A/KQRfk6bU=
-github.com/mattn/go-sqlite3 v1.14.14/go.mod h1:NyWgC/yNuGj7Q9rpYnZvas74GogHl5/Z4A/KQRfk6bU=
 github.com/mattn/go-sqlite3 v2.0.3+incompatible h1:gXHsfypPkaMZrKbD5209QV9jbUTJKjyR5WD3HYQSd+U=
 github.com/mattn/go-sqlite3 v2.0.3+incompatible/go.mod h1:FPy6KqzDD04eiIsT53CuJW3U88zkxoIYsOqkbpncsNc=
 github.com/matttproud/golang_protobuf_extensions v1.0.1 h1:4hp9jkHxhMHkqkrB3Ix0jegS5sx/RkqARlsWZ6pIwiU=

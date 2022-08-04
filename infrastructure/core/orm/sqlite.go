@@ -1,13 +1,10 @@
 package store
 
 import (
-	"log"
-	"os"
-	"time"
-
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
 	"gorm.io/gorm/logger"
 )
 
@@ -24,27 +21,31 @@ func (this *BaseInfo) Init(address string, port int64, account string, passwd st
 }
 
 func (db *SqliteDB) Connect() {
-	newLogger := logger.New(
-		log.New(os.Stdout, "\r\n", log.LstdFlags), // io writer
-		logger.Config{
-			SlowThreshold:             time.Second,   // Slow SQL threshold
-			LogLevel:                  logger.Silent, // Log level
-			IgnoreRecordNotFoundError: true,          // Ignore ErrRecordNotFound error for logger
-			Colorful:                  false,         // Disable color
-		},
-	)
+	//echo all of sql
+	// logger.Default.LogMode(logger.Info)
+
+	// newLogger := logger.New(
+	// 	log.New(os.Stdout, "\r\n", log.LstdFlags), // io writer
+	// 	logger.Config{
+	// 		SlowThreshold:             time.Second,   // Slow SQL threshold
+	// 		LogLevel:                  logger.Silent, // Log level
+	// 		IgnoreRecordNotFoundError: true,          // Ignore ErrRecordNotFound error for logger
+	// 		Colorful:                  true,          // Disable color
+	// 	},
+	// )
+	//logger.Default.LogMode(logger.Info)
 
 	ormDB, err := gorm.Open(sqlite.Open("/Users/rockli/go/src/p2pdb-server/data/test.db"), &gorm.Config{
-		Logger: newLogger,
+		Logger: logger.Default.LogMode(logger.Info),
 	})
 	if err != nil {
 		panic("failed to connect database")
 	}
-	db.OrmDB = ormDB
-	// ormDB.Logger
+
 	// ormDB.LogMode(true)
 	// ormDB.SingularTable(true)
-	//rmDB.SetLogger(log.New(os.Stdout, "\r\n", 0))
+	// ormDB.SetLogger(log.New(os.Stdout, "\r\n", 0))
+	db.OrmDB = ormDB
 }
 
 func (db *SqliteDB) Create(value interface{}) *gorm.DB {
@@ -84,12 +85,12 @@ func (db *SqliteDB) Where(query interface{}, args ...interface{}) *gorm.DB {
 // }
 
 func (db *SqliteDB) Migrator() gorm.Migrator {
-	// type Product struct {
-	// 	gorm.Model
-	// 	Code  string
-	// 	Price uint
-	// }
 	return db.OrmDB.Migrator()
+}
+
+func (db *SqliteDB) InsertIgnore(value interface{}) error {
+	//return nil
+	return db.OrmDB.Clauses(clause.Insert{Modifier: " OR IGNORE"}).Create(value).Error
 }
 
 //something wrong

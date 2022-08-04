@@ -3,7 +3,7 @@ package persistence
 // Database  information_schema definition
 type InstanceInformation struct {
 	BaseColumn
-	InstanceId      string `gorm:"column:instance_id"`
+	InstanceId      string `gorm:"column:instance_id;primary_key"`
 	LocalPeerId     string `gorm:"column:local_peer_id"`
 	GlobalClockTime int64  `gorm:"column:global_clock_time"`
 }
@@ -11,6 +11,7 @@ type InstanceInformation struct {
 // Database  information_schema definition
 type PeerNodeInfomation struct {
 	BaseColumn
+	PeerNodeId         string `gorm:"column:peer_node_id;primary_key"`
 	DatabaseId         string `gorm:"column:database_id"`
 	TableId            string `gorm:"column:table_id"`
 	LocalPeerId        string `gorm:"column:local_peer_id"`

@@ -11,6 +11,7 @@ require (
 	github.com/caarlos0/env/v6 v6.9.3
 	github.com/favframework/debug v0.0.0-20150708094948-5c7e73aafb21
 	github.com/gdamore/tcell/v2 v2.5.1
+	github.com/ipfs/go-cid v0.2.0
 	github.com/ipfs/go-log/v2 v2.5.1
 	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.4.0
@@ -19,19 +20,22 @@ require (
 	github.com/libp2p/go-libp2p-pubsub v0.7.1
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
 	github.com/multiformats/go-multiaddr v0.5.0
+	github.com/multiformats/go-multicodec v0.5.0
+	github.com/multiformats/go-multihash v0.2.0
 	github.com/rivo/tview v0.0.0-20220703182358-a13d901d3386
+	github.com/satori/go.uuid v1.2.0
 	github.com/sirupsen/logrus v1.8.1
 	gorm.io/driver/sqlite v1.3.6
 	gorm.io/gorm v1.23.8
 )
 
-// replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
+replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
 
-// replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
+replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
 
-// replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
+replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
 
-// replace github.com/Rock-liyi/p2pdb-discovery => ../p2pdb-discovery
+replace github.com/Rock-liyi/p2pdb-discovery => ../p2pdb-discovery
 
 require (
 	github.com/Rock-liyi/p2pdb-discovery v0.0.1 // indirect
@@ -66,7 +70,6 @@ require (
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/hashicorp/golang-lru v0.5.4 // indirect
 	github.com/huin/goupnp v1.0.3 // indirect
-	github.com/ipfs/go-cid v0.2.0 // indirect
 	github.com/ipfs/go-datastore v0.5.1 // indirect
 	github.com/ipfs/go-ipfs-util v0.0.2 // indirect
 	github.com/ipfs/go-log v1.0.5 // indirect
@@ -122,8 +125,6 @@ require (
 	github.com/multiformats/go-multiaddr-dns v0.3.1 // indirect
 	github.com/multiformats/go-multiaddr-fmt v0.1.0 // indirect
 	github.com/multiformats/go-multibase v0.1.0 // indirect
-	github.com/multiformats/go-multicodec v0.5.0 // indirect
-	github.com/multiformats/go-multihash v0.2.0 // indirect
 	github.com/multiformats/go-multistream v0.3.3 // indirect
 	github.com/multiformats/go-varint v0.0.6 // indirect
 	github.com/nxadm/tail v1.4.8 // indirect
@@ -141,7 +142,6 @@ require (
 	github.com/raulk/clock v1.1.0 // indirect
 	github.com/raulk/go-watchdog v1.2.0 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
-	github.com/satori/go.uuid v1.2.0 // indirect
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/spacemonkeygo/spacelog v0.0.0-20180420211403-2296661a0572 // indirect

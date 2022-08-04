@@ -12,12 +12,12 @@
 
 
 * 核心模块
-  * [p2pdb-server](zh-cn/p2pdb-server/introduce.md)
-  * [p2pdb-log](zh-cn/p2pdb-log/introduce.md)
-  * [p2pdb-pubsub](#)
-  * [p2pdb-consistency](#)
-  * [p2pdb-discovery](#)
-  * [p2pdb-store](#)
+  * [server](zh-cn/p2pdb-server/introduce.md)
+  * [log](zh-cn/p2pdb-log/introduce.md)
+  * [pubsub](#)
+  * [consistency](#)
+  * [discovery](#)
+  * [store](#)
 
 
 * 关键设计
