@@ -45,3 +45,12 @@ func InstanceInformationTable(InstanceId string, LocalPeerId string, GlobalClock
 	}
 	return true
 }
+
+func GetInstanceInformation() *PO.InstanceInformation {
+
+	db := DB.InitDB()
+	var instance = &PO.InstanceInformation{}
+	db.First(instance)
+
+	return instance
+}
