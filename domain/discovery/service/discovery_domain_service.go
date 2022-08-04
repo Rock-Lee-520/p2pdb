@@ -12,11 +12,13 @@ func InitInstanceInformation() {
 	var instance = repository.GetInstanceInformation()
 
 	// if didn't find instance, create a new one
-	if instance == nil {
+	//log.Debug(instance.InstanceId)
+	if instance.InstanceId == "" {
 		var InstanceId = function.GetLocalInstanceId()
 		var LocalPeerId = function.GetLocalPeerId()
 		var GlobalClockTime = function.GetGlobalLogicalClock()
 		repository.InstanceInformationTable(InstanceId, LocalPeerId, GlobalClockTime)
+
 	} else {
 		log.Debug(instance.InstanceId)
 	}
