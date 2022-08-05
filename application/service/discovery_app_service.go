@@ -13,7 +13,7 @@ func InitSub() {
 	if err != nil {
 		panic(err)
 	}
-	sub.StartNewSubscribeService(subscription)
+	go sub.StartNewSubscribeService(subscription)
 }
 
 func InitPub() {
