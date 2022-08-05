@@ -21,7 +21,7 @@ func GlobalSyncEvent(param interface{}) {
 }
 
 func PublishSyncEvent(name string, message Message) {
-
+	debug.Dump(name)
 	// Find the list of events by the name
 	list := eventByName[name]
 

@@ -46,9 +46,8 @@ func main() {
 	for {
 		time.Sleep(1 * time.Second)
 		input := DataMessage{
-			Message:    "123",
-			SenderID:   "123",
-			SenderNick: "1233",
+			Data: "Publish",
+			Type: "store_drop_table_event",
 		}
 
 		msgBytes, err := json.Marshal(input)
@@ -61,12 +60,18 @@ func main() {
 
 }
 
-// ChatMessage gets converted to/from JSON and sent in the body of pubsub messages.
 type DataMessage struct {
-	Message    string
-	SenderID   string
-	SenderNick string
+	Type string
+	Data interface{}
 }
+
+// ChatMessage gets converted to/from JSON and sent in the body of pubsub messages.
+// type DataMessage struct {
+// 	Message    string
+// 	SenderID   string
+// 	SenderNick string
+// 	Topic      string
+// }
 
 func topicName(Name string) string {
 	return Name

@@ -3,6 +3,7 @@ package log
 import (
 	"os"
 
+	debug "github.com/favframework/debug"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -27,8 +28,8 @@ func Trace(args ...interface{}) {
 }
 
 func Debug(args ...interface{}) {
-	//debug.Dump(args)
-	log.Debug(args)
+	debug.Dump(args)
+	//log.Debug(args)
 }
 
 func Info(args ...interface{}) {

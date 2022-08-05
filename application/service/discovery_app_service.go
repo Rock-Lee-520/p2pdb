@@ -13,13 +13,13 @@ func InitSub() {
 	if err != nil {
 		panic(err)
 	}
-	go sub.StartNewSubscribeService(subscription)
+	sub.StartNewSubscribeService(subscription)
 }
 
 func InitPub() {
 	var pub ps.PubSub
 	pub.SetType("p2pdb")
-	go pub.InitPub()
+	pub.InitPub()
 }
 
 func InitDiscovery() {
