@@ -1,4 +1,4 @@
-package persistence
+package po
 
 // Database  information_schema definition
 type InstanceInformation struct {

@@ -7,18 +7,6 @@ import (
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
-// type selector struct {
-// 	name string
-// }
-
-// type subscribe struct {
-// 	selector
-// }
-//  func (s *subscribe) String() string {
-// 	//     return s.name
-
-// }
-
 var topic = "p2pdb"
 var eventFunc = &event.EventFuncs{}
 
