@@ -5,10 +5,10 @@ import (
 	"github.com/Rock-liyi/p2pdb/application/event/publish"
 )
 
-func PublishAsyncEvent(eventType string, data []byte) {
+func PublishAsyncEvent(eventType string, data interface{}) {
 
 	var publisherFactory = &publish.LogPublisherFactory{}
-	if eventType == "log" {
+	if eventType == "TestPublishAsyncEvent" {
 		publisherFactory = &publish.LogPublisherFactory{}
 	}
 	//data = []byte{8, 0, 0, 0}

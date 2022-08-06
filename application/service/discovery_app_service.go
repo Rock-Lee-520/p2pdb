@@ -1,26 +1,27 @@
 package service
 
 import (
-	ps "github.com/Rock-liyi/p2pdb-pubsub"
+	PS "github.com/Rock-liyi/p2pdb-pubsub"
 	DiscoveryService "github.com/Rock-liyi/p2pdb/domain/discovery/service"
 )
 
+var Sub PS.PubSub
+
 func InitSub() {
 
-	var sub ps.PubSub
-	sub.SetType("p2pdb")
-	var subscription, err = sub.Sub()
+	Sub.SetType("p2pdb")
+	var subscription, err = Sub.Sub()
 	if err != nil {
 		panic(err)
 	}
 	//resgister a discovery config for the application
-	InitDiscovery(sub.Host.ID().String())
-
-	go sub.StartNewSubscribeService(subscription)
+	InitDiscovery(Sub.Host.ID().String())
+	Sub.Pub(PS.DataMessage{Type: "InitSub", Data: "test InitSub"})
+	go Sub.StartNewSubscribeService(subscription)
 }
 
-func InitPub() {
-	var pub ps.PubSub
+func InitPub(pub PS.PubSub) {
+
 	pub.SetType("p2pdb")
 	pub.InitPub()
 }

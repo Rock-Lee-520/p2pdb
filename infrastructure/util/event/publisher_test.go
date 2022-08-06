@@ -44,11 +44,11 @@ func randUpString(l int) []byte {
 
 func TestPublishAsyncEvent(t *testing.T) {
 	data := randUpString(19)
-	PublishAsyncEvent("log", data)
+	//start a subscribe service	 for the application
+	PublishAsyncEvent("TestPublishAsyncEvent", data)
+
+	time.Sleep(5 * time.Second)
 }
-
-
-
 
 func TestPublishSyncEvent(t *testing.T) {
 	data := "StoreDeleteEvent"

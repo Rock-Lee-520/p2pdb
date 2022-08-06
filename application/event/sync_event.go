@@ -1,9 +1,7 @@
 package event
 
 import (
-	"fmt"
-
-	debug "github.com/favframework/debug"
+	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
 type Driver struct {
@@ -11,17 +9,16 @@ type Driver struct {
 
 // Add an event-processing function for function
 func (a *Driver) OnEvent(param interface{}) {
-	debug.Dump("call OnEvent======")
-	fmt.Println("actor event:", param)
+	log.Debug("actor event:")
+	log.Debug(param)
 }
 
 func GlobalSyncEvent(param interface{}) {
-	debug.Dump("call GlobalSyncEvent======")
-	fmt.Println("global event:", param)
+	log.Debug("global event:")
+	log.Debug(param)
 }
 
 func PublishSyncEvent(name string, message Message) {
-	debug.Dump(name)
 	// Find the list of events by the name
 	list := eventByName[name]
 

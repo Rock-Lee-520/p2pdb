@@ -27,8 +27,8 @@ func (e *EventFuncs) NewAsyncEvent(topic string) {
 	eb.SubscribeAsyncEvent(topic, chanEvent)
 }
 
-func (e *EventFuncs) PrintDataAsyncEvent(ch string, data DataEvent) {
-	fmt.Printf("Channel: %s; Topic: %s; DataEvent %v\n", ch, data.Topic, data.Data)
+func (e *EventFuncs) PrintDataAsyncEvent(topic string, data DataEvent) {
+	fmt.Printf("Channel: %s; Topic: %s; DataEvent %v\n", topic, data.Topic, data.Data)
 }
 
 func (e *EventFuncs) PublishAsyncEvent(topic string, message interface{}) {

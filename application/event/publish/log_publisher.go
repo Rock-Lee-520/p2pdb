@@ -17,19 +17,19 @@ type LogAsyncEvent struct {
 
 type LogAsyncEventMessage struct {
 	Topic string
-	Data  []byte
+	Data  interface{}
 }
 
 type LogPublisherFactory struct{}
 
-func (m *LogPublisherFactory) NewMessage(topic string, data []byte) *LogAsyncEventMessage {
+func (m *LogPublisherFactory) NewMessage(topic string, data interface{}) *LogAsyncEventMessage {
 	return &LogAsyncEventMessage{
 		Topic: topic,
 		Data:  data,
 	}
 }
 
-var topic = "log"
+var topic = "TestPublishAsyncEvent"
 var eventFunc = &event.EventFuncs{}
 
 func (m *LogPublisherFactory) PublishAsyncEvent(msg *LogAsyncEventMessage) (bool, error) {
@@ -41,7 +41,7 @@ func (m *LogPublisherFactory) PublishAsyncEvent(msg *LogAsyncEventMessage) (bool
 		return false, fmt.Errorf("error topic")
 	}
 
-	if len(msg.Data) == 0 {
+	if msg.Data == nil {
 		return false, fmt.Errorf("empty data")
 	}
 

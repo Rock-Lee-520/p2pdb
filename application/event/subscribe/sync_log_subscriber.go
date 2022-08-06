@@ -3,7 +3,7 @@ package subscribe
 import (
 	"github.com/Rock-liyi/p2pdb/application/event"
 	common_event "github.com/Rock-liyi/p2pdb/domain/common/event"
-	debug "github.com/favframework/debug"
+	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
 func init() {
@@ -24,6 +24,8 @@ func init() {
 }
 
 func ExecuteLogFunc(message event.Message) {
-	debug.Dump("call ExecuteLogFunc, message is ")
-	debug.Dump(message)
+	log.Debug("call ExecuteLogFunc, message is ")
+	log.Debug(message)
+
+	//service.Publish(message.Type, message.Data)
 }
