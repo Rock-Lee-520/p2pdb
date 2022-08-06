@@ -21,6 +21,7 @@ type DBconnect interface {
 	Init(address string, port int64, account string, passwd string)
 	Create(value interface{}) *gorm.DB
 	Updates(value interface{}) *gorm.DB
+	Update(column string, value interface{}) *gorm.DB
 	Delete(value interface{}, conds ...interface{}) *gorm.DB
 	Select(query interface{}, args ...interface{}) *gorm.DB
 	Where(query interface{}, args ...interface{}) *gorm.DB

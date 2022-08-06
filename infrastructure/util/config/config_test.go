@@ -16,6 +16,4 @@ func TestDatabase_Name(t *testing.T) {
 	// log.Debug(env)
 	log.Debug(isdebug)
 
-	log.Debug(name)
-
 }

@@ -55,6 +55,11 @@ func (db *SqliteDB) Create(value interface{}) *gorm.DB {
 func (db *SqliteDB) Updates(value interface{}) *gorm.DB {
 	return db.OrmDB.Updates(value)
 }
+
+func (db *SqliteDB) Update(column string, value interface{}) *gorm.DB {
+	return db.OrmDB.Update(column, value)
+}
+
 func (db *SqliteDB) Delete(value interface{}, conds ...interface{}) *gorm.DB {
 	return db.OrmDB.Delete(value, conds)
 }

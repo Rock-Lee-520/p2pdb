@@ -1,6 +1,8 @@
 package persistence
 
 import (
+	"time"
+
 	PO "github.com/Rock-liyi/p2pdb/domain/discovery/repository/po"
 	orm "github.com/Rock-liyi/p2pdb/infrastructure/core/orm"
 	log "github.com/Rock-liyi/p2pdb/infrastructure/util/log"
@@ -29,16 +31,31 @@ func CreatePeerNodeInfomationTable() bool {
 	return true
 }
 
-func InstanceInformationTable(InstanceId string, LocalPeerId string, GlobalClockTime int64) bool {
+func InsertInstanceInformation(InstanceId string, LocalPeerId string, GlobalClockTime int64) bool {
 	db := DB.InitDB()
 
 	var instance = &PO.InstanceInformation{}
 	instance.InstanceId = InstanceId
 	instance.LocalPeerId = LocalPeerId
 	instance.GlobalClockTime = GlobalClockTime
-	// instance.CreatedAt = time.Now()
-	// instance.UpdatedAt = time.Now()
+	instance.CreatedAt = time.Now()
+	instance.UpdatedAt = time.Now()
 	err := db.InsertIgnore(instance)
+	if err != nil {
+		log.Error(err)
+		return false
+	}
+	return true
+}
+
+func UpdateInstanceInformation(InstanceId string, LocalPeerId string, GlobalClockTime int64) bool {
+	db := DB.InitDB()
+
+	var instance = &PO.InstanceInformation{}
+	instance.LocalPeerId = LocalPeerId
+	instance.GlobalClockTime = GlobalClockTime + 1
+	instance.UpdatedAt = time.Now()
+	err := db.Where(instance.GetInstancePrimaryId()+" = ?", InstanceId).Updates(instance)
 	if err != nil {
 		log.Error(err)
 		return false

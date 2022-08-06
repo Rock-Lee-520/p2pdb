@@ -22,9 +22,6 @@ func init() {
 
 func main() {
 
-	//resgister a discovery config for the application
-	service.InitDiscovery()
-
 	//start a subscribe service	 for the application
 	service.InitSub()
 

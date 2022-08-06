@@ -8,6 +8,10 @@ type InstanceInformation struct {
 	GlobalClockTime int64  `gorm:"column:global_clock_time"`
 }
 
+func (instance *InstanceInformation) GetInstancePrimaryId() string {
+	return "instance_id"
+}
+
 // Database  information_schema definition
 type PeerNodeInfomation struct {
 	BaseColumn

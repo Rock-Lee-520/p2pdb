@@ -13,6 +13,9 @@ func InitSub() {
 	if err != nil {
 		panic(err)
 	}
+	//resgister a discovery config for the application
+	InitDiscovery(sub.Host.ID().String())
+
 	go sub.StartNewSubscribeService(subscription)
 }
 
@@ -22,7 +25,8 @@ func InitPub() {
 	pub.InitPub()
 }
 
-func InitDiscovery() {
-	DiscoveryService.InitInstanceInformation()
+func InitDiscovery(peerId string) {
+
+	DiscoveryService.InitInstanceInformation(peerId)
 	DiscoveryService.InitPeerNodeInfomation()
 }
