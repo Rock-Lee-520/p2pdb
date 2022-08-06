@@ -29,7 +29,7 @@ func init() {
 	var pub PS.PubSub
 
 	service.InitPub(pub)
-	go func() use(pub) {
+	go func() {
 		for {
 			select {
 			case data := <-chanEvent:
