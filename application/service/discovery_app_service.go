@@ -16,7 +16,7 @@ func InitSub() {
 	}
 	//resgister a discovery config for the application
 	InitDiscovery(Sub.Host.ID().String())
-	Sub.Pub(PS.DataMessage{Type: "InitSub", Data: "test InitSub"})
+	//Sub.Pub(PS.DataMessage{Type: "InitSub", Data: "test InitSub"})
 	go Sub.StartNewSubscribeService(subscription)
 }
 
