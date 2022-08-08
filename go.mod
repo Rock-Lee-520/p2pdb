@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/Rock-liyi/p2pdb-log v0.0.0-20220718124543-0bcc189e2a66
-	github.com/Rock-liyi/p2pdb-pubsub v0.0.5
+	github.com/Rock-liyi/p2pdb-pubsub v0.0.6
 	github.com/Rock-liyi/p2pdb-server v0.1.2
 	github.com/Rock-liyi/p2pdb-store v0.1.2
 	github.com/astaxie/beego v1.12.3
