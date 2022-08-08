@@ -2,22 +2,23 @@
 
 @startuml
 
-class MerkleDAGNode <<Entity>> {
+class TableNode <<Entity>> {
     - NodeId  // 节点ID,一个原子事件一个节点
     - RequestId //  请求ID,用于幂等验证
     - Type // 节点类型 默认log
     - LogicalClock //逻辑时钟
     - LastNodeId //因果关系事件id(上一个关联事件id) 为空代表没有因果关系                 
+    - DataIds //关联多个数据对象            
 }
 
 
-class MerkleDAGData <<Entity>> {
+class TableData <<Entity>> {
     - DataId  // 数据ID  一个节点包含多个数据对象
     - Operation //自定义操作信息
     - Propertie //自定义属性信息                 
 }
 
-class MerkleDAGLink <<Entity>> {
+class TableLink <<Entity>> {
     - LinkId   // 链接id
     - LastNodeId  // 上一个节点CID
     - NodeId //当前节点id
@@ -33,8 +34,7 @@ class DatabaseInfomation <<Entity>> {
     - DatabaseId   // 数据库id
     - InstanceId   // 实例id
     - DatabaseName   // 数据库名字
-    - LocalPeerId  // 本地对等节点
-    - LogicalClock //数据库逻辑时钟
+    - LocalInstanceId  // 本地对等节点
 }
 
 
