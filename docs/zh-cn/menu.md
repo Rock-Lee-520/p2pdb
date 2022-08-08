@@ -22,6 +22,7 @@
 
 * 关键设计
     * [数据库设计](zh-cn/entity/persistence.md)
+    * [消息队列](zh-cn/messagequeue/messagequeue.md)
 
 
 * 使用案例

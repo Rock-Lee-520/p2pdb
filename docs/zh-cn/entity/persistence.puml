@@ -79,6 +79,16 @@ class InstanceInformation <<Entity>> {
 }
 
 
+class Hook <<Entity>> {
+    //hook 监听配置表
+    - event_type  // 事件type
+    - LocalPeerId  // 本地对等节点  ,新的会覆盖旧的
+    - LocalHost //本地host
+    - GlobalLogicalClock //全局逻辑时钟
+
+}
+
+
 
 InstanceInformation --> PeerNodeInfomation : 存储对等节点信息
 ' note on link #red: note that is red
