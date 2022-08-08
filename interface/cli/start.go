@@ -21,6 +21,8 @@ func init() {
 }
 
 func main() {
+	//init database and table configured formatters
+	service.InitStore()
 
 	//start a subscribe service	 for the application
 	service.InitSub()
