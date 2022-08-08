@@ -1,22 +1,24 @@
 package subscribe
 
 import (
-	PS "github.com/Rock-liyi/p2pdb-pubsub"
 	"github.com/Rock-liyi/p2pdb/application/event"
-	"github.com/Rock-liyi/p2pdb/application/service"
+	common_event "github.com/Rock-liyi/p2pdb/domain/common/event"
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
 var topic = "p2pdb"
 var eventFunc = &event.EventFuncs{}
 
-func init() {
+func InitAsyncLogSubscriber() {
 	chanEvent := make(chan event.DataEvent)
 	eventFunc.RegisterAsyncEvent(topic, chanEvent)
 	log.Debug("subscribe Register is ok, topic is %s", topic)
-	var pub PS.PubSub
 
-	service.InitPub(pub)
+	for i := 0; i < len(common_event.StoreEventType); i++ {
+		eventFunc.RegisterAsyncEvent(topic, chanEvent)
+	}
+
+	// service.InitPub(pub)
 	go func() {
 		for {
 			select {

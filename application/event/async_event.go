@@ -2,9 +2,7 @@ package event
 
 import (
 	"fmt"
-	"math/rand"
 	"sync"
-	"time"
 )
 
 type EventFuncs struct {
@@ -35,7 +33,7 @@ func (e *EventFuncs) PublishAsyncEvent(topic string, message interface{}) {
 	//for {
 
 	eb.PublishAsyncEvent(topic, message)
-	time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
+	//time.Sleep(time.Duration(rand.Intn(1000)) * time.Millisecond)
 	//}
 }
 

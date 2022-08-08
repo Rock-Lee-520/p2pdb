@@ -2,6 +2,7 @@ package subscribe
 
 import (
 	"github.com/Rock-liyi/p2pdb/application/event"
+	"github.com/Rock-liyi/p2pdb/application/event/publish"
 	common_event "github.com/Rock-liyi/p2pdb/domain/common/event"
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
@@ -28,4 +29,17 @@ func ExecuteLogFunc(message event.Message) {
 	log.Debug(message)
 
 	//service.Publish(message.Type, message.Data)
+
+	//PublishAsyncEvent(message.Type, message.Data)
+}
+
+func PublishAsyncEvent(eventType string, data interface{}) {
+
+	var publisherFactory = &publish.LogPublisherFactory{}
+	if eventType == "TestPublishAsyncEvent" {
+		publisherFactory = &publish.LogPublisherFactory{}
+	}
+	//data = []byte{8, 0, 0, 0}
+	message := publisherFactory.NewMessage(eventType, data)
+	publisherFactory.PublishAsyncEvent(message)
 }

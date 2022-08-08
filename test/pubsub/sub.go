@@ -62,7 +62,7 @@ func main() {
 		cm := new(DataMessage)
 		err = json.Unmarshal(msg.Data, cm)
 		beego.Debug("debug:")
-		beego.Debug(cm.Message)
+		beego.Debug(cm.Data)
 		if err != nil {
 			continue
 		}
@@ -74,9 +74,8 @@ func main() {
 
 // ChatMessage gets converted to/from JSON and sent in the body of pubsub messages.
 type DataMessage struct {
-	Message    string
-	SenderID   string
-	SenderNick string
+	Type string
+	Data interface{}
 }
 
 func topicName(Name string) string {
