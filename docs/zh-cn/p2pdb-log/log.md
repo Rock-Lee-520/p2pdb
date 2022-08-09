@@ -2,20 +2,36 @@
 #### 日志数据结构
 ```json
 {
-    "node_id":"",//节点id
-    "node_type":"log",//节点类型
-    "request_id":"",//请求id 用于幂等
-    "logical_clock":12,//逻辑时钟值
-    "front_node_id":"",//上一个节点id
-    "database_id":"",//数据库id
-    "table_id":"",//表id
-    "instance_id":"",//数据库实例id
-    "opreation":"i",//i、u、r、d
-    "properties":[{//update 数据
-        "id":12323,
-        "name":"Anne",
-    }],
-    "sql":["update set"]//原始sql
+    "nodeId":"",//节点id
+    "clock":{
+          "instanceId":"",//数据库实例id
+          "time":1,
+          "peerId":""
+    },
+    "data":{
+        "nodeType":"log",//节点类型
+        "requestId":"",//请求id 用于幂等
+        "logicalClock":12,//逻辑时钟值
+        "lastNodeId":"",//上一个节点id
+        "databaseId":"",//数据库id
+        "tableId":"",//表id
+        "opreation":"i",//i、u、r、d
+        "properties":
+        [
+           "before": {//update 数据
+            "id":12323,
+            "name":"Anne",
+             },
+            "after":{//update 数据
+                "id":12323,
+                "name":"Anne",
+            }
+            ],
+        "sql":["update set"]//原始sql
+    }
+    ,
+    "links":[""]
+ 
    
 }
 ```
