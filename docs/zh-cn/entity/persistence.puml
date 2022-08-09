@@ -25,7 +25,7 @@ class TableLink <<Entity>> {
     - DatabaseId   // 数据库id
     - InstanceId   // 实例id
     - TableId   // 表id
-    - Size //数据大小
+    - TableAlias   // 表别名
 }
 
 

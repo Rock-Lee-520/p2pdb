@@ -14,15 +14,15 @@
 * 核心模块
   * [server](zh-cn/p2pdb-server/introduce.md)
   * [log](zh-cn/p2pdb-log/introduce.md)
-  * [pubsub](#)
-  * [consistency](#)
-  * [discovery](#)
-  * [store](#)
-
+  * [pubsub](zh-cn/p2pdb-pubsub/introduce.md)
+  * [consistency](zh-cn/p2pdb-consistency/introduce.md)
+  * [discovery](zh-cn/p2pdb-discovery/introduce.md)
+  * [store](zh-cn/p2pdb-store/introduce.md)
+  * [cdc](zh-cn/p2pdb-cdc/introduce.md)
 
 * 关键设计
     * [数据库设计](zh-cn/entity/persistence.md)
-    * [消息队列](zh-cn/messagequeue/messagequeue.md)
+    * [消息队列](zh-cn/p2pdb-cdc/queue.md)
 
 
 * 使用案例

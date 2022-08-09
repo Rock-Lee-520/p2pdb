@@ -14,9 +14,9 @@ type Node struct {
 // Data  information_schema definition
 type Data struct {
 	BaseColumn
-	DataId    string `gorm:"column:data_id"`
-	Operation string `gorm:"column:operation"`
-	Propertie string `gorm:"column:propertie"`
+	DataId     string `gorm:"column:data_id"`
+	Operation  string `gorm:"column:operation"`
+	Properties string `gorm:"column:properties"`
 }
 
 // Link  information_schema definition
@@ -28,5 +28,4 @@ type Link struct {
 	TableId    string `gorm:"column:table_id;primary_key"`
 	DatabaseId string `gorm:"column:database_id"`
 	InstanceId string `gorm:"column:local_instance_id"`
-	Size       int64  `gorm:"column:size"`
 }
