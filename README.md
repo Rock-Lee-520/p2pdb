@@ -39,7 +39,7 @@ P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点�
 - :white_check_mark:  `p2pdb-store`: [p2pdb-store](https://github.com/Rock-liyi/p2pdb-store) 用于数据实际存储的模块,类似mysql的数据存储一样，提供索引检索,数据的增删改查等,这是一个抽象的模块,目的是将来如果当前的存储引擎无法满足你的存储需求,可以提供更多的DB驱动如clickhouse、postgresql、TDngine等数据库，当前提供内存存储（开发模式使用）以及文件存储（生产使用）。
 
 
-- :black_square_button:  `p2pdb-cdc`: 基于数据库事务日志Change Data Capture(CDC)技术，作为一种更为优雅和先进的实时数据同步方案，广泛用于增量数据集成中，用于进一步扩展消息的使用方式,内置了一个消息队列,可通过webhook的方式监听数据的变动,支持Http、RPC、Websocket等协议链接,计划内置对接Kafka、RabbitMq、Nsq、Nats等主流的消息队列,同时它也是一个具备扩展性的模块，可以根据该模块提供的接口，进行二次开发，RockMq第三方库，以满足更多的业务场景。
+- :black_square_button:  `p2pdb-cdc`: 基于数据库事务日志Change Data Capture(CDC)技术，作为一种更为优雅和先进的实时数据同步方案，广泛用于增量数据集成中，用于进一步扩展消息的使用方式,内置了一个消息队列,可通过webhook的方式监听数据的变动,支持Websocket协议链接,将来计划对接到Kafka、RabbitMq、Nsq、Nats等主流的消息队列,实现更广泛的数据消费应用，同时它也是一个具备扩展性的模块，可以根据该模块提供的接口，进行二次开发，以满足更多的业务场景。
 
 
 ### 核心模块解释
