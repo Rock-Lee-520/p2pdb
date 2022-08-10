@@ -14,14 +14,15 @@ import (
 )
 
 type Env struct {
-	DEBUG          bool   `env:"DEBUG"`
-	ENV            string `env:"ENV"`
-	DBNAME         string `env:"DBNAME"`
-	DBTABLENAME    string `env:"DBTABLENAME"`
-	DATAPATH       string `env:"DATAPATH"`
-	STORAGE_ENGINE string `env:"STORAGE_ENGINE"`
-	PORT           string `env:"PORT"`
-	DBHOUST        string `env:"DBHOST"`
+	DEBUG               bool   `env:"DEBUG"`
+	ENV                 string `env:"ENV"`
+	DBNAME              string `env:"DBNAME"`
+	DBTABLENAME         string `env:"DBTABLENAME"`
+	DATAPATH            string `env:"DATAPATH"`
+	STORAGE_ENGINE      string `env:"STORAGE_ENGINE"`
+	PORT                string `env:"PORT"`
+	DBHOUST             string `env:"DBHOST"`
+	DB_INFORMATION_NAME string `env:"DB_INFORMATION_NAME"`
 }
 
 const projectDirName = "p2pdb-store" // change to relevant project name
@@ -119,4 +120,13 @@ func GetPort() string {
 	}
 	//fmt.Printf("%+v\n", conf)
 	return conf.PORT
+}
+
+func GetDBInformationName() string {
+	conf := Env{}
+	if err := env.Parse(&conf); err != nil {
+		fmt.Printf("%+v\n", err)
+	}
+	fmt.Printf("%+v\n", conf)
+	return conf.DB_INFORMATION_NAME
 }

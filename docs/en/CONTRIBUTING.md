@@ -7,12 +7,7 @@ resources to make it easier to get your contribution accepted.
 
 ## Contributor License Agreement (CLA)
 
-By contributing to this project you agree to the Contributor License
-Agreement (CLA). This grants copyright of your work on the project to
-the project owners, P2PDB Inc, as well as waives certain other
-rights related to your contribution. The first time you submit a PR,
-you will be prompted to read and sign the CLA. We cannot accept
-contributions that do not sign the CLA.
+By contributing to this project, you agree to the Contributor License Agreement (CLA). These grants copyright of your work on the project to the project owners, P2PDB Inc, as well as waives certain other rights related to your contribution. The first time you submit a PR, you will be prompted to read and sign the CLA. We cannot accept contributions that do not sign the CLA.
 
 ## Support Channel
 

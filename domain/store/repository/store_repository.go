@@ -5,7 +5,12 @@ import (
 	orm "github.com/Rock-liyi/p2pdb/infrastructure/core/orm"
 )
 
-var DB *orm.CreateDBFactory
+var DB *orm.CreateDBFactory = new(orm.CreateDBFactory)
+
+func init() {
+	//settings  use  the default  information database
+	DB.SetIsDBInformation(true)
+}
 
 func CreateDatabaseInformationTable() bool {
 	db := DB.InitDB()

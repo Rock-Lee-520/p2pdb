@@ -35,7 +35,7 @@ func (db *SqliteDB) Connect() {
 	// )
 	//logger.Default.LogMode(logger.Info)
 
-	ormDB, err := gorm.Open(sqlite.Open("/Users/rockli/go/src/p2pdb-server/data/test.db"), &gorm.Config{
+	ormDB, err := gorm.Open(sqlite.Open(db.address), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	})
 	if err != nil {

@@ -1,43 +1,25 @@
-# Supported SQL Syntax
+# Supported Sqlite SQL Syntax
 
-## Supported types
+SQLite 数据类型是一个用来指定任何对象的数据类型的属性。SQLite 中的每一列，每个变量和表达式都有相关的数据类型。
 
-- BOOLEAN
-- INTEGER
-- TINYINT
-- SMALLINT
-- MEDIUMINT
-- INT
-- BIGINT
-- DECIMAL
-- FLOAT
-- DOUBLE
-- BIT
-- DATE
-- TIME
-- DATETIME
-- TIMESTAMP
-- YEAR
-- CHAR
-- VARCHAR
-- BINARY
-- VARBINARYX
-- BLOB
-- TINYTEXT
-- TEXT
-- MEDIUMTEXT
-- LONGTEXT
-- ENUM
-- SET
-- JSON
+您可以在创建表的同时使用这些数据类型。SQLite 使用一个更普遍的动态类型系统。在 SQLite 中，值的数据类型与值本身是相关的，而不是与它的容器相关。
+
+## Supported Sqlite types
+每个存储在 SQLite 数据库中的值都具有以下存储类之一：
+
+存储类	描述
+NULL	值是一个 NULL 值。
+INTEGER	值是一个带符号的整数，根据值的大小存储在 1、2、3、4、6 或 8 字节中。
+REAL	值是一个浮点值，存储为 8 字节的 IEEE 浮点数字。
+TEXT	值是一个文本字符串，使用数据库编码（UTF-8、UTF-16BE 或 UTF-16LE）存储。
+BLOB	值是一个 blob 数据，完全根据它的输入存储。
+SQLite 的存储类稍微比数据类型更普遍。INTEGER 存储类，例如，包含 6 种不同的不同长度的整数数据类型。
 
 ## Data manipulation statements
 
 - DELETE
 - INSERT
-- REPLACE
 - SELECT
-- SUBQUERIES
 - UPDATE
 
 ## Data definition statements

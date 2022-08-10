@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	conf "github.com/Rock-liyi/p2pdb-log/config"
+	conf "github.com/Rock-liyi/p2pdb/infrastructure/util/config"
 	"gorm.io/gorm"
 )
 
@@ -36,6 +36,11 @@ type DBconnect interface {
 }
 
 type CreateDBFactory struct {
+	IsDBInformation bool
+}
+
+func (db *CreateDBFactory) SetIsDBInformation(value bool) {
+	db.IsDBInformation = value
 }
 
 func (db *CreateDBFactory) CreateDBConnect(db_type string) DBconnect {
@@ -56,10 +61,13 @@ func (db *CreateDBFactory) InitDB() DBconnect {
 	if dataPath != "" {
 		dataPath = dataPath + "/"
 	}
+	var dataName string
 
-	//get db name
-	dataName := conf.GetDBName()
-	//debug.Dump(dataName)
+	if db.IsDBInformation == true {
+		dataName = conf.GetDBInformationName()
+	} else {
+		dataName = conf.GetDBName()
+	}
 
 	if dataName == "" {
 		panic("dbname does not exits in .env file")
@@ -72,10 +80,8 @@ func (db *CreateDBFactory) InitDB() DBconnect {
 	}
 
 	address := dataPath + dataName + ".db"
-	//debug.Dump(address)
 	connect.Init(address, 0, "", "")
 	connect.Connect()
-
 	return connect
 
 }

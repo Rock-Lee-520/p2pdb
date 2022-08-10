@@ -9,7 +9,12 @@ import (
 	//function "github.com/Rock-liyi/p2pdb/infrastructure/untl/function"
 )
 
-var DB *orm.CreateDBFactory
+var DB *orm.CreateDBFactory = new(orm.CreateDBFactory)
+
+func init() {
+	//settings  use  the default  information database
+	DB.SetIsDBInformation(true)
+}
 
 func CreateInstance(name string) {
 

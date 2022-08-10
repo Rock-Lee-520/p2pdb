@@ -42,7 +42,7 @@ func StartNewService(DBName string, tableName string, DBHost string, port string
 		Auth:     auth.NewNativeSingle("root", "", auth.AllPermissions),
 	}
 
-	log.Info("The server host is: " + DBHost + ",the server port is: " + port)
+	log.Info("The server host is: " + DBHost + ",the server port is: " + port + ",the storageEngine is " + storageEngine)
 	s, err := ser.NewDefaultServer(config, engine)
 	if err != nil {
 		panic(err)
