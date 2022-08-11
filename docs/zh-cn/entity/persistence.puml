@@ -79,14 +79,13 @@ class InstanceInformation <<Entity>> {
 }
 
 
-class Hook <<Entity>> {
-    //hook 监听配置表
-    - event_type  // 事件type
-    - LocalPeerId  // 本地对等节点  ,新的会覆盖旧的
-    - LocalHost //本地host
-    - GlobalLogicalClock //全局逻辑时钟
-
-}
+' class Hook <<Entity>> {
+'     //hook 监听配置表
+'     - event_type  // 事件type
+'     - LocalPeerId  // 本地对等节点  ,新的会覆盖旧的
+'     - LocalHost //本地host
+'     - GlobalLogicalClock //全局逻辑时钟
+' }
 
 
 
@@ -95,12 +94,12 @@ InstanceInformation --> PeerNodeInfomation : 存储对等节点信息
 
 
 ' PeerNodeInfomation --> NodeSyncInfomation : A link
-MerkleDAGNode --> MerkleDAGData : 存储merkle-dag 节点信息及数据信息
+TableNode --> TableData : 存储merkle-dag 节点信息及数据信息
 ' note right on link #blue
 ' this is my note on right link
 ' end note
 
-MerkleDAGData --> MerkleDAGLink : 存储merkle-dag 的边,用于递归遍历生成dag树结构
+TableData --> TableLink : 存储merkle-dag 的边,用于递归遍历生成dag树结构
 ' note right on link #blue
 ' this is my note on right link
 ' end note
