@@ -163,7 +163,7 @@ It will take care of setting up the test server and shutting it down.
 
 ## `_example`
 
-A small example of how to use go-mysql-server to create a server and
+A small example of how to use p2pdb to create a server and
 run it.
 
 # Connecting the dots
