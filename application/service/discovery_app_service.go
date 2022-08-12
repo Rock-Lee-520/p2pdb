@@ -17,7 +17,7 @@ var Sub PS.PubSub
 
 var topicType = "p2pdb"
 
-func InitSub() {
+func InitSub() string {
 
 	Sub.SetType(topicType)
 	var subscription, libpubsubTpoic, err = Sub.Sub()
@@ -25,14 +25,14 @@ func InitSub() {
 		panic(err)
 	}
 	//resgister a discovery config for the application
-	InitDiscovery(Sub.Host.ID().String())
+	var instanceId = InitDiscovery(Sub.Host.ID().String())
 	//Sub.Pub(PS.DataMessage{Type: "InitSub", Data: "test InitSub"})
 	InitLogPublisher(libpubsubTpoic)
 
 	subscribe.InitAsyncLogSubscriber()
 
 	go Sub.StartNewSubscribeService(subscription)
-
+	return instanceId
 }
 
 func InitPub(pub PS.PubSub) {
@@ -41,10 +41,11 @@ func InitPub(pub PS.PubSub) {
 	pub.InitPub()
 }
 
-func InitDiscovery(peerId string) {
+func InitDiscovery(peerId string) string {
 
-	DiscoveryService.InitInstanceInformation(peerId)
+	var instanceId = DiscoveryService.InitInstanceInformation(peerId)
 	DiscoveryService.InitPeerNodeInfomation()
+	return instanceId
 }
 
 var eventFunc = &event.EventFuncs{}

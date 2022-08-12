@@ -9,7 +9,7 @@ import (
 func TestDBFactory(t *testing.T) {
 
 	var db *CreateDBFactory = new(CreateDBFactory)
-	db.SetIsDBInformation(true)
+	db.SetIsInternalStore(true)
 	orm := db.InitDB()
 	var node = &Node{}
 	orm.Where("node_id = ?", "nodeid").First(&node)
@@ -20,7 +20,7 @@ func TestDBFactory(t *testing.T) {
 func TestDBSelect(t *testing.T) {
 
 	var db *CreateDBFactory = new(CreateDBFactory)
-	db.SetIsDBInformation(true)
+	db.SetIsInternalStore(true)
 	orm := db.InitDB()
 	var node = &Node{}
 	orm.Where("node_id = ?", "nodeid").Select(&node)

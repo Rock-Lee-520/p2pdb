@@ -21,11 +21,12 @@ func init() {
 }
 
 func main() {
-	//init database and table configured formatters
-	service.InitStore()
-
 	//start a subscribe service	 for the application
-	service.InitSub()
+	// the InitSub method needs to be  called before  the InitStore method
+	var instanceId = service.InitSub()
+
+	//init database and table configured formatters
+	service.InitStore(instanceId)
 
 	//start a mysql service	 for the application
 	service.StartNewService()

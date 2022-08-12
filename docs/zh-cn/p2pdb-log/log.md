@@ -3,11 +3,9 @@
 ```json
 {
     "nodeId":"",//节点id
-    "clock":{
-          "instanceId":"",//数据库实例id
-          "time":1,
-          "peerId":""
-    },
+    "instanceId":"",//数据库实例id
+    "logicalClock":1,
+    "peerId":"",
     "data":{
         "nodeType":"log",//节点类型
         "requestId":"",//请求id 用于幂等

@@ -8,6 +8,10 @@ type DatabaseInfomation struct {
 	LocalInstanceId string `gorm:"column:local_instance_id"`
 }
 
+func (instance *DatabaseInfomation) GetDatabasePrimaryId() string {
+	return "database_id"
+}
+
 // Table  information_schema definition
 type TableInfomation struct {
 	BaseColumn

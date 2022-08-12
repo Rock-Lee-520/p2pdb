@@ -9,11 +9,14 @@ import (
 	//function "github.com/Rock-liyi/p2pdb/infrastructure/untl/function"
 )
 
-var DB *orm.CreateDBFactory = new(orm.CreateDBFactory)
+var ORM *orm.CreateDBFactory = new(orm.CreateDBFactory)
+var db orm.DBconnect
 
-func init() {
+func InitDB() orm.DBconnect {
 	//settings  use  the default  information database
-	DB.SetIsDBInformation(true)
+	ORM.SetIsInternalStore(true)
+	db = ORM.InitDB()
+	return db
 }
 
 func CreateInstance(name string) {
@@ -25,20 +28,19 @@ func GetInstance(name string) {
 }
 
 func CreateInstanceInformationTable() bool {
-	db := DB.InitDB()
+	db = InitDB()
 	db.Migrator().CreateTable(&PO.InstanceInformation{})
 	return true
 }
 
 func CreatePeerNodeInfomationTable() bool {
-	db := DB.InitDB()
+	db = InitDB()
 	db.Migrator().CreateTable(&PO.PeerNodeInfomation{})
 	return true
 }
 
 func InsertInstanceInformation(InstanceId string, LocalPeerId string, GlobalClockTime int64) bool {
-	db := DB.InitDB()
-
+	db = InitDB()
 	var instance = &PO.InstanceInformation{}
 	instance.InstanceId = InstanceId
 	instance.LocalPeerId = LocalPeerId
@@ -54,8 +56,7 @@ func InsertInstanceInformation(InstanceId string, LocalPeerId string, GlobalCloc
 }
 
 func UpdateInstanceInformation(InstanceId string, LocalPeerId string, GlobalClockTime int64) bool {
-	db := DB.InitDB()
-
+	db = InitDB()
 	var instance = &PO.InstanceInformation{}
 	instance.LocalPeerId = LocalPeerId
 	instance.GlobalClockTime = GlobalClockTime + 1
@@ -69,8 +70,7 @@ func UpdateInstanceInformation(InstanceId string, LocalPeerId string, GlobalCloc
 }
 
 func GetInstanceInformation() *PO.InstanceInformation {
-
-	db := DB.InitDB()
+	db = InitDB()
 	var instance = &PO.InstanceInformation{}
 	db.First(instance)
 

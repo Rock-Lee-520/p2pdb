@@ -36,11 +36,11 @@ type DBconnect interface {
 }
 
 type CreateDBFactory struct {
-	IsDBInformation bool
+	IsInternalStore bool
 }
 
-func (db *CreateDBFactory) SetIsDBInformation(value bool) {
-	db.IsDBInformation = value
+func (db *CreateDBFactory) SetIsInternalStore(value bool) {
+	db.IsInternalStore = value
 }
 
 func (db *CreateDBFactory) CreateDBConnect(db_type string) DBconnect {
@@ -56,17 +56,23 @@ func (db *CreateDBFactory) CreateDBConnect(db_type string) DBconnect {
 
 func (db *CreateDBFactory) InitDB() DBconnect {
 	var connect = db.CreateDBConnect("sqlite")
-	//init config,get db path
-	dataPath := conf.GetDataPath()
-	if dataPath != "" {
-		dataPath = dataPath + "/"
-	}
-	var dataName string
 
-	if db.IsDBInformation == true {
+	var dataName string
+	var dataPath string
+	if db.IsInternalStore == true {
 		dataName = conf.GetDBInformationName()
+		//init config,get db path
+		dataPath = conf.GetInternaleDataPath()
+		if dataPath != "" {
+			dataPath = dataPath + "/"
+		}
 	} else {
 		dataName = conf.GetDBName()
+		//init config,get db path
+		dataPath = conf.GetDataPath()
+		if dataPath != "" {
+			dataPath = dataPath + "/"
+		}
 	}
 
 	if dataName == "" {

@@ -16,13 +16,14 @@ import (
 type Env struct {
 	DEBUG               bool   `env:"DEBUG"`
 	ENV                 string `env:"ENV"`
-	DBNAME              string `env:"DBNAME"`
-	DBTABLENAME         string `env:"DBTABLENAME"`
-	DATAPATH            string `env:"DATAPATH"`
+	DB_NAME             string `env:"DB_NAME"`
+	DB_TABLE_NAME       string `env:"DB_TABLE_NAME"`
+	DATA_PATH           string `env:"DATA_PATH"`
 	STORAGE_ENGINE      string `env:"STORAGE_ENGINE"`
 	PORT                string `env:"PORT"`
-	DBHOUST             string `env:"DBHOST"`
+	DB_HOUST            string `env:"DB_HOST"`
 	DB_INFORMATION_NAME string `env:"DB_INFORMATION_NAME"`
+	INTERNAL_DATA_PATH  string `env:"INTERNAL_DATA_PATH"`
 }
 
 const projectDirName = "p2pdb-store" // change to relevant project name
@@ -74,7 +75,16 @@ func GetDataPath() string {
 		log.Error(fmt.Printf("%+v\n", err))
 	}
 	//fmt.Printf("%+v\n", conf)
-	return conf.DATAPATH
+	return conf.DATA_PATH
+}
+
+func GetInternaleDataPath() string {
+	conf := Env{}
+	if err := env.Parse(&conf); err != nil {
+		log.Error(fmt.Printf("%+v\n", err))
+	}
+	//fmt.Printf("%+v\n", conf)
+	return conf.INTERNAL_DATA_PATH
 }
 
 func GetDBTableName() string {
@@ -83,7 +93,7 @@ func GetDBTableName() string {
 		log.Error(fmt.Printf("%+v\n", err))
 	}
 	//fmt.Printf("%+v\n", conf)
-	return conf.DBTABLENAME
+	return conf.DB_TABLE_NAME
 }
 
 func GetDBName() string {
@@ -92,7 +102,7 @@ func GetDBName() string {
 		log.Error(fmt.Printf("%+v\n", err))
 	}
 	//fmt.Printf("%+v\n", conf)
-	return conf.DBNAME
+	return conf.DB_NAME
 }
 
 func GetStorageEngine() string {
@@ -110,7 +120,7 @@ func GetDBHost() string {
 		fmt.Printf("%+v\n", err)
 	}
 	//fmt.Printf("%+v\n", conf)
-	return conf.DBHOUST
+	return conf.DB_HOUST
 }
 
 func GetPort() string {

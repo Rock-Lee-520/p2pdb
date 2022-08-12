@@ -10,7 +10,7 @@
   * [快速开始](zh-cn/install/start.md)
   * [常见问题](zh-cn/application/issue.md)
   * [语法说明](zh-cn/application/syntax.md)
-  * [已支持语法](zh-cn/application/supported.md)
+  <!-- * [已支持语法](zh-cn/application/supported.md) -->
   * [客户端连接](zh-cn/application/connection_clinets.md)
 
   
