@@ -26,14 +26,10 @@ func FindDatabaseInformationTable(DatabaseId string) *PO.DatabaseInfomation {
 	return database
 }
 
-func UpdateDatabaseInformation(databaseId string, databaseName string, instanceId string) bool {
+func UpdateDatabaseInformation(databasePO *PO.DatabaseInfomation) bool {
 	db = InitDB()
-	var newDatabase = &PO.DatabaseInfomation{}
-	newDatabase.DatabaseId = databaseId
-	newDatabase.DatabaseName = databaseName
-	newDatabase.LocalInstanceId = instanceId
-	newDatabase.UpdatedAt = time.Now()
-	err := db.Where(newDatabase.GetDatabasePrimaryId()+" = ?", databaseId).Updates(newDatabase)
+	databasePO.UpdatedAt = time.Now()
+	err := db.Where(databasePO.GetDatabasePrimaryId()+" = ?", databasePO.DatabaseId).Updates(databasePO)
 	if err != nil {
 		log.Error(err)
 		return false
@@ -41,13 +37,9 @@ func UpdateDatabaseInformation(databaseId string, databaseName string, instanceI
 	return true
 }
 
-func InsertDatabaseInformation(databaseId string, databaseName string, instanceId string) bool {
+func InsertDatabaseInformation(databasePO *PO.DatabaseInfomation) bool {
 	db = InitDB()
-	var newDatabase = &PO.DatabaseInfomation{}
-	newDatabase.DatabaseId = databaseId
-	newDatabase.DatabaseName = databaseName
-	newDatabase.LocalInstanceId = instanceId
-	err := db.InsertIgnore(newDatabase)
+	err := db.InsertIgnore(databasePO)
 	if err != nil {
 		log.Error(err)
 		return false

@@ -9,7 +9,7 @@ import (
 var topic = "p2pdb"
 var eventFunc = &event.EventFuncs{}
 
-func InitAsyncLogSubscriber() {
+func init() {
 	chanEvent := make(chan event.DataEvent)
 	eventFunc.RegisterAsyncEvent(topic, chanEvent)
 	log.Debug("subscribe Register is ok, topic is %s", topic)

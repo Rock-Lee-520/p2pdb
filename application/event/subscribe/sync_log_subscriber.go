@@ -2,17 +2,19 @@ package subscribe
 
 import (
 	"github.com/Rock-liyi/p2pdb/application/event"
-	common_event "github.com/Rock-liyi/p2pdb/domain/common/event"
+	"github.com/Rock-liyi/p2pdb/application/service"
+	commonEvent "github.com/Rock-liyi/p2pdb/domain/common/event"
+	StoreEvent "github.com/Rock-liyi/p2pdb/domain/store/event"
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
 func init() {
 	//	debug.Dump("new event.Driver======")
 	//d := new(event.Driver)
-	for i := 0; i < len(common_event.StoreEventType); i++ {
+	for i := 0; i < len(commonEvent.StoreEventType); i++ {
 		//println(common_event.StoreEventType[i])
 		// Call the event, and all of the registered functions with the same name are called
-		event.RegisterSyncEvent(common_event.StoreEventType[i], ExecuteLogFunc)
+		event.RegisterSyncEvent(commonEvent.StoreEventType[i], ExecuteLogFunc)
 
 		// Register the global events on the OnSkill again
 		//event.RegisterSyncEvent(common_event.StoreEventType[i], event.GlobalSyncEvent)
@@ -21,11 +23,17 @@ func init() {
 
 func ExecuteLogFunc(message event.Message) {
 	log.Debug("call ExecuteLogFunc, message is ")
-	log.Debug(message)
+	log.Debug(message.Type)
+	log.Debug(message.Data)
+	switch message.Type {
+	case StoreEvent.StoreCreateTableEvent:
+		service.CreateTableByStoreEvent(message.Data)
+	}
+	//	event.RegisterSyncEvent(common_event.StoreEventType[i], ExecuteLogFunc)
 
-	//service.Publish(message.Type, message.Data)
+	// Register the global events on the OnSkill again
+	//event.RegisterSyncEvent(common_event.StoreEventType[i], event.GlobalSyncEvent)
 
-	//PublishAsyncEvent(message.Type, message.Data)
 }
 
 // func PublishAsyncEvent(eventType string, data interface{}) {

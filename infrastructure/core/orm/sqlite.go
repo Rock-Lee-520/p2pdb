@@ -48,6 +48,10 @@ func (db *SqliteDB) Connect() {
 	db.OrmDB = ormDB
 }
 
+func (db *SqliteDB) Exec(sql string, values ...interface{}) *gorm.DB {
+
+	return db.OrmDB.Exec(sql, values...)
+}
 func (db *SqliteDB) Create(value interface{}) *gorm.DB {
 
 	return db.OrmDB.Create(value)

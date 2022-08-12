@@ -5,6 +5,7 @@ import (
 	"path/filepath"
 
 	conf "github.com/Rock-liyi/p2pdb/infrastructure/util/config"
+	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 	"gorm.io/gorm"
 )
 
@@ -31,6 +32,7 @@ type DBconnect interface {
 	// HasTable(dst ...interface{}) bool
 	// CreateTable(dst ...interface{}) error
 	//AutoMigrate(dst ...interface{}) error
+	Exec(sql string, values ...interface{}) *gorm.DB
 	Migrator() gorm.Migrator
 	InsertIgnore(value interface{}) error
 }
@@ -86,6 +88,8 @@ func (db *CreateDBFactory) InitDB() DBconnect {
 	}
 
 	address := dataPath + dataName + ".db"
+
+	log.Info("database address is " + address)
 	connect.Init(address, 0, "", "")
 	connect.Connect()
 	return connect

@@ -3,7 +3,7 @@ package service
 import (
 	entity "github.com/Rock-liyi/p2pdb/domain/store/entity"
 	repository "github.com/Rock-liyi/p2pdb/domain/store/repository"
-	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
+	PO "github.com/Rock-liyi/p2pdb/domain/store/repository/po"
 )
 
 func InitDatabaseInformation() {
@@ -12,15 +12,23 @@ func InitDatabaseInformation() {
 }
 
 func SaveDatabaseInformation(databaseName string, instanceId string) string {
-	log.Debug("=====SaveDatabaseInformation")
-
+	var instanceEntity = entity.NewDatabaseEntity()
 	var databaseId = entity.GetNewDatabaseId(databaseName)
+	instanceEntity.SetDatabaseId(databaseId)
+
 	var dbinfo = repository.FindDatabaseInformationTable(databaseId)
-	log.Debug(dbinfo)
+
+	//entity convert PO
+	var databasePO = &PO.DatabaseInfomation{}
+	databasePO.DatabaseId = instanceEntity.GetDatabaseId()
+	databasePO.DatabaseName = instanceEntity.GetDatabaseName()
+	databasePO.LocalInstanceId = instanceEntity.GetInstanceId()
+
 	if dbinfo.DatabaseId == "" {
-		repository.InsertDatabaseInformation(databaseId, databaseName, instanceId)
+
+		repository.InsertDatabaseInformation(databasePO)
 	} else {
-		repository.UpdateDatabaseInformation(databaseId, databaseName, instanceId)
+		repository.UpdateDatabaseInformation(databasePO)
 	}
 
 	return databaseId

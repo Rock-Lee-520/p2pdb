@@ -23,8 +23,13 @@ func init() {
 	log.SetLevel(log.ErrorLevel)
 }
 
+func Print(args ...interface{}) {
+	log.Print()
+}
+
 func Trace(args ...interface{}) {
 	log.Trace(args)
+
 }
 
 func Debug(args ...interface{}) {

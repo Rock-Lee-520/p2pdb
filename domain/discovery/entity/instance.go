@@ -1,9 +1,9 @@
 package entity
 
 type InstanceEntity struct {
-	localPeerId     string
-	localHost       string
-	globalClockTime int64
+	LocalPeerId     string
+	LocalHost       string
+	GlobalClockTime int64
 }
 
 func NewInstanceEntity() *InstanceEntity {
@@ -11,25 +11,25 @@ func NewInstanceEntity() *InstanceEntity {
 }
 
 func (i *InstanceEntity) GetLocalPeerId() string {
-	return i.localPeerId
+	return i.LocalPeerId
 }
 
 func (i *InstanceEntity) SetLocalPeerId(localPeerId string) {
-	i.localPeerId = localPeerId
+	i.LocalPeerId = localPeerId
 }
 
 func (i *InstanceEntity) GetLocalHost() string {
-	return i.localHost
+	return i.LocalHost
 }
 
 func (i *InstanceEntity) SetLocalHost(localHost string) {
-	i.localHost = localHost
+	i.LocalHost = localHost
 }
 
 func (i *InstanceEntity) GetGlobalClockTime() int64 {
-	return i.globalClockTime
+	return i.GlobalClockTime
 }
 
 func (i *InstanceEntity) SetGlobalClockTime(globalClockTime int64) {
-	i.globalClockTime = globalClockTime
+	i.GlobalClockTime = globalClockTime
 }

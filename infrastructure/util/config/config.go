@@ -47,12 +47,19 @@ func init() {
 			log.Error("p2pdb -> Error loading .env file, the path is" + currentWorkDirectory + `/.env`)
 		}
 	}
+	conf := Env{}
+	if err := env.Parse(&conf); err != nil {
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
+	}
+	log.Info(fmt.Printf("%+v\n", conf))
 }
 
 func IsDebug() bool {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		log.Error(fmt.Printf("%+v\n", err))
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
 	}
 
 	//log.Info(conf)
@@ -63,80 +70,90 @@ func IsDebug() bool {
 func GetEnv() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		log.Error(fmt.Printf("%+v\n", err))
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
 	}
-	log.Info(conf)
 	return conf.ENV
 }
 
 func GetDataPath() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		log.Error(fmt.Printf("%+v\n", err))
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
 	}
-	//fmt.Printf("%+v\n", conf)
 	return conf.DATA_PATH
 }
 
 func GetInternaleDataPath() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		log.Error(fmt.Printf("%+v\n", err))
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
 	}
-	//fmt.Printf("%+v\n", conf)
 	return conf.INTERNAL_DATA_PATH
 }
 
 func GetDBTableName() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		log.Error(fmt.Printf("%+v\n", err))
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
 	}
-	//fmt.Printf("%+v\n", conf)
 	return conf.DB_TABLE_NAME
 }
 
 func GetDBName() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		log.Error(fmt.Printf("%+v\n", err))
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
 	}
-	//fmt.Printf("%+v\n", conf)
 	return conf.DB_NAME
 }
 
 func GetStorageEngine() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		fmt.Printf("%+v\n", err)
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
 	}
-	//fmt.Printf("%+v\n", conf)
 	return conf.STORAGE_ENGINE
 }
 
 func GetDBHost() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		fmt.Printf("%+v\n", err)
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
 	}
-	//fmt.Printf("%+v\n", conf)
 	return conf.DB_HOUST
 }
 
 func GetPort() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		fmt.Printf("%+v\n", err)
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
 	}
-	//fmt.Printf("%+v\n", conf)
+
 	return conf.PORT
 }
 
 func GetDBInformationName() string {
 	conf := Env{}
 	if err := env.Parse(&conf); err != nil {
-		fmt.Printf("%+v\n", err)
+		log.Warn(fmt.Printf("%+v\n", err))
+		fmt.Printf("%+v\n", conf)
 	}
-	fmt.Printf("%+v\n", conf)
+
 	return conf.DB_INFORMATION_NAME
+}
+
+func GetDefualtDatabaseAddress() string {
+	path := GetDataPath()
+	DBname := GetDBName()
+
+	DBPath := path + "/" + DBname + ".db"
+	return DBPath
 }

@@ -7,7 +7,6 @@ import (
 
 	PS "github.com/Rock-liyi/p2pdb-pubsub"
 	"github.com/Rock-liyi/p2pdb/application/event"
-	"github.com/Rock-liyi/p2pdb/application/event/subscribe"
 	DiscoveryService "github.com/Rock-liyi/p2pdb/domain/discovery/service"
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 	libpubsub "github.com/libp2p/go-libp2p-pubsub"
@@ -29,7 +28,7 @@ func InitSub() string {
 	//Sub.Pub(PS.DataMessage{Type: "InitSub", Data: "test InitSub"})
 	InitLogPublisher(libpubsubTpoic)
 
-	subscribe.InitAsyncLogSubscriber()
+	//subscribe.InitAsyncLogSubscriber()
 
 	go Sub.StartNewSubscribeService(subscription)
 	return instanceId
