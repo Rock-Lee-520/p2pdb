@@ -8,13 +8,13 @@ type Node struct {
 	Type         string `gorm:"column:type"`
 	LogicalClock string `gorm:"column:logcal_clock"`
 	LastNodeId   string `gorm:"column:last_node_Id"`
-	DataIds      string `gorm:"column:data_ids"`
 }
 
 // Data  information_schema definition
 type Data struct {
 	BaseColumn
 	DataId     string `gorm:"column:data_id"`
+	NodeId     string `gorm:"column:node_id"`
 	Operation  string `gorm:"column:operation"`
 	Properties string `gorm:"column:properties"`
 }

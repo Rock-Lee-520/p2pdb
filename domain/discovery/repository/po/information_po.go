@@ -5,6 +5,7 @@ type InstanceInformation struct {
 	BaseColumn
 	InstanceId      string `gorm:"column:instance_id;primary_key"`
 	LocalPeerId     string `gorm:"column:local_peer_id"`
+	LocalHost       string `gorm:"column:local_host"`
 	GlobalClockTime int64  `gorm:"column:global_clock_time"`
 }
 
@@ -24,6 +25,6 @@ type PeerNodeInfomation struct {
 	RemoteHost         string `gorm:"column:remote_host"`
 	RemotePeerId       string `gorm:"column:remote_peer_id"`
 	RemoteInstanceId   string `gorm:"column:remote_instance_id"`
-	LastDagMergeNodeId string `gorm:"column:last_node_id"`
+	LastDagMergeNodeId string `gorm:"column:last_dag_merge_node_id"`
 	ProtocolId         string `gorm:"column:protocol_id"` //defualt /ipfs/id/1.0.0
 }

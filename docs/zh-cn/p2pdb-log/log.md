@@ -3,14 +3,9 @@
 ```json
 {
     "nodeId":"",//节点id
-    "instanceId":"",//数据库实例id
-    "logicalClock":1,
-    "peerId":"",
+    "logicalClock":12,//逻辑时钟值
     "data":{
-        "nodeType":"log",//节点类型
         "requestId":"",//请求id 用于幂等
-        "logicalClock":12,//逻辑时钟值
-        "lastNodeId":"",//上一个节点id
         "databaseId":"",//数据库id
         "tableId":"",//表id
         "opreation":"i",//i、u、r、d
@@ -28,7 +23,12 @@
         "sql":["update set"]//原始sql
     }
     ,
-    "links":[""]
+    "links":{
+        "lastNodeId":"",//上一个节点id
+        "nodeType":"log",//节点类型
+        "instanceId":"",//数据库实例id
+        "peerId":"",
+    }
  
    
 }

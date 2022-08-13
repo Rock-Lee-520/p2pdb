@@ -1,1 +1,5 @@
 package service
+
+func CreateLink() {
+
+}

@@ -27,7 +27,7 @@ func ExecuteLogFunc(message event.Message) {
 	log.Debug(message.Data)
 	switch message.Type {
 	case StoreEvent.StoreCreateTableEvent:
-		service.CreateTableByStoreEvent(message.Data)
+		service.CreateTableByStoreEvent(message)
 	}
 	//	event.RegisterSyncEvent(common_event.StoreEventType[i], ExecuteLogFunc)
 
