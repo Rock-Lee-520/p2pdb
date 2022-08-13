@@ -58,8 +58,8 @@ p2pdb基于[p2pdb-log](https://github.com/Rock-liyi/p2pdb-log)之上实现，p2p
 ![alt 属性文本](./p2pdb_core_flowchart.png)
 
 
-### 文档
-[查看文档](https://rock-liyi.github.io/p2pdb/)
+### 详细文档
+[详细文档](https://rock-liyi.github.io/p2pdb/)
 
 
 ### 快速使用
