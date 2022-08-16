@@ -6,7 +6,6 @@ import (
 	"testing"
 	"time"
 	//_ "github.com/Rock-liyi/p2pdb/application/event/subscribe" //注册事件监听
-	//"github.com/Rock-liyi/p2pdb/domain/common/event"
 )
 
 func randInt(min int, max int) byte {

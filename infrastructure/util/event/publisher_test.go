@@ -7,7 +7,7 @@ import (
 	"time"
 
 	//_ "github.com/Rock-liyi/p2pdb/application/event/subscribe" //注册事件监听
-	"github.com/Rock-liyi/p2pdb/domain/common/event"
+	"github.com/Rock-liyi/p2pdb/domain/common/entity/value_object"
 )
 
 func randInt(min int, max int) byte {
@@ -52,5 +52,5 @@ func TestPublishAsyncEvent(t *testing.T) {
 
 func TestPublishSyncEvent(t *testing.T) {
 	data := "StoreDeleteEvent"
-	PublishSyncEvent(event.StoreDeleteEvent, data)
+	PublishSyncEvent(value_object.StoreDeleteEvent, data)
 }

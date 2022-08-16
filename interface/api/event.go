@@ -24,7 +24,7 @@ func (e *EventApi) PublishAsyncEvent(eventType string, data interface{}) {
 	publisherFactory.PublishAsyncEvent(message)
 }
 
-func (e *EventApi) PublishSyncEvent(eventType string, data interface{}) {
+func (e *EventApi) PublishSyncEvent(eventType string, data []byte) {
 	// var message event.Message{Type:eventType,Data:Data}
 
 	event.PublishSyncEvent(eventType, event.Message{Type: eventType, Data: data})

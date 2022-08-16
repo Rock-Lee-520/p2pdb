@@ -33,16 +33,23 @@ type DBconnect interface {
 	// CreateTable(dst ...interface{}) error
 	//AutoMigrate(dst ...interface{}) error
 	Exec(sql string, values ...interface{}) *gorm.DB
+	Raw(sql string, values ...interface{}) *gorm.DB
+	Table(name string, args ...interface{}) *gorm.DB
 	Migrator() gorm.Migrator
 	InsertIgnore(value interface{}) error
 }
 
 type CreateDBFactory struct {
 	IsInternalStore bool
+	DatabaseName    string
 }
 
 func (db *CreateDBFactory) SetIsInternalStore(value bool) {
 	db.IsInternalStore = value
+}
+
+func (db *CreateDBFactory) SetDatabaseName(databaseName string) {
+	db.DatabaseName = databaseName
 }
 
 func (db *CreateDBFactory) CreateDBConnect(db_type string) DBconnect {
@@ -61,6 +68,8 @@ func (db *CreateDBFactory) InitDB() DBconnect {
 
 	var dataName string
 	var dataPath string
+
+	//Is it a internal  database?
 	if db.IsInternalStore == true {
 		dataName = conf.GetDBInformationName()
 		//init config,get db path
@@ -77,8 +86,13 @@ func (db *CreateDBFactory) InitDB() DBconnect {
 		}
 	}
 
+	//Whether the database name is set dynamically?
+	if db.DatabaseName != "" {
+		dataName = db.DatabaseName
+	}
+
 	if dataName == "" {
-		panic("dbname does not exits in .env file")
+		log.Panic("dbname does not exits in .env file")
 	}
 
 	binary, _ := os.Getwd()

@@ -16,5 +16,5 @@ type SyncEvent interface {
 
 type Message struct {
 	Type string
-	Data interface{}
+	Data []byte
 }

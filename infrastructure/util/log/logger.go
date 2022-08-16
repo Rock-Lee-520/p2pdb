@@ -20,7 +20,7 @@ func init() {
 	log.SetOutput(os.Stdout)
 
 	// Only log the warning severity or above.
-	log.SetLevel(log.ErrorLevel)
+	log.SetLevel(log.DebugLevel)
 }
 
 func Print(args ...interface{}) {

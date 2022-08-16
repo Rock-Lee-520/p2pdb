@@ -1,11 +1,16 @@
-package event
-
-//module name+topic name+event
+package value_object
 
 //p2pdb-log EventType
 const (
 	p2pdbLogTopic = "p2pdb-log"
 	LogTopic      = "log"
+)
+
+const (
+	//DDL
+	CREATE = "create"
+	//DDLActionType
+	DATABASE = "database"
 )
 
 //p2pdb-store EventType

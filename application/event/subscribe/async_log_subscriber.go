@@ -2,7 +2,7 @@ package subscribe
 
 import (
 	"github.com/Rock-liyi/p2pdb/application/event"
-	common_event "github.com/Rock-liyi/p2pdb/domain/common/event"
+	value_object "github.com/Rock-liyi/p2pdb/domain/common/entity/value_object"
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
@@ -14,7 +14,7 @@ func init() {
 	eventFunc.RegisterAsyncEvent(topic, chanEvent)
 	log.Debug("subscribe Register is ok, topic is %s", topic)
 
-	for i := 0; i < len(common_event.StoreEventType); i++ {
+	for i := 0; i < len(value_object.StoreEventType); i++ {
 		eventFunc.RegisterAsyncEvent(topic, chanEvent)
 	}
 

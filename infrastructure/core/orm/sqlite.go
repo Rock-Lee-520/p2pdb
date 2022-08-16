@@ -6,6 +6,7 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
 	"gorm.io/gorm/logger"
+	"gorm.io/gorm/schema"
 )
 
 type SqliteDB struct {
@@ -37,20 +38,35 @@ func (db *SqliteDB) Connect() {
 
 	ormDB, err := gorm.Open(sqlite.Open(db.address), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
+		NamingStrategy: schema.NamingStrategy{
+			SingularTable: true, // 使用单数表名，启用该选项后，`Student` 表将是`student`, 禁用则为`students`
+			//TablePrefix:   "pre_", // 表名前缀，`User`表为`pre_users`
+			//NameReplacer:  strings.NewReplacer("AbcID", "Abcid"), // 在转为数据库名称之前，使用NameReplacer更改结构/字段名称。
+		},
 	})
 	if err != nil {
 		panic("failed to connect database")
 	}
 
 	// ormDB.LogMode(true)
-	// ormDB.SingularTable(true)
+	//ormDB.SingularTable(true)
 	// ormDB.SetLogger(log.New(os.Stdout, "\r\n", 0))
 	db.OrmDB = ormDB
+}
+
+func (db *SqliteDB) Table(name string, args ...interface{}) *gorm.DB {
+
+	return db.OrmDB.Table(name, args...)
 }
 
 func (db *SqliteDB) Exec(sql string, values ...interface{}) *gorm.DB {
 
 	return db.OrmDB.Exec(sql, values...)
+}
+
+func (db *SqliteDB) Raw(sql string, values ...interface{}) *gorm.DB {
+
+	return db.OrmDB.Raw(sql, values...)
 }
 func (db *SqliteDB) Create(value interface{}) *gorm.DB {
 
