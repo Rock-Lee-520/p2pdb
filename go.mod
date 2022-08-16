@@ -3,9 +3,9 @@ module github.com/Rock-liyi/p2pdb
 go 1.17
 
 require (
-	github.com/Rock-liyi/p2pdb-pubsub v0.0.6
+	github.com/Rock-liyi/p2pdb-pubsub v0.0.7
 	github.com/Rock-liyi/p2pdb-server v0.1.2
-	github.com/Rock-liyi/p2pdb-store v0.1.8
+	github.com/Rock-liyi/p2pdb-store v0.1.10
 	github.com/astaxie/beego v1.12.3
 	github.com/caarlos0/env/v6 v6.9.3
 	github.com/favframework/debug v0.0.0-20150708094948-5c7e73aafb21
@@ -23,7 +23,7 @@ require (
 	github.com/multiformats/go-multihash v0.2.0
 	github.com/rivo/tview v0.0.0-20220703182358-a13d901d3386
 	github.com/satori/go.uuid v1.2.0
-	github.com/sirupsen/logrus v1.8.1
+	github.com/sirupsen/logrus v1.9.0
 	gorm.io/driver/sqlite v1.3.6
 	gorm.io/gorm v1.23.8
 )
@@ -158,7 +158,7 @@ require (
 	golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 // indirect
 	golang.org/x/net v0.0.0-20220517181318-183a9ca12b87 // indirect
 	golang.org/x/sync v0.0.0-20220601150217-0de741cfad7f // indirect
-	golang.org/x/sys v0.0.0-20220517195934-5e4e11fc645e // indirect
+	golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/tools v0.1.10 // indirect
