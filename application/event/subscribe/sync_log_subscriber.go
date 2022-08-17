@@ -24,15 +24,19 @@ func init() {
 
 func ExecuteLogFunc(message event.Message) {
 	log.Debug("call ExecuteLogFunc, message is ")
-	// log.Debug(message.Type)
-	// log.Debug(message.Data)
+
+	var newData entity.Data
+	function.JsonDecode(message.Data, &newData)
+
 	switch message.Type {
 	case value_object.StoreCreateTableEvent:
-		var newData entity.Data
-		function.JsonDecode(message.Data, &newData)
 
 		service.InitLogTable(newData)
 		service.CreateTableByStoreEvent(newData)
+	case value_object.StoreInsertEvent:
+	case value_object.StoreDeleteEvent:
+	case value_object.StoreUpdateEvent:
+		log.Debug(newData)
 	}
 	//	event.RegisterSyncEvent(common_event.StoreEventType[i], ExecuteLogFunc)
 

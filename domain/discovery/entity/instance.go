@@ -2,12 +2,21 @@ package entity
 
 type InstanceEntity struct {
 	LocalPeerId     string
+	InstanceId      string
 	LocalHost       string
 	GlobalClockTime int64
 }
 
 func NewInstanceEntity() *InstanceEntity {
 	return &InstanceEntity{}
+}
+
+func (i *InstanceEntity) GetInstanceId() string {
+	return i.InstanceId
+}
+
+func (i *InstanceEntity) SetInstanceId(instanceId string) {
+	i.InstanceId = instanceId
 }
 
 func (i *InstanceEntity) GetLocalPeerId() string {

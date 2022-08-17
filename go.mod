@@ -28,15 +28,15 @@ require (
 	gorm.io/gorm v1.23.8
 )
 
-// replace github.com/Rock-liyi/p2pdb => ../p2pdb
+replace github.com/Rock-liyi/p2pdb => ../p2pdb
 
-// replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
+replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
 
-// replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
+replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
 
-// replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
+replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
 
-// replace github.com/Rock-liyi/p2pdb-discovery => ../p2pdb-discovery
+replace github.com/Rock-liyi/p2pdb-discovery => ../p2pdb-discovery
 
 require (
 	github.com/Rock-liyi/p2pdb-discovery v0.0.1 // indirect

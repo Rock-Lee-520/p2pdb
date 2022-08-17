@@ -15,6 +15,7 @@ func GetInstanceEntity() *entity.InstanceEntity {
 	instanceEntity.SetGlobalClockTime(instance.GlobalClockTime)
 	instanceEntity.SetLocalHost(instance.LocalHost)
 	instanceEntity.SetLocalPeerId(instance.LocalPeerId)
+	instanceEntity.SetInstanceId(instance.InstanceId)
 	return instanceEntity
 }
 

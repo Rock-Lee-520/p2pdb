@@ -1,6 +1,9 @@
 package service
 
-import "github.com/Rock-liyi/p2pdb/domain/log/repository"
+import (
+	"github.com/Rock-liyi/p2pdb/domain/log/entity"
+	"github.com/Rock-liyi/p2pdb/domain/log/repository"
+)
 
 func InitLogTable(tableName string, databaseName string) {
 	CreateNodeTable(tableName, databaseName)
@@ -23,5 +26,17 @@ func CreateDataTable(tableName string, databaseName string) {
 func CreateLinkTable(tableName string, databaseName string) {
 	tableName = "link_" + tableName
 	repository.CreateLinkTable(tableName, databaseName)
+
+}
+
+func InsertDataLog(data *entity.DataEntity) {
+
+}
+
+func InsertNodeLog(node *entity.NodeEntity) {
+
+}
+
+func InsertLinkLog(link *entity.LinkEntity) {
 
 }
