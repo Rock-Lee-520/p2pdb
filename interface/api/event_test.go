@@ -52,5 +52,5 @@ func TestPublishAsyncEvent(t *testing.T) {
 
 func TestPublishSyncEvent(t *testing.T) {
 	data := "StoreDeleteEvent"
-	eventApi.PublishSyncEvent("StoreDeleteEvent", data)
+	eventApi.PublishSyncEvent("StoreDeleteEvent", []byte(data))
 }
