@@ -225,6 +225,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/her-cat"><img src="https://avatars.githubusercontent.com/u/18332628?v=4?s=100" width="100px;" alt=""/><br /><sub><b>她和她的猫</b></sub></a><br /><a href="#infra-her-cat" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/Rock-liyi/p2pdb/commits?author=her-cat" title="Tests">⚠️</a> <a href="https://github.com/Rock-liyi/p2pdb/commits?author=her-cat" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/PandaLIU-1111"><img src="https://avatars.githubusercontent.com/u/26201936?v=4?s=100" width="100px;" alt=""/><br /><sub><b>pandaLIU</b></sub></a><br /><a href="#infra-PandaLIU-1111" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/Rock-liyi/p2pdb/commits?author=PandaLIU-1111" title="Tests">⚠️</a> <a href="https://github.com/Rock-liyi/p2pdb/commits?author=PandaLIU-1111" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/CbYip"><img src="https://avatars.githubusercontent.com/u/31086265?v=4?s=100" width="100px;" alt=""/><br /><sub><b>CbYip</b></sub></a><br /><a href="#infra-CbYip" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/Rock-liyi/p2pdb/commits?author=CbYip" title="Tests">⚠️</a> <a href="https://github.com/Rock-liyi/p2pdb/commits?author=CbYip" title="Code">💻</a></td>
   </tr>
 </table>
