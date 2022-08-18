@@ -15,6 +15,17 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "PandaLIU-1111",
+      "name": "pandaLIU",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26201936?v=4",
+      "profile": "https://github.com/PandaLIU-1111",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
