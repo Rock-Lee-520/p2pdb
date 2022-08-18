@@ -16,11 +16,34 @@
         "code"
       ]
     },
-    {
-      "login": "Rock-liyi",
+        {
+         "login": "Rock-liyi",
       "name": "Rock",
       "avatar_url": "https://avatars.githubusercontent.com/u/35133768?v=4",
       "profile": "https://github.com/Rock-liyi",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    },
+
+      {
+      "login": "PandaLIU-1111",
+      "name": "pandaLIU",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26201936?v=4",
+      "profile": "https://github.com/PandaLIU-1111",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    },
+    {
+      "login": "CbYip",
+      "name": "CbYip",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31086265?v=4",
+      "profile": "https://github.com/CbYip",
       "contributions": [
         "infra",
         "test",
