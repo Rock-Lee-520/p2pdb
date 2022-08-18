@@ -1,6 +1,6 @@
 # P2PDB
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
@@ -225,6 +225,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/her-cat"><img src="https://avatars.githubusercontent.com/u/18332628?v=4?s=100" width="100px;" alt=""/><br /><sub><b>她和她的猫</b></sub></a><br /><a href="#infra-her-cat" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/Rock-liyi/p2pdb/commits?author=her-cat" title="Tests">⚠️</a> <a href="https://github.com/Rock-liyi/p2pdb/commits?author=her-cat" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Rock-liyi"><img src="https://avatars.githubusercontent.com/u/35133768?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rock</b></sub></a><br /><a href="#infra-Rock-liyi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/Rock-liyi/p2pdb/commits?author=Rock-liyi" title="Tests">⚠️</a> <a href="https://github.com/Rock-liyi/p2pdb/commits?author=Rock-liyi" title="Code">💻</a></td>
   </tr>
 </table>
 
