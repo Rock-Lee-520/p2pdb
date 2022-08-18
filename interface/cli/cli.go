@@ -1,4 +1,4 @@
-package main
+package cli
 
 import (
 	_ "github.com/Rock-liyi/p2pdb/application/event/subscribe" //注册事件监听
@@ -7,7 +7,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func init() {
+func StartCli() {
 	environment := conf.GetEnv()
 	// do something here to set environment depending on an environment variable
 	// or command-line flag
@@ -18,9 +18,6 @@ func init() {
 		log.SetLevel(log.DebugLevel)
 	}
 
-}
-
-func main() {
 	//start a subscribe service	 for the application
 	// the InitSub method needs to be  called before  the InitStore method
 	var instanceId = service.InitSub()
