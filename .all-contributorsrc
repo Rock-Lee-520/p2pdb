@@ -15,6 +15,17 @@
         "test",
         "code"
       ]
+    },
+    {
+      "login": "CbYip",
+      "name": "CbYip",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31086265?v=4",
+      "profile": "https://github.com/CbYip",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
