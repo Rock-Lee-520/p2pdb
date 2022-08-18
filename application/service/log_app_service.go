@@ -12,25 +12,53 @@ import (
 )
 
 func InitLogTable(data commonEntity.Data) {
-	// var instanceEntity = DiscoveryService.GetInstanceEntity()
-	// log.Debug(instanceEntity)
-	// var tableName="",
-	// var DatabaseName=""
-	log.Debug(data)
 	logService.InitLogTable(data.TableName, data.TableName)
 }
 
 func InsertStoreLog(data commonEntity.Data) {
-	var instanceEntity = discoveryService.GetInstanceEntity()
+	log.Info("call InsertStoreLog method start")
+	var nodeEntity = assembleNodeEntity()
+	var dataEntity = assembleDataEntity(nodeEntity)
+	var linkEntity = assembleLinkEntity(nodeEntity)
+	var dbEntity = assembleDbEntity(data)
 
-	var nodeEntity = entity.NewNodeEntity()
-	var dataEntity = entity.NewDataEntity()
-	var linkEntity = entity.NewLinkEntity()
+	logService.InsertNodeLog(nodeEntity, dbEntity)
+	logService.InsertLinkLog(linkEntity, dbEntity)
+	logService.InsertDataLog(dataEntity, dbEntity)
+	log.Info("call InsertStoreLog method end")
+}
+
+func assembleDbEntity(data commonEntity.Data) *entity.DB {
+	var dbEntity = entity.NewDB()
+	dbEntity.SetDatabaseName(data.TableName)
+	dbEntity.SetTableName(data.TableName)
+	return dbEntity
+}
+
+func assembleNodeEntity() *entity.Node {
+	var nodeEntity = entity.NewNode()
 	nodeEntity.SetNodeId(function.GetUUID())
 	nodeEntity.SetRequestId(function.GetUUID())
 	nodeEntity.SetLogicalClock(function.GetGlobalLogicalClock() + 1)
-	logService.InsertNodeLog(nodeEntity)
 
+	return nodeEntity
+}
+
+func assembleDataEntity(nodeEntity *entity.Node) *entity.Data {
+
+	var dataEntity = entity.NewData()
+	dataEntity.SetDataId(function.GetUUID())
+	dataEntity.SetNodeId(nodeEntity.GetNodeId())
+	dataEntity.SetOperation(function.GetUUID())
+	var StringArray []string
+	StringArray = append(StringArray, function.GetUUID())
+	dataEntity.SetProperties(StringArray)
+	return dataEntity
+}
+
+func assembleLinkEntity(nodeEntity *entity.Node) *entity.Link {
+	var linkEntity = entity.NewLink()
+	var instanceEntity = discoveryService.GetInstanceEntity()
 	linkEntity.SetNodeId(nodeEntity.GetNodeId())
 	linkEntity.SetLinkId(function.GetUUID())
 	linkEntity.SetInstanceId(instanceEntity.InstanceId)
@@ -38,13 +66,6 @@ func InsertStoreLog(data commonEntity.Data) {
 	linkEntity.SetTableId(function.GetUUID())
 	linkEntity.SetLastNodeId(function.GetUUID())
 	linkEntity.SetDatabaseId(function.GetUUID())
+	return linkEntity
 
-	dataEntity.SetDataId(function.GetUUID())
-	dataEntity.SetOperation(function.GetUUID())
-	var StringArray []string
-	StringArray = append(StringArray, function.GetUUID())
-	dataEntity.SetProperties(StringArray)
-
-	logService.InsertLinkLog(linkEntity)
-	logService.InsertDataLog(dataEntity)
 }

@@ -12,7 +12,7 @@ func InitDatabaseInformation() {
 }
 
 func SaveDatabaseInformation(databaseName string, instanceId string) string {
-	var instanceEntity = entity.NewDatabaseEntity()
+	var instanceEntity = entity.NewDatabase()
 	var databaseId = entity.GetNewDatabaseId(databaseName)
 	instanceEntity.SetDatabaseId(databaseId)
 

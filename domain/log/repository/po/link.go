@@ -1,16 +1,27 @@
-package entity
+package po
 
+// Link  information_schema definition
 type Link struct {
-	LinkId     string `json:"linkId"`
-	LastNodeId string `json:"lastNodeId"`
-	NodeId     string `json:"nodeId"`
-	TableId    string `json:"tableId"`
-	DatabaseId string `json:"databaseId"`
-	InstanceId string `json:"instanceId"`
+	BaseColumn
+	LinkId     string `gorm:"column:link_id"`
+	LastNodeId string `gorm:"column:last_node_id"`
+	NodeId     string `gorm:"column:node_id"`
+	TableId    string `gorm:"column:table_id;primary_key"`
+	DatabaseId string `gorm:"column:database_id"`
+	InstanceId string `gorm:"column:local_instance_id"`
+	TabName    string `gorm:"-"`
 }
 
 func NewLink() *Link {
 	return &Link{}
+}
+
+func (n *Link) SetTabName(TabName string) {
+	LINK_TABLE_NAME = TabName
+}
+
+func (n *Link) TableName() string {
+	return LINK_TABLE_NAME
 }
 
 func (i *Link) GetLinkId() string {

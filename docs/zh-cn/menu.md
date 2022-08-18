@@ -21,7 +21,7 @@
   * [consistency](zh-cn/p2pdb-consistency/introduce.md)
   * [discovery](zh-cn/p2pdb-discovery/introduce.md)
   * [store](zh-cn/p2pdb-store/introduce.md)
-  * [cdc](zh-cn/p2pdb-cdc/introduce.md)
+  <!-- * [cdc](zh-cn/p2pdb-cdc/introduce.md) -->
 
 * 关键设计
     * [数据库设计](zh-cn/entity/persistence.md)

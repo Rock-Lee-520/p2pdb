@@ -6,37 +6,37 @@ import (
 	function "github.com/Rock-liyi/p2pdb/infrastructure/util/function"
 )
 
-type DatabaseEntity struct {
+type Database struct {
 	DatabaseName string
 	DatabaseId   string
 	InstanceId   string
 }
 
-func NewDatabaseEntity() *DatabaseEntity {
-	return &DatabaseEntity{}
+func NewDatabase() *Database {
+	return &Database{}
 }
 
-func (i *DatabaseEntity) GetInstanceId() string {
+func (i *Database) GetInstanceId() string {
 	return i.InstanceId
 }
 
-func (i *DatabaseEntity) SetInstanceId(instanceId string) {
+func (i *Database) SetInstanceId(instanceId string) {
 	i.InstanceId = instanceId
 }
 
-func (i *DatabaseEntity) GetDatabaseName() string {
+func (i *Database) GetDatabaseName() string {
 	return i.DatabaseId
 }
 
-func (i *DatabaseEntity) SetDatabaseName(databaseName string) {
+func (i *Database) SetDatabaseName(databaseName string) {
 	i.DatabaseId = databaseName
 }
 
-func (i *DatabaseEntity) GetDatabaseId() string {
+func (i *Database) GetDatabaseId() string {
 	return i.DatabaseId
 }
 
-func (i *DatabaseEntity) SetDatabaseId(DatabaseId string) {
+func (i *Database) SetDatabaseId(DatabaseId string) {
 	i.DatabaseId = DatabaseId
 }
 

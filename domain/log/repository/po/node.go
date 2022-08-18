@@ -1,25 +1,27 @@
-package entity
+package po
 
+// Node  information_schema definition
 type Node struct {
-	NodeId       string `json:"nodeId"`
-	RequestId    string `json:"requestId"`
-	Type         string `json:"type"`
-	LogicalClock int64  `json:"logicalClock"`
-	LastNodeId   string `json:"lastNodeId"`
-	Data         Data   `json:"data"`
-	Link         Link   `json:"Links"`
+	BaseColumn
+	NodeId       string `gorm:"column:node_id"`
+	RequestId    string `gorm:"column:request_id"`
+	Type         string `gorm:"column:type"`
+	LogicalClock int64  `gorm:"column:logcal_clock"`
+	LastNodeId   string `gorm:"column:last_node_Id"`
+	TabName      string `gorm:"-"`
 }
 
 func NewNode() *Node {
 	return &Node{}
 }
 
-func (i *Node) GetNodeId() string {
-	return i.NodeId
+func (n *Node) SetTabName(TabName string) {
+	//n.TabName = TabName
+	NODE_TABLE_NAME = TabName
 }
 
-func (i *Node) SetNodeId(nodeId string) {
-	i.NodeId = nodeId
+func (n *Node) TableName() string {
+	return NODE_TABLE_NAME
 }
 
 func (i *Node) GetLastNodeId() string {
@@ -28,6 +30,14 @@ func (i *Node) GetLastNodeId() string {
 
 func (i *Node) SetLastNodeId(lastNodeId string) {
 	i.LastNodeId = lastNodeId
+}
+
+func (i *Node) GetNodeId() string {
+	return i.NodeId
+}
+
+func (i *Node) SetNodeId(nodeId string) {
+	i.NodeId = nodeId
 }
 
 func (i *Node) GetRequestId() string {

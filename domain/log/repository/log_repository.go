@@ -56,3 +56,30 @@ func CreateLinkTable(tableName string, databaseName string) bool {
 	db.Migrator().AutoMigrate(newTable)
 	return true
 }
+
+func InsertNodeLog(Po *PO.Node, tableName string, databaseName string) bool {
+	DB.SetDatabaseName(databaseName)
+	db := DB.InitDB()
+	var newTable = PO.NewNode()
+	newTable.SetTabName(tableName)
+	db.InsertIgnore(Po)
+	return true
+}
+
+func InsertDataLog(Po *PO.Data, tableName string, databaseName string) bool {
+	DB.SetDatabaseName(databaseName)
+	db := DB.InitDB()
+	var newTable = PO.NewData()
+	newTable.SetTabName(tableName)
+	db.InsertIgnore(Po)
+	return true
+}
+
+func InsertLinkLog(Po *PO.Link, tableName string, databaseName string) bool {
+	DB.SetDatabaseName(databaseName)
+	db := DB.InitDB()
+	var newTable = PO.NewLink()
+	newTable.SetTabName(tableName)
+	db.InsertIgnore(Po)
+	return true
+}

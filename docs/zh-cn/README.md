@@ -15,7 +15,7 @@
 
 
 ### 简介
-P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点数据库、它是传统数据库技术与区块链技术的结合,P2PDB基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文,使用IPFS-libp2p构建去中心化网络和IPFS-pubsub与对等节点同步数据。P2PDB愿景是打造一个工业级别的去中心化式数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和边缘计算应用程序数据存储的绝佳选择, P2PDB基于[白皮书](zh-cn/whitebook.md)实现
+P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点数据库、它是传统数据库技术与区块链技术的结合,P2PDB基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文,使用IPFS-libp2p构建去中心化网络和IPFS-pubsub与对等节点同步数据。P2PDB愿景是打造一个工业级别的去中心化式数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和边缘计算应用程序数据存储的绝佳选择, P2PDB实践基于[白皮书](zh-cn/whitebook.md)实现
 
 
 
@@ -98,7 +98,7 @@ p2pdb是一个从0到1的项目，也是较早研究去中心化数据库领域�
 
 维护人员：[@Rock](https://github.com/Rock-liyi) [@Panda](https://github.com/PandaLIU-1111) [@CbYip](https://github.com/CbYip) [@her-cat](https://github.com/her-cat)
 
-当前维护p2pdb项目的是`kkguan`这个组织,由于某些原因考虑,仓库暂为private状态
+当前维护P2PDB项目的是`kkguan`这个组织,由于某些原因考虑,仓库暂为private状态
 
 注意：项目仍然属于快速迭代阶段，意味着大部分的API都有被重构的风险, 当前可作为学习跟研究使用，不建议运用在生产上,开发团队会尽最大的努力去推进1.0.0版本的发布，但是我们无法预估什么时候发布稳定版本。
 

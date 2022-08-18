@@ -17,7 +17,7 @@
 
 
 ### 简介
-P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点数据库、它是传统数据库技术与区块链技术的结合,P2PDB基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文,使用IPFS-libp2p构建去中心化网络和IPFS-pubsub与对等节点同步数据。P2PDB愿景是打造一个工业级别的去中心化式数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和边缘计算应用程序数据存储的绝佳选择, P2PDB基于[白皮书](docs/zh-cn/whitebook.md)实现
+P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点数据库、它是传统数据库技术与区块链技术的结合,P2PDB基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文,使用IPFS-libp2p构建去中心化网络和IPFS-pubsub与对等节点同步数据。P2PDB愿景是打造一个工业级别的去中心化式数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和边缘计算应用程序数据存储的绝佳选择, P2PDB实践基于[白皮书](docs/zh-cn/whitebook.md)实现
 
 
 
@@ -27,7 +27,7 @@ P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点�
 - :white_check_mark: `p2pdb-log`: 基于[merker-crdt](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)协议实现的不可篡改日志组件
 
 
-- :white_check_mark:  `p2pdb-pubsub`: 基于[libp2p-pubsub](github.com/libp2p/go-libp2p-pubsub)实现的消息广播组件,用于对等节点中数据的主动传播,采用了Gossip流言广播算法。
+- :white_check_mark:  `p2pdb-pubsub`: 基于[libp2p-pubsub](github.com/libp2p/go-libp2p-pubsub)实现的消息广播组件,用于对等节点中数据的主动传播,采用了Gossip流言广播算法,内置了一个消息队列,可通过webhook的方式监听数据的变动,支持Websocket协议链接,将来计划对接到Kafka、RabbitMq、Nsq、Nats等主流的消息队列,实现更广泛的数据消费应用，同时它也是一个具备扩展性的模块，可以根据该模块提供的接口，进行二次开发，以满足更多的业务场景
 
 
 - :black_square_button:  `p2pdb-consistency`: 基于[crdt](https://github.com/Rock-liyi/p2pdb/blob/main/doc/zh-cn/CRDT%E5%8D%8F%E8%AE%AE.md)，ot等协议用于消息顺序一致性判断的组件,主要用于当事件没有因果关系时（并发）,作为全序判断的模块，集成了常用的顺序判断规则，如内置规则无法满足，你也可以根据该模块规范增加新的协议。
@@ -39,7 +39,7 @@ P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点�
 - :white_check_mark:  `p2pdb-store`: [p2pdb-store](https://github.com/Rock-liyi/p2pdb-store) 用于数据实际存储的模块,类似mysql的数据存储一样，提供索引检索,数据的增删改查等,这是一个抽象的模块,目的是将来如果当前的存储引擎无法满足你的存储需求,可以提供更多的DB驱动如clickhouse、postgresql、TDngine等数据库，当前提供内存存储（开发模式使用）以及文件存储（生产使用）。
 
 
-- :black_square_button:  `p2pdb-cdc`: 基于数据库事务日志Change Data Capture(CDC)技术，作为一种更为优雅和先进的实时数据同步方案，广泛用于增量数据集成中，用于进一步扩展消息的使用方式,内置了一个消息队列,可通过webhook的方式监听数据的变动,支持Websocket协议链接,将来计划对接到Kafka、RabbitMq、Nsq、Nats等主流的消息队列,实现更广泛的数据消费应用，同时它也是一个具备扩展性的模块，可以根据该模块提供的接口，进行二次开发，以满足更多的业务场景。
+<!-- - :black_square_button:  `p2pdb-cdc`: 基于数据库事务日志Change Data Capture(CDC)技术，作为一种更为优雅和先进的实时数据同步方案，广泛用于增量数据集成中，用于进一步扩展消息的使用方式,内置了一个消息队列,可通过webhook的方式监听数据的变动,支持Websocket协议链接,将来计划对接到Kafka、RabbitMq、Nsq、Nats等主流的消息队列,实现更广泛的数据消费应用，同时它也是一个具备扩展性的模块，可以根据该模块提供的接口，进行二次开发，以满足更多的业务场景。 -->
 
 
 ### 核心模块解释
@@ -183,7 +183,7 @@ p2pdb是一个从0到1的项目，也是较早研究去中心化数据库领域�
 
 维护人员：[@Rock](https://github.com/Rock-liyi) [@Panda](https://github.com/PandaLIU-1111) [@CbYip](https://github.com/CbYip)  [@her-cat](https://github.com/her-cat)
 
-当前维护p2pdb项目的是`kkguan`这个组织,由于某些原因考虑,仓库暂为private状态
+当前维护P2PDB项目的是`kkguan`这个组织,由于某些原因考虑,仓库暂为private状态
 
 注意：项目仍然属于快速迭代阶段，意味着大部分的API都有被重构的风险, 当前可作为学习跟研究使用，不建议运用在生产上,开发团队会尽最大的努力去推进1.0.0版本的发布，但是我们无法预估什么时候发布稳定版本。
 

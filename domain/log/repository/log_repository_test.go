@@ -5,7 +5,7 @@ import (
 )
 
 func TestCreateTable(t *testing.T) {
-	CreateNodeTable("node5")
-	CreateLinkTable("link5")
-	CreateDataTable("data5")
+	CreateNodeTable("node5", "test5")
+	CreateLinkTable("link5", "test5")
+	CreateDataTable("data5", "test5")
 }

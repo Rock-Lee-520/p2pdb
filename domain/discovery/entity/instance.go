@@ -1,44 +1,44 @@
 package entity
 
-type InstanceEntity struct {
+type Instance struct {
 	LocalPeerId     string
 	InstanceId      string
 	LocalHost       string
 	GlobalClockTime int64
 }
 
-func NewInstanceEntity() *InstanceEntity {
-	return &InstanceEntity{}
+func NewInstance() *Instance {
+	return &Instance{}
 }
 
-func (i *InstanceEntity) GetInstanceId() string {
+func (i *Instance) GetInstanceId() string {
 	return i.InstanceId
 }
 
-func (i *InstanceEntity) SetInstanceId(instanceId string) {
+func (i *Instance) SetInstanceId(instanceId string) {
 	i.InstanceId = instanceId
 }
 
-func (i *InstanceEntity) GetLocalPeerId() string {
+func (i *Instance) GetLocalPeerId() string {
 	return i.LocalPeerId
 }
 
-func (i *InstanceEntity) SetLocalPeerId(localPeerId string) {
+func (i *Instance) SetLocalPeerId(localPeerId string) {
 	i.LocalPeerId = localPeerId
 }
 
-func (i *InstanceEntity) GetLocalHost() string {
+func (i *Instance) GetLocalHost() string {
 	return i.LocalHost
 }
 
-func (i *InstanceEntity) SetLocalHost(localHost string) {
+func (i *Instance) SetLocalHost(localHost string) {
 	i.LocalHost = localHost
 }
 
-func (i *InstanceEntity) GetGlobalClockTime() int64 {
+func (i *Instance) GetGlobalClockTime() int64 {
 	return i.GlobalClockTime
 }
 
-func (i *InstanceEntity) SetGlobalClockTime(globalClockTime int64) {
+func (i *Instance) SetGlobalClockTime(globalClockTime int64) {
 	i.GlobalClockTime = globalClockTime
 }

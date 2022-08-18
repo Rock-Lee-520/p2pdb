@@ -27,16 +27,21 @@ func ExecuteLogFunc(message event.Message) {
 
 	var newData entity.Data
 	function.JsonDecode(message.Data, &newData)
-
+	log.Debug(newData)
 	switch message.Type {
 	case value_object.StoreCreateTableEvent:
 
 		service.InitLogTable(newData)
 		service.CreateTableByStoreEvent(newData)
 	case value_object.StoreInsertEvent:
+
+		service.InsertStoreLog(newData)
 	case value_object.StoreDeleteEvent:
+		service.InsertStoreLog(newData)
 	case value_object.StoreUpdateEvent:
+		service.InsertStoreLog(newData)
 		log.Debug(newData)
+		service.InsertStoreLog(newData)
 	}
 	//	event.RegisterSyncEvent(common_event.StoreEventType[i], ExecuteLogFunc)
 

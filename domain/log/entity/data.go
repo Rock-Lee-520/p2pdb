@@ -1,35 +1,44 @@
 package entity
 
-type DataEntity struct {
+type Data struct {
 	DataId     string   `json:"dataId"`
+	NodeId     string   `json:"nodeId"`
 	Operation  string   `json:"operation"` //create  update delete
 	Properties []string `json:"properties"`
 }
 
-func NewDataEntity() *DataEntity {
-	return &DataEntity{}
+func NewData() *Data {
+	return &Data{}
 }
 
-func (i *DataEntity) GetDataId() string {
+func (i *Data) GetDataId() string {
 	return i.DataId
 }
 
-func (i *DataEntity) SetDataId(dataId string) {
+func (i *Data) SetDataId(dataId string) {
 	i.DataId = dataId
 }
 
-func (i *DataEntity) GetOperation() string {
+func (i *Data) GetNodeId() string {
+	return i.NodeId
+}
+
+func (i *Data) SetNodeId(nodeId string) {
+	i.NodeId = nodeId
+}
+
+func (i *Data) GetOperation() string {
 	return i.Operation
 }
 
-func (i *DataEntity) SetOperation(operation string) {
+func (i *Data) SetOperation(operation string) {
 	i.Operation = operation
 }
 
-func (i *DataEntity) GetProperties() string {
-	return i.Operation
+func (i *Data) GetProperties() []string {
+	return i.Properties
 }
 
-func (i *DataEntity) SetProperties(properties []string) {
+func (i *Data) SetProperties(properties []string) {
 	i.Properties = properties
 }

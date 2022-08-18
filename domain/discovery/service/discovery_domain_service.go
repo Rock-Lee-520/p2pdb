@@ -8,10 +8,10 @@ import (
 	function "github.com/Rock-liyi/p2pdb/infrastructure/util/function"
 )
 
-func GetInstanceEntity() *entity.InstanceEntity {
+func GetInstanceEntity() *entity.Instance {
 	var instance = repository.GetInstanceInformation()
 
-	var instanceEntity = entity.NewInstanceEntity()
+	var instanceEntity = entity.NewInstance()
 	instanceEntity.SetGlobalClockTime(instance.GlobalClockTime)
 	instanceEntity.SetLocalHost(instance.LocalHost)
 	instanceEntity.SetLocalPeerId(instance.LocalPeerId)
