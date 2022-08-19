@@ -15,10 +15,10 @@ func InitLogTable(data commonEntity.Data) {
 	logService.InitLogTable(data.TableName, data.TableName)
 }
 
-func InsertStoreLog(data commonEntity.Data) {
+func InsertStoreLog(data commonEntity.Data, operation string) {
 	log.Info("call InsertStoreLog method start")
 	var nodeEntity = assembleNodeEntity()
-	var dataEntity = assembleDataEntity(nodeEntity)
+	var dataEntity = assembleDataEntity(nodeEntity, operation, data)
 	var linkEntity = assembleLinkEntity(nodeEntity)
 	var dbEntity = assembleDbEntity(data)
 
@@ -44,14 +44,14 @@ func assembleNodeEntity() *entity.Node {
 	return nodeEntity
 }
 
-func assembleDataEntity(nodeEntity *entity.Node) *entity.Data {
+func assembleDataEntity(nodeEntity *entity.Node, operation string, d commonEntity.Data) *entity.Data {
 
 	var dataEntity = entity.NewData()
 	dataEntity.SetDataId(function.GetUUID())
 	dataEntity.SetNodeId(nodeEntity.GetNodeId())
-	dataEntity.SetOperation(function.GetUUID())
+	dataEntity.SetOperation(operation)
 	var StringArray []string
-	StringArray = append(StringArray, function.GetUUID())
+	StringArray = append(StringArray, d.SQLStatement)
 	dataEntity.SetProperties(StringArray)
 	return dataEntity
 }

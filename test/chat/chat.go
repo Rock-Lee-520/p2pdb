@@ -9,7 +9,6 @@ import (
 	"os"
 	"time"
 
-	"github.com/astaxie/beego"
 	"github.com/gdamore/tcell/v2"
 	"github.com/libp2p/go-libp2p"
 	"github.com/libp2p/go-libp2p-core/host"
@@ -72,8 +71,7 @@ func main() {
 	// peersList.SetBorder(true)
 	// peersList.SetTitle("Peers")
 	// peersList.SetChangedFunc(func() { app.Draw() })
-	// beego.Debug("debug peer:")
-	// beego.Debug(peersList)
+
 	// inputCh := make(chan string, 32)
 	// inputCh <- "test3"
 	// ui := &ChatUI{
@@ -226,8 +224,7 @@ func (cr *ChatRoom) readLoop() {
 		}
 		cm := new(ChatMessage)
 		err = json.Unmarshal(msg.Data, cm)
-		beego.Debug("debug:")
-		beego.Debug(cm.Message)
+
 		if err != nil {
 			continue
 		}

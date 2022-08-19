@@ -30,18 +30,16 @@ func ExecuteLogFunc(message event.Message) {
 	log.Debug(newData)
 	switch message.Type {
 	case value_object.StoreCreateTableEvent:
-
 		service.InitLogTable(newData)
 		service.CreateTableByStoreEvent(newData)
 	case value_object.StoreInsertEvent:
-
-		service.InsertStoreLog(newData)
+		service.InsertStoreLog(newData, value_object.StoreInsertEvent)
 	case value_object.StoreDeleteEvent:
-		service.InsertStoreLog(newData)
+		service.InsertStoreLog(newData, value_object.StoreDeleteEvent)
 	case value_object.StoreUpdateEvent:
-		service.InsertStoreLog(newData)
+		service.InsertStoreLog(newData, value_object.StoreUpdateEvent)
 		log.Debug(newData)
-		service.InsertStoreLog(newData)
+		service.InsertStoreLog(newData, value_object.StoreUpdateEvent)
 	}
 	//	event.RegisterSyncEvent(common_event.StoreEventType[i], ExecuteLogFunc)
 
