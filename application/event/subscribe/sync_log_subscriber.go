@@ -41,20 +41,5 @@ func ExecuteLogFunc(message event.Message) {
 		log.Debug(newData)
 		service.InsertStoreLog(newData, value_object.StoreUpdateEvent)
 	}
-	//	event.RegisterSyncEvent(common_event.StoreEventType[i], ExecuteLogFunc)
-
-	// Register the global events on the OnSkill again
-	//event.RegisterSyncEvent(common_event.StoreEventType[i], event.GlobalSyncEvent)
 
 }
-
-// func PublishAsyncEvent(eventType string, data interface{}) {
-
-// 	var publisherFactory = &publish.LogPublisherFactory{}
-// 	if eventType == "TestPublishAsyncEvent" {
-// 		publisherFactory = &publish.LogPublisherFactory{}
-// 	}
-// 	//data = []byte{8, 0, 0, 0}
-// 	message := publisherFactory.NewMessage(eventType, data)
-// 	publisherFactory.PublishAsyncEvent(message)
-// }

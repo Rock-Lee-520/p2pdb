@@ -5,6 +5,8 @@ type Instance struct {
 	InstanceId      string
 	LocalHost       string
 	GlobalClockTime int64
+	LocalPublicKey  string
+	LocalPrivateKey string
 }
 
 func NewInstance() *Instance {

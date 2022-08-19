@@ -16,5 +16,5 @@ func TestInsertStoreLog(t *testing.T) {
 	data.DatabaseName = "test6"
 	data.TableName = "test6"
 	data.DMLType = "insert"
-	InsertStoreLog(*data)
+	InsertStoreLog(*data, data.DMLType)
 }

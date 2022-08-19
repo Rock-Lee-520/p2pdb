@@ -7,7 +7,7 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func StartCli() {
+func Start() {
 	environment := conf.GetEnv()
 	// do something here to set environment depending on an environment variable
 	// or command-line flag

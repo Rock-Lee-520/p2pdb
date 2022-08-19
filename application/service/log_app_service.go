@@ -30,8 +30,8 @@ func InsertStoreLog(data commonEntity.Data, operation string) {
 
 func assembleDbEntity(data commonEntity.Data) *entity.DB {
 	var dbEntity = entity.NewDB()
-	dbEntity.SetDatabaseName(data.TableName)
-	dbEntity.SetTableName(data.TableName)
+	dbEntity.SetDatabaseName(data.GetDatabaseName())
+	dbEntity.SetTableName(data.GetTableName())
 	return dbEntity
 }
 
@@ -50,8 +50,11 @@ func assembleDataEntity(nodeEntity *entity.Node, operation string, d commonEntit
 	dataEntity.SetDataId(function.GetUUID())
 	dataEntity.SetNodeId(nodeEntity.GetNodeId())
 	dataEntity.SetOperation(operation)
-	var StringArray []string
-	StringArray = append(StringArray, d.SQLStatement)
+	var Property entity.Properties
+	var Properties []entity.Properties
+	Property.SetSQLStatement(d.GetSQLStatement())
+	Property.SetRowID(d.GetRowID())
+	StringArray := append(Properties, Property)
 	dataEntity.SetProperties(StringArray)
 	return dataEntity
 }
@@ -61,7 +64,7 @@ func assembleLinkEntity(nodeEntity *entity.Node) *entity.Link {
 	var instanceEntity = discoveryService.GetInstanceEntity()
 	linkEntity.SetNodeId(nodeEntity.GetNodeId())
 	linkEntity.SetLinkId(function.GetUUID())
-	linkEntity.SetInstanceId(instanceEntity.InstanceId)
+	linkEntity.SetInstanceId(instanceEntity.GetInstanceId())
 	// TODO: did not set real  values
 	linkEntity.SetTableId(function.GetUUID())
 	linkEntity.SetLastNodeId(function.GetUUID())

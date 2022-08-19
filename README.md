@@ -73,7 +73,7 @@ git  clone  https://github.com/Rock-liyi/p2pdb.git
 ```
 go mod init 
 go mod tidy
-go run  interface/cli/start.go
+go run  p2pdb.go
 
 ```
 
