@@ -1,0 +1,60 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "her-cat",
+      "name": "她和她的猫",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18332628?v=4",
+      "profile": "https://github.com/her-cat",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    },
+        {
+         "login": "Rock-liyi",
+      "name": "Rock",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35133768?v=4",
+      "profile": "https://github.com/Rock-liyi",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    },
+
+      {
+      "login": "PandaLIU-1111",
+      "name": "pandaLIU",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26201936?v=4",
+      "profile": "https://github.com/PandaLIU-1111",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    },
+    {
+      "login": "CbYip",
+      "name": "CbYip",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31086265?v=4",
+      "profile": "https://github.com/CbYip",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "p2pdb",
+  "projectOwner": "Rock-liyi",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
