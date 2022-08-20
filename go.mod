@@ -3,7 +3,7 @@ module github.com/Rock-liyi/p2pdb
 go 1.17
 
 require (
-	github.com/Rock-liyi/p2pdb-pubsub v0.0.7
+	github.com/Rock-liyi/p2pdb-pubsub v0.0.8
 	github.com/Rock-liyi/p2pdb-server v0.1.2
 	github.com/Rock-liyi/p2pdb-store v0.1.10
 	github.com/caarlos0/env/v6 v6.9.3
@@ -24,15 +24,15 @@ require (
 	gorm.io/gorm v1.23.8
 )
 
-replace github.com/Rock-liyi/p2pdb => ../p2pdb
+// replace github.com/Rock-liyi/p2pdb => ../p2pdb
 
-replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
+// replace github.com/Rock-liyi/p2pdb-store => ../p2pdb-store
 
-replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
+// replace github.com/Rock-liyi/p2pdb-server => ../p2pdb-server
 
-replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
+// replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
 
-replace github.com/Rock-liyi/p2pdb-discovery => ../p2pdb-discovery
+// replace github.com/Rock-liyi/p2pdb-discovery => ../p2pdb-discovery
 
 require (
 	github.com/Rock-liyi/p2pdb-discovery v0.0.1 // indirect

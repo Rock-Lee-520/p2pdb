@@ -13,7 +13,7 @@ import (
 var Pub PS.PubSub
 
 func init() {
-
+	Pub = service.InitPub()
 	//	debug.Dump("new event.Driver======")
 	//d := new(event.Driver)
 	for i := 0; i < len(value_object.StoreEventType); i++ {
@@ -30,24 +30,25 @@ func ExecuteLogFunc(message event.Message) {
 	log.Debug("call ExecuteLogFunc, message is ")
 
 	var newData entity.Data
-	function.JsonDecode(message.Data, &newData)
-	log.Debug(newData)
 	switch message.Type {
 	case value_object.StoreCreateTableEvent:
+		function.JsonDecode(message.Data, &newData)
 		service.InitLogTable(newData)
 		service.CreateTableByStoreEvent(newData)
 	case value_object.StoreInsertEvent:
+		function.JsonDecode(message.Data, &newData)
 		service.InsertStoreLog(newData, value_object.StoreInsertEvent)
 	case value_object.StoreDeleteEvent:
+		function.JsonDecode(message.Data, &newData)
 		service.InsertStoreLog(newData, value_object.StoreDeleteEvent)
 	case value_object.StoreUpdateEvent:
-		service.InsertStoreLog(newData, value_object.StoreUpdateEvent)
-		log.Debug(newData)
+		function.JsonDecode(message.Data, &newData)
 		service.InsertStoreLog(newData, value_object.StoreUpdateEvent)
 	}
-	Pub = service.InitPub()
+	log.Debug(newData)
+
 	//	PublishAsyncEvent(message.Type, message)
-	Pub.Pub(PS.DataMessage{Type: Pub.GetType(), Data: newData})
+	Pub.Pub(PS.DataMessage{Type: Pub.GetType(), Data: message.Data})
 }
 
 // func PublishAsyncEvent(eventType string, data interface{}) {

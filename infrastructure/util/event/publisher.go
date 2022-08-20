@@ -20,4 +20,5 @@ func PublishSyncEvent(eventType string, data []byte) {
 	// var message event.Message{Type:eventType,Data:Data}
 
 	event.PublishSyncEvent(eventType, event.Message{Type: eventType, Data: data})
+
 }
