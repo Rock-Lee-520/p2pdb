@@ -1,6 +1,7 @@
 package subscribe
 
 import (
+	PS "github.com/Rock-liyi/p2pdb-pubsub"
 	"github.com/Rock-liyi/p2pdb/application/event"
 	"github.com/Rock-liyi/p2pdb/application/service"
 	entity "github.com/Rock-liyi/p2pdb/domain/common/entity"
@@ -9,7 +10,10 @@ import (
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
+var Pub PS.PubSub
+
 func init() {
+
 	//	debug.Dump("new event.Driver======")
 	//d := new(event.Driver)
 	for i := 0; i < len(value_object.StoreEventType); i++ {
@@ -41,5 +45,18 @@ func ExecuteLogFunc(message event.Message) {
 		log.Debug(newData)
 		service.InsertStoreLog(newData, value_object.StoreUpdateEvent)
 	}
-
+	Pub = service.InitPub()
+	//	PublishAsyncEvent(message.Type, message)
+	Pub.Pub(PS.DataMessage{Type: Pub.GetType(), Data: newData})
 }
+
+// func PublishAsyncEvent(eventType string, data interface{}) {
+
+// 	var publisherFactory = &publish.LogPublisherFactory{}
+// 	if eventType == "TestPublishAsyncEvent" {
+// 		publisherFactory = &publish.LogPublisherFactory{}
+// 	}
+// 	//data = []byte{8, 0, 0, 0}
+// 	message := publisherFactory.NewMessage(eventType, data)
+// 	publisherFactory.PublishAsyncEvent(message)
+// }

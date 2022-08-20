@@ -39,7 +39,7 @@ func InsertDataLog(data *entity.Data, db *entity.DB) {
 	var properties = function.JsonEncode(data.GetProperties())
 	DataPO.SetProperties(function.ToString(properties))
 	tableName := "data_" + db.GetTableName()
-	repository.InsertDataLog(DataPO, tableName, db.GetDatabaseName())
+	repository.InsertDataLog(DataPO, tableName, db.GetTableName())
 }
 
 func InsertNodeLog(node *entity.Node, db *entity.DB) {
@@ -50,7 +50,7 @@ func InsertNodeLog(node *entity.Node, db *entity.DB) {
 	NodePO.SetLastNodeId(node.GetLastNodeId())
 	NodePO.SetType(node.GetType())
 	tableName := "node_" + db.GetTableName()
-	repository.InsertNodeLog(NodePO, tableName, db.GetDatabaseName())
+	repository.InsertNodeLog(NodePO, tableName, db.GetTableName())
 }
 
 func InsertLinkLog(link *entity.Link, db *entity.DB) {
@@ -62,5 +62,5 @@ func InsertLinkLog(link *entity.Link, db *entity.DB) {
 	LinkPO.SetNodeId(link.GetNodeId())
 	LinkPO.SetTableId(link.GetTableId())
 	tableName := "link_" + db.GetTableName()
-	repository.InsertLinkLog(LinkPO, tableName, db.GetDatabaseName())
+	repository.InsertLinkLog(LinkPO, tableName, db.GetTableName())
 }

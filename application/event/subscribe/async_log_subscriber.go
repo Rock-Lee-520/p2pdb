@@ -18,7 +18,6 @@ func init() {
 		eventFunc.RegisterAsyncEvent(topic, chanEvent)
 	}
 
-	// service.InitPub(pub)
 	go func() {
 		for {
 			select {
@@ -35,4 +34,5 @@ func init() {
 func execute(data event.DataEvent) {
 	log.Debug("call execute method=====")
 	go eventFunc.PrintDataAsyncEvent(topic, data)
+
 }

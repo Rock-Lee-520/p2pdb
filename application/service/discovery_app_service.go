@@ -1,10 +1,6 @@
 package service
 
 import (
-	"context"
-	"encoding/json"
-	"time"
-
 	PS "github.com/Rock-liyi/p2pdb-pubsub"
 	"github.com/Rock-liyi/p2pdb/application/event"
 	DiscoveryService "github.com/Rock-liyi/p2pdb/domain/discovery/service"
@@ -34,10 +30,9 @@ func InitSub() string {
 	return instanceId
 }
 
-func InitPub(pub PS.PubSub) {
-
-	pub.SetType("p2pdb")
-	pub.InitPub()
+func InitPub() PS.PubSub {
+	Sub.SetType(topicType)
+	return Sub.InitPub()
 }
 
 func InitDiscovery(peerId string) string {
@@ -74,16 +69,17 @@ func execute(dataEvent event.DataEvent, topicType string, libpubsubTpoic *libpub
 	log.Debug("call execute method=====")
 	log.Debug(dataEvent)
 	eventFunc.PrintDataAsyncEvent(topicType, dataEvent)
-	ctx := context.Background()
+	//ctx := context.Background()
 
 	//for {
-	time.Sleep(1 * time.Second)
+	// time.Sleep(1 * time.Second)
 
-	msgBytes, err := json.Marshal(dataEvent)
-	if err != nil {
-		panic(err)
-	}
-	libpubsubTpoic.Publish(ctx, msgBytes)
-	time.Sleep(1 * time.Second)
+	// msgBytes, err := json.Marshal(dataEvent)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// log.Debug(msgBytes)
+	// //libpubsubTpoic.Publish(ctx, msgBytes)
+	// time.Sleep(1 * time.Second)
 	//}
 }
