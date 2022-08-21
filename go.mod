@@ -3,7 +3,8 @@ module github.com/Rock-liyi/p2pdb
 go 1.17
 
 require (
-	github.com/Rock-liyi/p2pdb-pubsub v0.0.8
+	github.com/Rock-liyi/p2pdb-discovery v0.0.1
+	github.com/Rock-liyi/p2pdb-pubsub v0.0.9
 	github.com/Rock-liyi/p2pdb-server v0.1.2
 	github.com/Rock-liyi/p2pdb-store v0.1.10
 	github.com/astaxie/beego v1.12.3
@@ -31,7 +32,6 @@ require (
 //replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
 
 require (
-	github.com/Rock-liyi/p2pdb-discovery v0.0.1 // indirect
 	github.com/benbjohnson/clock v1.3.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/btcsuite/btcd v0.22.1 // indirect
