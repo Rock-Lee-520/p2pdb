@@ -18,7 +18,7 @@ func init() {
 		eventFunc.RegisterAsyncEvent(topic, chanEvent)
 	}
 
-	// service.InitPub(pub)
+	// service.InitPubSub(pub)
 	go func() {
 		for {
 			select {
