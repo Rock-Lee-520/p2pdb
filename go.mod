@@ -28,7 +28,7 @@ require (
 	gorm.io/gorm v1.23.8
 )
 
-replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
+//replace github.com/Rock-liyi/p2pdb-pubsub => ../p2pdb-pubsub
 
 require (
 	github.com/Rock-liyi/p2pdb-discovery v0.0.1 // indirect
