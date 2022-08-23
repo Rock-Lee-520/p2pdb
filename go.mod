@@ -3,7 +3,7 @@ module github.com/Rock-liyi/p2pdb
 go 1.17
 
 require (
-	github.com/Rock-liyi/p2pdb-pubsub v0.0.8
+	github.com/Rock-liyi/p2pdb-pubsub master
 	github.com/Rock-liyi/p2pdb-server v0.1.2
 	github.com/Rock-liyi/p2pdb-store v0.1.12-0.20220819111213-063682aa9f02
 	github.com/caarlos0/env/v6 v6.9.3
