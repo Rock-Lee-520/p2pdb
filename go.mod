@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/Rock-liyi/p2pdb-pubsub v0.0.8
 	github.com/Rock-liyi/p2pdb-server v0.1.2
-	github.com/Rock-liyi/p2pdb-store v0.1.10
+	github.com/Rock-liyi/p2pdb-store v0.1.12-0.20220819111213-063682aa9f02
 	github.com/caarlos0/env/v6 v6.9.3
 	github.com/favframework/debug v0.0.0-20150708094948-5c7e73aafb21
 	github.com/gdamore/tcell/v2 v2.5.1

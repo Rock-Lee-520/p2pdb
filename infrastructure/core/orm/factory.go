@@ -63,8 +63,7 @@ func (db *CreateDBFactory) CreateDBConnect(db_type string) DBconnect {
 	return orm
 }
 
-func (db *CreateDBFactory) InitDB() DBconnect {
-	var connect = db.CreateDBConnect("sqlite")
+func (db *CreateDBFactory) GetDatabasePath() string {
 
 	var dataName string
 	var dataPath string
@@ -102,7 +101,12 @@ func (db *CreateDBFactory) InitDB() DBconnect {
 	}
 
 	address := dataPath + dataName + ".db"
+	return address
+}
 
+func (db *CreateDBFactory) InitDB() DBconnect {
+	var connect = db.CreateDBConnect("sqlite")
+	address := db.GetDatabasePath()
 	log.Info("database address is " + address)
 	connect.Init(address, 0, "", "")
 	connect.Connect()

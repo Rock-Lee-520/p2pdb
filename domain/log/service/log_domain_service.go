@@ -13,6 +13,11 @@ func InitLogTable(tableName string, databaseName string) {
 	CreateLinkTable(tableName, databaseName)
 }
 
+func RemoveLogTable(tableName string, databaseName string) {
+	var databasePath = repository.GetDatabasePath(databaseName)
+	repository.RemoveDatabase(databasePath)
+}
+
 func CreateNodeTable(tableName string, databaseName string) {
 	tableName = "node_" + tableName
 	repository.CreateNodeTable(tableName, databaseName)

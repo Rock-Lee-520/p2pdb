@@ -11,8 +11,12 @@ import (
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
-func InitLogTable(data commonEntity.Data) {
+func CreateStoteLogTable(data commonEntity.Data) {
 	logService.InitLogTable(data.TableName, data.TableName)
+}
+
+func DropStoteLogTable(data commonEntity.Data) {
+	logService.RemoveLogTable(data.GetTableName(), data.GetDatabaseName())
 }
 
 func InsertStoreLog(data commonEntity.Data, operation string) {

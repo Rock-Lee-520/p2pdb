@@ -4,6 +4,7 @@
   * [白皮书](zh-cn/whitebook.md)
   * [贡献指南](en/CONTRIBUTING.md)
   * [术语](zh-cn/background/term.md)
+  * [路线图](zh-cn/roadmap.md)
 
 * 安装使用
 

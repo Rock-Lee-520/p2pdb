@@ -1,8 +1,11 @@
 package repository
 
 import (
+	"log"
+
 	PO "github.com/Rock-liyi/p2pdb/domain/log/repository/po"
 	orm "github.com/Rock-liyi/p2pdb/infrastructure/core/orm"
+	"github.com/Rock-liyi/p2pdb/infrastructure/util/function"
 )
 
 var DB *orm.CreateDBFactory = new(orm.CreateDBFactory)
@@ -12,23 +15,18 @@ func init() {
 	DB.SetIsInternalStore(true)
 }
 
-// func CreateNodeTable() bool {
-// 	db := DB.InitDB()
-// 	db.Migrator().CreateTable(&PO.Node{})
-// 	return true
-// }
+func RemoveDatabase(databasePath string) {
+	err := function.RemoveFile(databasePath)
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+}
 
-// func CreateDataTable() bool {
-// 	db := DB.InitDB()
-// 	db.Migrator().CreateTable(&PO.Data{})
-// 	return true
-// }
-
-// func CreateLinkTable() bool {
-// 	db := DB.InitDB()
-// 	db.Migrator().CreateTable(&PO.Link{})
-// 	return true
-// }
+func GetDatabasePath(databaseName string) string {
+	DB.InitDB()
+	DB.SetDatabaseName(databaseName)
+	return DB.GetDatabasePath()
+}
 
 func CreateNodeTable(tableName string, databaseName string) bool {
 	DB.SetDatabaseName(databaseName)

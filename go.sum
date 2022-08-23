@@ -64,6 +64,7 @@ github.com/Rock-liyi/p2pdb v0.0.5/go.mod h1:/p2q8cBg0SJwhwD4tB7aOyOkEaQysMAL0+7t
 github.com/Rock-liyi/p2pdb v0.0.6/go.mod h1:5+Gy4xSO8lr0ChVMhbcL9dDU9V35GILhqeGeaIgUQ2Y=
 github.com/Rock-liyi/p2pdb v0.0.7/go.mod h1:Mgky2KbRHaO1DggGuMgK5jS3XhB1ke4u1CU7mqlu7mo=
 github.com/Rock-liyi/p2pdb v0.0.8/go.mod h1:2s+nbugexvK/IiSVaCpLUqXwvyE/+UDsY+TIChIyvj4=
+github.com/Rock-liyi/p2pdb v0.0.10/go.mod h1:bR1qbOFaL7n3PjofH2g4aZb9g5r8vin9xxLJdpFaCKM=
 github.com/Rock-liyi/p2pdb-discovery v0.0.0-20220722063818-588bb555997d/go.mod h1:/R2QYuoOl4lI3j0rP6dtQOFES5R4IoFz51/6hyNAk+Q=
 github.com/Rock-liyi/p2pdb-discovery v0.0.1 h1:eFcv3XxoBF1s8x1R/sRZCSBUfpEz6sv31RPfqxDym88=
 github.com/Rock-liyi/p2pdb-discovery v0.0.1/go.mod h1:/R2QYuoOl4lI3j0rP6dtQOFES5R4IoFz51/6hyNAk+Q=
@@ -72,6 +73,7 @@ github.com/Rock-liyi/p2pdb-log v0.0.0-20220718124543-0bcc189e2a66 h1:1WUjJsfS7b1
 github.com/Rock-liyi/p2pdb-log v0.0.0-20220718124543-0bcc189e2a66/go.mod h1:382zjlMJyya4LWy5nwZJnX1CXohxouPy0sHnBNG/7AM=
 github.com/Rock-liyi/p2pdb-pubsub v0.0.5/go.mod h1:Txhz6RD4YKZvzqFPa9gl87x96R4m/A3PP29QzQzUPYc=
 github.com/Rock-liyi/p2pdb-pubsub v0.0.6/go.mod h1:n/j6J1qzXnJLabrGY9iceUR8Frw/U8saehIO/VRgPVY=
+github.com/Rock-liyi/p2pdb-pubsub v0.0.7/go.mod h1:Hyg4WABLRdp7eBnr6yFlthtjKebHXaN4a/QhU5uOHrE=
 github.com/Rock-liyi/p2pdb-pubsub v0.0.8 h1:/tWpoVX+AJUSjJ/1zUj7G8KAzOyF/UYizxjHTC2yu0U=
 github.com/Rock-liyi/p2pdb-pubsub v0.0.8/go.mod h1:Hyg4WABLRdp7eBnr6yFlthtjKebHXaN4a/QhU5uOHrE=
 github.com/Rock-liyi/p2pdb-server v0.1.2 h1:WnWOoW7ktkEi8IgV6sHChxwKWwlNGuAvC23AT+Ck2mc=
@@ -81,8 +83,9 @@ github.com/Rock-liyi/p2pdb-store v0.1.2/go.mod h1:Fy2jeEzhc6TII0K6mC4PtyU0oAJI9d
 github.com/Rock-liyi/p2pdb-store v0.1.6/go.mod h1:BDxaWCViejGs8SRlnbXS2OwSibvBKFVl4Ck0uCWX0XA=
 github.com/Rock-liyi/p2pdb-store v0.1.7/go.mod h1:PbT9bko8/GD8h4Q/I9V56Zn6cp3QpYZUhzBDAYFSwko=
 github.com/Rock-liyi/p2pdb-store v0.1.8/go.mod h1:mgCOQ44ycqrL6PMHUVXYqlvCiaBMnbUJ4VudECCdGe4=
-github.com/Rock-liyi/p2pdb-store v0.1.10 h1:MU/uNMiJHqDtKqgkLH616wBIdqlBSNh1IhYdo07mysw=
 github.com/Rock-liyi/p2pdb-store v0.1.10/go.mod h1:ckwZBxp9BhTFuS8/JFgLZnhpZhj107iEBFIq+Mn2cl4=
+github.com/Rock-liyi/p2pdb-store v0.1.12-0.20220819111213-063682aa9f02 h1:W3dAye+c4YkdR6RX0pzGlDfq+saKJNigmQDjSHWap0Y=
+github.com/Rock-liyi/p2pdb-store v0.1.12-0.20220819111213-063682aa9f02/go.mod h1:1ADEsLMn9VND1Z07UAVOYIaPqM6qBIZUf+QgygfbmCU=
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
 github.com/Shopify/sarama v1.30.0/go.mod h1:zujlQQx1kzHsh4jfV1USnptCQrHAEZ2Hk8fTKCulPVs=
 github.com/Shopify/toxiproxy v2.1.4+incompatible/go.mod h1:OXgGpZ6Cli1/URJOF1DMxUHB2q5Ap20/P/eIdh4G0pI=

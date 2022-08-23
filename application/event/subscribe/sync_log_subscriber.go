@@ -2,10 +2,10 @@ package subscribe
 
 import (
 	PS "github.com/Rock-liyi/p2pdb-pubsub"
+	"github.com/Rock-liyi/p2pdb-store/entity/value_object"
 	"github.com/Rock-liyi/p2pdb/application/event"
 	"github.com/Rock-liyi/p2pdb/application/service"
 	entity "github.com/Rock-liyi/p2pdb/domain/common/entity"
-	value_object "github.com/Rock-liyi/p2pdb/domain/common/entity/value_object"
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/function"
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
@@ -33,8 +33,11 @@ func ExecuteLogFunc(message event.Message) {
 	switch message.Type {
 	case value_object.StoreCreateTableEvent:
 		function.JsonDecode(message.Data, &newData)
-		service.InitLogTable(newData)
-		service.CreateTableByStoreEvent(newData)
+		service.CreateStoteLogTable(newData)
+		//service.CreateTableByStoreEvent(newData)
+	case value_object.StoreDropTableEvent:
+		function.JsonDecode(message.Data, &newData)
+		service.DropStoteLogTable(newData)
 	case value_object.StoreInsertEvent:
 		function.JsonDecode(message.Data, &newData)
 		service.InsertStoreLog(newData, value_object.StoreInsertEvent)
@@ -47,17 +50,5 @@ func ExecuteLogFunc(message event.Message) {
 	}
 	log.Debug(newData)
 
-	//	PublishAsyncEvent(message.Type, message)
 	Pub.Pub(PS.DataMessage{Type: Pub.GetType(), Data: message.Data})
 }
-
-// func PublishAsyncEvent(eventType string, data interface{}) {
-
-// 	var publisherFactory = &publish.LogPublisherFactory{}
-// 	if eventType == "TestPublishAsyncEvent" {
-// 		publisherFactory = &publish.LogPublisherFactory{}
-// 	}
-// 	//data = []byte{8, 0, 0, 0}
-// 	message := publisherFactory.NewMessage(eventType, data)
-// 	publisherFactory.PublishAsyncEvent(message)
-// }
