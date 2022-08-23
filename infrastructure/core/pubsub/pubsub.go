@@ -6,6 +6,6 @@ import (
 
 func Publish(topic string, data interface{}) {
 	var PubSub pb.PubSub
-	PubSub.InitPub()
+	PubSub.InitPubSub()
 	PubSub.Pub(pb.DataMessage{Type: topic, Data: "123"})
 }
