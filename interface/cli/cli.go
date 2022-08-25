@@ -19,8 +19,8 @@ func Start() {
 	}
 
 	//start a subscribe service	 for the application
-	// the InitSub method needs to be  called before  the InitStore method
-	var instanceId = service.InitSub()
+	// the InitPubSub method needs to be  called before  the InitStore method
+	var instanceId = service.InitPubSub()
 
 	//init database and table configured formatters
 	service.InitStore(instanceId)

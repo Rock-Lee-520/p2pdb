@@ -1,6 +1,8 @@
 package service
 
 import (
+	discovery "github.com/Rock-liyi/p2pdb-discovery"
+
 	PS "github.com/Rock-liyi/p2pdb-pubsub"
 	"github.com/Rock-liyi/p2pdb/application/event"
 	DiscoveryService "github.com/Rock-liyi/p2pdb/domain/discovery/service"
@@ -8,31 +10,36 @@ import (
 	libpubsub "github.com/libp2p/go-libp2p-pubsub"
 )
 
-var Sub PS.PubSub
+var PubSub PS.PubSub
 
 var topicType = "p2pdb"
 
-func InitSub() string {
+const Address string = "/ip4/0.0.0.0/tcp/0"
 
-	Sub.SetType(topicType)
-	var subscription, libpubsubTpoic, err = Sub.Sub()
+func InitPubSub() string {
+
+	host, err := discovery.NewDiscoveryFactory().Create(Address)
 	if err != nil {
 		panic(err)
 	}
-	//resgister a discovery config for the application
-	var instanceId = InitDiscovery(Sub.Host.ID().String())
-	//Sub.Pub(PS.DataMessage{Type: "InitSub", Data: "test InitSub"})
-	InitLogPublisher(libpubsubTpoic)
+
+	//PubSub.SetType(topicType)
+	//PubSub.SetHost(host)
+	log.Debug("start init PubSub module")
+	PubSub = PubSub.InitPubSub(topicType, host)
+	log.Debug("init PubSub module finished")
+	//var subscription, libpubsubTpoic, err = PubSub.Sub()
+	//if err != nil {
+	//	panic(err)
+	//}
+	// resgister a discovery config for the application
+	var instanceId = InitDiscovery(PubSub.Host.ID().String())
+	//PubSub.Pub(PS.DataMessage{Type: "InitPubSub", Data: "test InitPubSub"})
+	InitLogPublisher(PubSub.Topic)
 
 	//subscribe.InitAsyncLogSubscriber()
 
-	go Sub.StartNewSubscribeService(subscription)
 	return instanceId
-}
-
-func InitPub() PS.PubSub {
-	Sub.SetType(topicType)
-	return Sub.InitPub()
 }
 
 func InitDiscovery(peerId string) string {
