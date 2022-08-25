@@ -16,7 +16,7 @@ var topicType = "p2pdb"
 
 const Address string = "/ip4/0.0.0.0/tcp/0"
 
-func InitPubSub() string {
+func InitPubSub() (PS.PubSub, string) {
 
 	host, err := discovery.NewDiscoveryFactory().Create(Address)
 	if err != nil {
@@ -39,7 +39,7 @@ func InitPubSub() string {
 
 	//subscribe.InitAsyncLogSubscriber()
 
-	return instanceId
+	return PubSub, instanceId
 }
 
 func InitDiscovery(peerId string) string {
