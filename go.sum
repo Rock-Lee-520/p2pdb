@@ -74,8 +74,8 @@ github.com/Rock-liyi/p2pdb-log v0.0.0-20220718124543-0bcc189e2a66/go.mod h1:382z
 github.com/Rock-liyi/p2pdb-pubsub v0.0.5/go.mod h1:Txhz6RD4YKZvzqFPa9gl87x96R4m/A3PP29QzQzUPYc=
 github.com/Rock-liyi/p2pdb-pubsub v0.0.6/go.mod h1:n/j6J1qzXnJLabrGY9iceUR8Frw/U8saehIO/VRgPVY=
 github.com/Rock-liyi/p2pdb-pubsub v0.0.7/go.mod h1:Hyg4WABLRdp7eBnr6yFlthtjKebHXaN4a/QhU5uOHrE=
-github.com/Rock-liyi/p2pdb-pubsub v0.0.8 h1:/tWpoVX+AJUSjJ/1zUj7G8KAzOyF/UYizxjHTC2yu0U=
-github.com/Rock-liyi/p2pdb-pubsub v0.0.8/go.mod h1:Hyg4WABLRdp7eBnr6yFlthtjKebHXaN4a/QhU5uOHrE=
+github.com/Rock-liyi/p2pdb-pubsub v0.0.10-0.20220821070603-71621ca6f062 h1:2w4rrCMXWhgefA4eXny/0z+yFoc+QkIBznKHsnLLzWY=
+github.com/Rock-liyi/p2pdb-pubsub v0.0.10-0.20220821070603-71621ca6f062/go.mod h1:6OaBC51gAkOqd90TzkbraL8SFymvpjmi26JA0cJWFlE=
 github.com/Rock-liyi/p2pdb-server v0.1.2 h1:WnWOoW7ktkEi8IgV6sHChxwKWwlNGuAvC23AT+Ck2mc=
 github.com/Rock-liyi/p2pdb-server v0.1.2/go.mod h1:chCGBC9tGlpv8Oo27CLkyKQlpVGSRrJWgFXQk4Z6Ooc=
 github.com/Rock-liyi/p2pdb-store v0.1.0/go.mod h1:a6ONL/QOz18Z0EEJM/niNjAfZUqd7zHbG8DAMdzFp6g=

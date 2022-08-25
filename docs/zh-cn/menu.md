@@ -30,15 +30,17 @@
 
 
 * 使用案例
+
     * [实现一款去中心化的邮件系统](zh-cn/case/email.md)
     * [实现一款去中心化的聊天系统](zh-cn/case/chat.md)
     * [实现一款去中心化的笔记系统](zh-cn/case/note.md)
 
-
+<!-- 
 * 安全控制
-  * [权限控制](zh-cn/safety/authority.md)
+  * [权限控制](zh-cn/safety/authority.md) -->
 
 * 其它资料
+
   * [其它资料](zh-cn/others.md)
   * [兰伯特时钟](zh-cn/clock/lamportclock.md)
   * [CRDT](zh-cn/clock/CRDT.md)

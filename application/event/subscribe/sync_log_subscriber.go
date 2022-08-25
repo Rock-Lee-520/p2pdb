@@ -13,7 +13,7 @@ import (
 var Pub PS.PubSub
 
 func init() {
-	Pub = service.InitPub()
+	Pub = service.GetPubSub()
 	//	debug.Dump("new event.Driver======")
 	//d := new(event.Driver)
 	for i := 0; i < len(value_object.StoreEventType); i++ {
