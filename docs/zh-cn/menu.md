@@ -6,15 +6,20 @@
   * [术语](zh-cn/background/term.md)
   * [路线图](zh-cn/roadmap.md)
 
-* 安装使用
+* 快速开始
 
-  * [快速开始](zh-cn/install/start.md)
+  * [开始安装](zh-cn/install/start.md)
   * [常见问题](zh-cn/application/issue.md)
-  * [语法说明](zh-cn/application/syntax.md)
+
   <!-- * [已支持语法](zh-cn/application/supported.md) -->
   * [客户端连接](zh-cn/application/connection_clinets.md)
 
-  
+* 使用教程
+  * [语法说明](zh-cn/application/syntax.md)
+  * [支持语法](zh-cn/application/supported.md) 
+  * [库相关](zh-cn/application/database.md) 
+  * [表相关](zh-cn/application/table.md) 
+
 * 核心模块
   * [server](zh-cn/p2pdb-server/introduce.md)
   * [log](zh-cn/p2pdb-log/introduce.md)

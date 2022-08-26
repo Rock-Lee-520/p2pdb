@@ -10,10 +10,11 @@ import (
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
-var Pub PS.PubSub
+var PubSub PS.PubSub
 
 func init() {
-	Pub = service.GetPubSub()
+	PubSub = service.GetPubSub()
+
 	//	debug.Dump("new event.Driver======")
 	//d := new(event.Driver)
 	for i := 0; i < len(value_object.StoreEventType); i++ {
@@ -50,5 +51,5 @@ func ExecuteLogFunc(message event.Message) {
 	}
 	log.Debug(newData)
 
-	Pub.Pub(PS.DataMessage{Type: Pub.GetType(), Data: message.Data})
+	PubSub.Pub(PS.DataMessage{Type: PubSub.GetType(), Data: message.Data})
 }

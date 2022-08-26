@@ -25,7 +25,7 @@
 ## 客户端使用例子
 
 ### mysql-cli
-```
+```bash
 mysql -h 127.0.0.1 -u root -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -49,24 +49,11 @@ mysql> show databases;
 +--------------------+
 2 rows in set (0.00 sec)
 
-mysql> use p2pdb;
-Reading table information for completion of table and column names
-You can turn off this feature to get a quicker startup with -A
-
-Database changed
-mysql> show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| p2pdb              |
-+--------------------+
-2 rows in set (0.00 sec)
 ```
 
 ### pymysql
 
-```python
+```bash
 import pymysql.cursors
 
 connection = pymysql.connect(host='127.0.0.1',
@@ -88,7 +75,7 @@ finally:
 
 ### Python mysql-connector
 
-```python
+```bash
 import mysql.connector
 
 connection = mysql.connector.connect(host='127.0.0.1',
@@ -110,7 +97,7 @@ finally:
 
 ### Python sqlalchemy
 
-```python
+```bash
 import pandas as pd
 import sqlalchemy
 
@@ -123,7 +110,7 @@ with engine.connect() as conn:
 
 ### ruby-mysql
 
-```ruby
+```bash
 require "mysql"
 
 conn = Mysql::new("127.0.0.1", "root", "", "mydb")
@@ -176,7 +163,7 @@ connection.end();
 
 ### MysqlConnector
 
-```csharp
+```bash
 using MySql.Data.MySqlClient;
 using System.Threading.Tasks;
 
@@ -207,7 +194,7 @@ namespace something
 
 ### mariadb-java-client
 
-```java
+```bash
 package org.testing.mariadbjavaclient;
 
 import java.sql.*;
@@ -260,7 +247,7 @@ func main() {
 
 ### mysql-connector-c
 
-```c
+```bash
 #include <my_global.h>
 #include <mysql.h>
 
