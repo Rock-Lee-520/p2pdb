@@ -35,6 +35,7 @@ func ExecuteLogFunc(message event.Message) {
 	case value_object.StoreCreateTableEvent:
 		function.JsonDecode(message.Data, &newData)
 		service.CreateStoteLogTable(newData)
+		service.AddTableRecord(newData)
 		//service.CreateTableByStoreEvent(newData)
 	case value_object.StoreDropTableEvent:
 		function.JsonDecode(message.Data, &newData)

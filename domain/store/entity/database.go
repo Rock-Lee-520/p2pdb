@@ -10,37 +10,46 @@ type Database struct {
 	DatabaseName string
 	DatabaseId   string
 	InstanceId   string
+	LogicalClock int64
 }
 
 func NewDatabase() *Database {
 	return &Database{}
 }
 
-func (i *Database) GetInstanceId() string {
-	return i.InstanceId
+func (d *Database) GetInstanceId() string {
+	return d.InstanceId
 }
 
-func (i *Database) SetInstanceId(instanceId string) {
-	i.InstanceId = instanceId
+func (d *Database) SetInstanceId(instanceId string) {
+	d.InstanceId = instanceId
 }
 
-func (i *Database) GetDatabaseName() string {
-	return i.DatabaseId
+func (d *Database) GetDatabaseName() string {
+	return d.DatabaseId
 }
 
-func (i *Database) SetDatabaseName(databaseName string) {
-	i.DatabaseId = databaseName
+func (d *Database) SetDatabaseName(databaseName string) {
+	d.DatabaseId = databaseName
 }
 
-func (i *Database) GetDatabaseId() string {
-	return i.DatabaseId
+func (d *Database) GetDatabaseId() string {
+	return d.DatabaseId
 }
 
-func (i *Database) SetDatabaseId(DatabaseId string) {
-	i.DatabaseId = DatabaseId
+func (d *Database) SetDatabaseId(DatabaseId string) {
+	d.DatabaseId = DatabaseId
 }
 
-func GetNewDatabaseId(databaseName string) string {
+func (d *Database) GetLogicalClock() int64 {
+	return d.LogicalClock
+}
+
+func (d *Database) SetLogicalClock(logicalClock int64) {
+	d.LogicalClock = logicalClock
+}
+
+func (d *Database) GetNewDatabaseId(databaseName string) string {
 	cid, err := function.GetCidString(databaseName)
 	if err != nil {
 		log.Fatal(err.Error())
