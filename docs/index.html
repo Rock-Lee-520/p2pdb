@@ -31,6 +31,8 @@
     menubar: 'zh-cn/menu.md', 
     auto2top: true,
     loadNavbar: true,
+    coverpage: true,
+    // onlyCover: true,
     search: {
       depth: 6,
       noData: {
@@ -60,7 +62,7 @@
       '/': '#/',
     },
     plugins: [
-      EditOnGithubPlugin.create('https://github.com/Rock-liyi/p2pdb/blob/master/docs/', null, 'Edit on GitHub'),
+      EditOnGithubPlugin.create('https://github.com/kkguan/p2pdb/blob/master/docs/', null, 'Edit on GitHub'),
       function (hook) {
         hook.doneEach(function () {
           pangu.spacingElementByClassName('content')
