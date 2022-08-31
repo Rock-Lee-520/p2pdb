@@ -49,7 +49,12 @@ func (db *CreateDBFactory) SetIsInternalStore(value bool) {
 }
 
 func (db *CreateDBFactory) SetDatabaseName(databaseName string) {
+	log.Info("SetDatabaseName " + databaseName)
 	db.DatabaseName = databaseName
+}
+
+func (db *CreateDBFactory) GetDatabaseName() string {
+	return db.DatabaseName
 }
 
 func (db *CreateDBFactory) CreateDBConnect(db_type string) DBconnect {
@@ -63,7 +68,7 @@ func (db *CreateDBFactory) CreateDBConnect(db_type string) DBconnect {
 	return orm
 }
 
-func (db *CreateDBFactory) GetDatabasePath() string {
+func (db *CreateDBFactory) GetDatabasePath(databaseName string) string {
 
 	var dataName string
 	var dataPath string
@@ -86,9 +91,16 @@ func (db *CreateDBFactory) GetDatabasePath() string {
 	}
 
 	//Whether the database name is set dynamically?
-	if db.DatabaseName != "" {
+	if db.GetDatabaseName() != "" {
 		dataName = db.DatabaseName
 	}
+
+	if databaseName != "" {
+		dataName = databaseName
+	}
+
+	log.Info("GetDatabaseName " + db.GetDatabaseName())
+	log.Info("dataName " + dataName)
 
 	if dataName == "" {
 		log.Panic("dbname does not exits in .env file")
@@ -106,7 +118,7 @@ func (db *CreateDBFactory) GetDatabasePath() string {
 
 func (db *CreateDBFactory) InitDB() DBconnect {
 	var connect = db.CreateDBConnect("sqlite")
-	address := db.GetDatabasePath()
+	address := db.GetDatabasePath("")
 	log.Info("database address is " + address)
 	connect.Init(address, 0, "", "")
 	connect.Connect()

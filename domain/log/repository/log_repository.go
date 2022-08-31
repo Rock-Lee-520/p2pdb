@@ -1,11 +1,10 @@
 package repository
 
 import (
-	"log"
-
 	PO "github.com/Rock-liyi/p2pdb/domain/log/repository/po"
 	orm "github.com/Rock-liyi/p2pdb/infrastructure/core/orm"
 	"github.com/Rock-liyi/p2pdb/infrastructure/util/function"
+	log "github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
 var DB *orm.CreateDBFactory = new(orm.CreateDBFactory)
@@ -16,6 +15,7 @@ func init() {
 }
 
 func RemoveDatabase(databasePath string) {
+	log.Info("databasePath is" + databasePath)
 	err := function.RemoveFile(databasePath)
 	if err != nil {
 		log.Fatal(err.Error())
@@ -24,8 +24,8 @@ func RemoveDatabase(databasePath string) {
 
 func GetDatabasePath(databaseName string) string {
 	DB.InitDB()
-	DB.SetDatabaseName(databaseName)
-	return DB.GetDatabasePath()
+	//DB.SetDatabaseName(databaseName)
+	return DB.GetDatabasePath(databaseName)
 }
 
 func CreateNodeTable(tableName string, databaseName string) bool {
