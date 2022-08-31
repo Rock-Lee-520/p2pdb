@@ -16,10 +16,10 @@
 
 * 使用教程
   * [语法说明](zh-cn/application/syntax.md)
-  * [支持语法](zh-cn/application/supported.md) 
-  * [库相关](zh-cn/application/database.md) 
-  * [表相关](zh-cn/application/table.md) 
-
+  <!-- * [支持语法](zh-cn/application/supported.md)  -->
+  * [DDL](zh-cn/application/DDL.md) 
+  * [DML](zh-cn/application/DML.md) 
+  * [DQL](zh-cn/application/DQL.md) 
 * 核心模块
   * [server](zh-cn/p2pdb-server/introduce.md)
   * [log](zh-cn/p2pdb-log/introduce.md)
@@ -43,9 +43,9 @@
 <!-- 
 * 安全控制
   * [权限控制](zh-cn/safety/authority.md) -->
-
+<!-- 
 * 其它资料
 
   * [其它资料](zh-cn/others.md)
   * [兰伯特时钟](zh-cn/clock/lamportclock.md)
-  * [CRDT](zh-cn/clock/CRDT.md)
+  * [CRDT](zh-cn/clock/CRDT.md) -->

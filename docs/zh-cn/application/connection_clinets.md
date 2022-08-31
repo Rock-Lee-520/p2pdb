@@ -24,7 +24,7 @@
 
 ## 客户端使用例子
 
-### mysql-cli
+> ### mysql-cli
 ```bash
 mysql -h 127.0.0.1 -u root -p
 Enter password:
@@ -51,7 +51,7 @@ mysql> show databases;
 
 ```
 
-### pymysql
+> ### pymysql
 
 ```bash
 import pymysql.cursors
@@ -73,7 +73,7 @@ finally:
     connection.close()
 ```
 
-### Python mysql-connector
+> ### Python mysql-connector
 
 ```bash
 import mysql.connector
@@ -95,7 +95,7 @@ finally:
     connection.close()
 ```
 
-### Python sqlalchemy
+> ### Python sqlalchemy
 
 ```bash
 import pandas as pd
@@ -108,7 +108,7 @@ with engine.connect() as conn:
         print(table_name)
 ```
 
-### ruby-mysql
+> ### ruby-mysql
 
 ```bash
 require "mysql"
@@ -121,7 +121,7 @@ resp = conn.query "SELECT * FROM mytable LIMIT 1"
 conn.close()
 ```
 
-### php
+> ### php
 
 ```php
 try {
@@ -137,7 +137,7 @@ try {
 }
 ```
 
-### mysqljs
+> ### mysqljs
 
 ```js
 import mysql from 'mysql';
@@ -161,7 +161,7 @@ connection.query(query, function (error, results, _) {
 connection.end();
 ```
 
-### MysqlConnector
+> ### MysqlConnector
 
 ```bash
 using MySql.Data.MySqlClient;
@@ -192,7 +192,7 @@ namespace something
 }
 ```
 
-### mariadb-java-client
+> ### mariadb-java-client
 
 ```bash
 package org.testing.mariadbjavaclient;
@@ -219,7 +219,7 @@ class Main {
 }
 ```
 
-### go-sql-driver/mysql
+> ### go-sql-driver/mysql
 
 ```go
 package main
@@ -245,7 +245,7 @@ func main() {
 }
 ```
 
-### mysql-connector-c
+> ### mysql-connector-c
 
 ```bash
 #include <my_global.h>

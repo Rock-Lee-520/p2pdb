@@ -27,6 +27,6 @@ go mod tidy
 > 启动一个 P2PDB 实例
 
 ```shell
-go run  interface/cli/start.go
+go run  p2pdb.go
 ```
 

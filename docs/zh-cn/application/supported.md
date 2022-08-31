@@ -14,7 +14,7 @@ REAL	值是一个浮点值，存储为 8 字节的 IEEE 浮点数字。
 TEXT	值是一个文本字符串，使用数据库编码（UTF-8、UTF-16BE 或 UTF-16LE）存储。
 BLOB	值是一个 blob 数据，完全根据它的输入存储。
 SQLite 的存储类稍微比数据类型更普遍。INTEGER 存储类，例如，包含 6 种不同的不同长度的整数数据类型。
-
+<!-- 
 ## Data manipulation statements
 
 - DELETE
@@ -174,4 +174,4 @@ discuss an implementation plan with us and submit a PR.
 - `TRUNCATE`
 - Alter index
 - Alter view
-- Create function
+- Create function -->
