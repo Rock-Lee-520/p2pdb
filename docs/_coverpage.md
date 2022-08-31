@@ -10,8 +10,8 @@
 - 无需生成 html 文件
 - 众多主题 -->
 
-[GitHub](https://github.com/docsifyjs/docsify/)
-[Get Started](/en/)
+[GitHub](https://github.com/Rock-liyi/p2pdb)
+[Get Started](/zh-cn/)
 
 <!-- 背景色 -->
 <!-- 

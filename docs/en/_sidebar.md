@@ -34,7 +34,7 @@
     * [Message queue](zh-cn/p2pdb-cdc/queue.md)
 
 
-* Use the case
+* Cases
 
     * [How to build a decentralized mail system](zh-cn/case/email.md)
     * [How to build a decentralized chat system](zh-cn/case/chat.md)
