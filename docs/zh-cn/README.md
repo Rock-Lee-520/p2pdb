@@ -26,11 +26,6 @@ P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点�
 
 
 
-#### P2PDB核心流程：
-
-![alt 属性文本](https://github.com/Rock-liyi/p2pdb/raw/master/p2pdb_core_flowchart.png)
-
-
 ### 目标
  这个数据库的目标是：
 
