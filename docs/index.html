@@ -31,7 +31,11 @@
     // menubar: 'zh-cn/menu.md', 
     auto2top: true,
     loadNavbar: true,
-    coverpage: true,
+    coverpage: {
+    '/': '_coverpage.md',
+    '/zh-cn/': '_coverpage.md',
+    '/en/': '_coverpage.md'
+   },
     // onlyCover: true,
     search: {
       depth: 6,

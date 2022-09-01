@@ -200,7 +200,7 @@ mysql> show tables;
 
 > ### 删除列(不支持)
 
-由于默认的文件存储`sqlite` 是不支持删除列操作的,alter table table_name drop column  这个语句在sqlite 中是无效的，而替代方法可以如下：
+由于默认的文件存储`sqlite` 是不支持删除列操作的,alter table table_name drop column  这个语句在P2PDB 中是无效的，而替代方法可以如下：
 
 * 1、根据原表创建一张表
 * 2、将原表数据循环遍历迁移到新表

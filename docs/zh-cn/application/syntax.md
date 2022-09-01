@@ -6,7 +6,7 @@
 命令|描述|是否支持
 -|-|-
 CREATE|创建一个新的表，一个表的视图，或者数据库中的其他对象|:white_check_mark:
-ALTER|修改数据库中的某个已有的数据库对象，比如一个表|:black_square_button: 
+ALTER|修改数据库中的某个已有的数据库对象，比如一个表|:white_check_mark:
 DROP|删除整个表，或者表的视图，或者数据库中的其他对象|:white_check_mark:
 
 ### DML - 数据操作语言
