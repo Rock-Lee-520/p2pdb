@@ -1,5 +1,5 @@
 
-与关系数据库交互一致,P2PDB 命令类似于 SQL。命令包括 CREATE、SELECT、INSERT、UPDATE、DELETE 和 DROP,在默认的file 文件存储引擎中,底层使用到了SQLITE 存储引擎,所以某些场景上P2PDB的SQL语法及支持的程度可以跟SQLITE一致。
+与关系数据库型交互一致,P2PDB 命令类似于 SQL。命令包括 CREATE、SELECT、INSERT、UPDATE、DELETE 和 DROP,在默认的file 文件存储引擎中,底层使用到了SQLITE 存储引擎,所以某些场景上P2PDB的SQL语法及支持的程度可以跟SQLITE一致。
 这些命令基于它们的操作性质可分为以下几种：
 
 ### DDL - 数据定义语言
