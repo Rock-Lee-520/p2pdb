@@ -20,6 +20,7 @@
   * [DDL](zh-cn/application/DDL.md) 
   * [DML](zh-cn/application/DML.md) 
   * [DQL](zh-cn/application/DQL.md) 
+
 * 核心模块
   * [server](zh-cn/p2pdb-server/introduce.md)
   * [log](zh-cn/p2pdb-log/introduce.md)
@@ -29,9 +30,11 @@
   * [store](zh-cn/p2pdb-store/introduce.md)
   <!-- * [cdc](zh-cn/p2pdb-cdc/introduce.md) -->
 
-* 关键设计
+* 架构设计
     * [数据库设计](zh-cn/entity/persistence.md)
-    * [消息队列](zh-cn/p2pdb-cdc/queue.md)
+    * [DDD分层设计](zh-cn/architecture/DDD.md)
+    * [核心流程设计](zh-cn/architecture/process.md)
+    <!-- * [消息队列](zh-cn/p2pdb-cdc/queue.md) -->
 
 
 * 使用案例

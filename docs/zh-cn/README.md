@@ -1,17 +1,24 @@
 
 
-# P2PDB
 
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+<!-- [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) -->
 <p align="center">
-    <a href="https://opensource.org/licenses/Apache-2.0">
+  <a href="https://opensource.org/licenses/Apache-2.0">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"
+            alt="License"></a>
+    <a href="https://github.com/RichardLitt/standard-readme">
+        <img src="https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square"
             alt="License"></a>
     <a href="https://godoc.org/github.com/Rock-liyi/p2pdb">
         <img src="https://img.shields.io/badge/godoc-reference-blue.svg"
             alt="GoDoc"></a>
+                <a href="https://godoc.org/github.com/Rock-liyi/p2pdb">
+        <img src="https://img.shields.io/badge/platform-Win32%20|%20GNU/Linux%20|%20macOS%20|%20FreeBSD%20-gold"
+            alt="platform"></a>
 </p>
 
+
+# P2PDB
 
 
 ### 简介
@@ -32,17 +39,6 @@ P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点�
 3. 一个**边缘数据存储解决方案**
 4. 一个**离线应用数据存储解决方案**
 
- 使用场景
-* 1、离线web应用存储
-* 2、多人互动游戏
-* 3、多人协作文档
-* 4、多人聊天应用
-* 5、边缘缓存存储
-* 6、Dapp应用存储
-* 7、NFT应用存储
-* 8、更多.........
-
-
 ### 特性
 
 1. 兼容mysql 通用SQL语法，你可以使用任何mysql 客户端连接
@@ -54,27 +50,16 @@ P2PDB,一个为了web3.0 时代的而生的去中心化、分布式、点对点�
 7. 版本证明，类似区块链算法，保证数据一旦生成永不丢失。
 
 
+### 使用场景
+* 1、离线web应用存储
+* 2、多人互动游戏
+* 3、多人协作文档
+* 4、多人聊天应用
+* 5、边缘缓存存储
+* 6、Dapp应用存储
+* 7、NFT应用存储
+* 8、更多.........
 
-### 目录分层设计
-遵循DDD领域驱动分层架构
-```
-interface 接口层
-----cli 命令行执行工具
-application 应用层
-----event 事件
---------publish 发布事件
---------subscribe 订阅事件
-domain 领域层， 核心逻辑
-----common 公共领域
-----server 服务端领域
-infrastructure	基础设施层
-----core 核心模块引用
---------server p2pdb-server 模块引用
---------log    p2pdb-log 模块引用
-----util  公共工具，如日志
---------log
-data 文件数据存储目录
-```
 
 
 

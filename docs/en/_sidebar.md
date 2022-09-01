@@ -29,11 +29,11 @@
   * [store](zh-cn/p2pdb-store/introduce.md)
   <!-- * [cdc](zh-cn/p2pdb-cdc/introduce.md) -->
 
-* Kernel design
+* Architecture design
     * [database design](zh-cn/entity/persistence.md)
-    * [Message queue](zh-cn/p2pdb-cdc/queue.md)
-
-
+    <!-- * [Message queue](zh-cn/p2pdb-cdc/queue.md) -->
+    * [DDD hierarchical design](zh-cn/architecture/DDD.md)
+    * [Kernel process design](zh-cn/architecture/process.md)
 * Cases
 
     * [How to build a decentralized mail system](zh-cn/case/email.md)
