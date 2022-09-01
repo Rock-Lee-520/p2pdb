@@ -9,7 +9,7 @@
 
 
 [GitHub](https://github.com/Rock-liyi/p2pdb)
-[Read Doc](/en/README)
+[Read Docs](/en/README)
 
 <!-- 背景图片 -->
 
