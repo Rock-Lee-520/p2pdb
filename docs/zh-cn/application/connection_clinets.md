@@ -2,6 +2,8 @@
 
 理论上所有支持mysql的客户端都可以连接p2pdb,以下这些是我们积极测试以检查他们是否兼容p2pdb的客户端，
 
+!>  注意，由于没有足够的人手投入,P2PDB并不支持在一些可视化客户端中执行DDL语句(mysql-cli除外),如Navicat,DBeaver等,使用时需要注意
+
 - Mysql-cli
   - [mysql-cli](#mysql-cli)
 - Python
