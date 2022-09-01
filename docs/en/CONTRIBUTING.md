@@ -36,9 +36,9 @@ list of requirements:
     - In any case, all the PRs have to pass the personal evaluation of
       at least one of the maintainers of the project.
 
-### Getting started
+### about p2pdb-server
 
-If you are a new contributor to the project, reading
-[ARCHITECTURE.md](zh-cn/p2pdb-server/ARCHITECTURE.md) is highly recommended, as it
-contains all the details about the architecture of go-mysql-server and
+If you are  intrested on p2pdb-server reading
+[ARCHITECTURE.md](en/p2pdb-server/ARCHITECTURE.md) is highly recommended, as it
+contains all the details about the architecture of p2pdb-server and
 its components.

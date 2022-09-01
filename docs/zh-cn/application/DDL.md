@@ -148,10 +148,67 @@ mysql> show tables;
 1 rows in set (0.01 sec)
 ```
 
-> ### 修改表(暂不支持)
+> ### 修改表名
+
+ALTER TABLE 命令不会通过执行一个完整的转储和数据的重载来修改已有的表,你可以使用 ALTER TABLE 语句重命名表。
+
+!>  在 P2PDB 中，除了`重命名表`和在已有的表中`添加列`，ALTER TABLE 命令`不支持其他操作`。
+#### 基本语法:
+```sql
+ALTER TABLE table_name RENAME TO new_table_name;
+```
+
+#### 解释:
+用来重命名已有的表的 ALTER TABLE 的基本语法上：
+
+#### 例子:
+先确认一下表是否存在
+```bash
+mysql> use p2pdb;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++----------+
+| Table    |
++----------+
+| new_test |
+| test4    |
++----------+
+2 rows in set (0.02 sec)
+```
+
+这意味着 test4 表已存在数据库中，让我们尝试使用 ALTER TABLE 语句重命名该表，如下所示：
+```bash
+mysql> alter table test4 rename to test;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
++----------+
+| Table    |
++----------+
+| new_test |
+| test     |
++----------+
+2 rows in set (0.01 sec)
+```
+
+> ### 新增列(暂不支持)
+
+?> _TODO_ 待完善示例
+
+> ### 删除列(不支持)
+
+由于默认的文件存储`sqlite` 是不支持删除列操作的,alter table table_name drop column  这个语句在sqlite 中是无效的，而替代方法可以如下：
+
+* 1、根据原表创建一张表
+* 2、将原表数据循环遍历迁移到新表
+* 3、交换旧表跟新表的表名
+* 4、删除旧表
 
 
-### 显示建表语句
+> ### 显示建表语句
 #### 基本语法:
 ```sql
 SHOW TABLE CREATE.TABLE_NAME;
