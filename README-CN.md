@@ -22,7 +22,8 @@
 
 
 ### 简介
-P2PDB,一个为了web3而生的去中心化、分布式、点对点数据库、它是传统数据库技术与区块链技术的结合,最终数据一致性算法基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文实现,它使用IPFS-libp2p构建去中心化网络和IPFS-pubsub与对等节点同步数据。它是一个使用CRDT、POW、POS解决数据一致性冲突的关系型数据库,P2PDB愿景是打造一个工业级别的去中心化式数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和区块链应用程序数据存储的绝佳选择, P2PDB基于[白皮书](docs/zh-cn/whitebook.md)实现
+P2PDB,一个为了web3而生的去中心化、分布式、点对点数据库、它是传统数据库技术与区块链技术的结合,最终数据一致性算法基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文实现,它使用IPFS-libp2p构建去中心化网络和IPFS-pubsub与对等节点同步数据。它是一个使用CRDT、POW、POS解决数据一致性冲突的关系型数据库,P2PDB愿景是打造一个工业级别的去中心化数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和区块链应用程序数据存储的绝佳选择, P2PDB基于[白皮书](docs/zh-cn/whitebook.md)实现
+
 
 
 ### 使用教程
@@ -35,7 +36,7 @@ P2PDB,一个为了web3而生的去中心化、分布式、点对点数据库、�
 
 - :white_check_mark: `p2pdb-log`: 基于[merker-crdt](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)协议实现的不可篡改日志组件，p2pdb-log是一种只允许追加写入日志，并且不可窜改。基于操作的无冲突复制数据结构 (CRDT)与Merkle DAG（有向无环图）实现。如果所有 P2PDB 数据库类型都不符合您的需求和/或您需要特定于案例的功能，您可以轻松使用日志模块实现您想要的数据库
 
-- :white_check_mark:  `p2pdb-pubsub`: 基于[libp2p-pubsub](github.com/libp2p/go-libp2p-pubsub)实现的消息广播组件,用于对等节点中数据的主动传播,采用了Gossip流言广播算法,内置了一个消息队列,可通过webhook的方式监听数据的变动,支持Websocket协议链接,将来计划对接到Kafka、RabbitMq、Nsq、Nats等主流的消息队列,实现更广泛的数据消费应用，同时它也是一个具备扩展性的模块，可以根据该模块提供的接口，进行二次开发，以满足更多的业务场景
+- :white_check_mark:  `p2pdb-pubsub`: 基于[libp2p-pubsub](https://github.com/libp2p/go-libp2p-pubsub)实现的消息广播组件,用于对等节点中数据的主动传播,采用了Gossip流言广播算法,内置了一个消息队列,可通过webhook的方式监听数据的变动,支持Websocket协议链接,将来计划对接到Kafka、RabbitMq、Nsq、Nats等主流的消息队列,实现更广泛的数据消费应用，同时它也是一个具备扩展性的模块，可以根据该模块提供的接口，进行二次开发，以满足更多的业务场景
 
 
 - :black_square_button:  `p2pdb-consistency`: 基于[crdt](https://github.com/Rock-liyi/p2pdb/blob/main/doc/zh-cn/CRDT%E5%8D%8F%E8%AE%AE.md)，ot等协议用于消息顺序一致性判断的组件,主要用于当事件没有因果关系时（并发）,作为全序判断的模块，集成了常用的顺序判断规则，如内置规则无法满足，你也可以根据该模块规范增加新的协议。
