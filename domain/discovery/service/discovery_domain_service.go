@@ -12,7 +12,7 @@ func GetInstanceEntity() *entity.Instance {
 	var instance = repository.GetInstanceInformation()
 
 	var instanceEntity = entity.NewInstance()
-	instanceEntity.SetGlobalClockTime(instance.GlobalClockTime)
+	// instanceEntity.SetGlobalClockTime(instance.GlobalClockTime)
 	instanceEntity.SetLocalHost(instance.LocalHost)
 	instanceEntity.SetLocalPeerId(instance.LocalPeerId)
 	instanceEntity.SetInstanceId(instance.InstanceId)
@@ -24,7 +24,7 @@ func InitInstanceInformation(LocalPeerId string) string {
 
 	var instance = repository.GetInstanceInformation()
 	var instanceId string
-	var GlobalClockTime = function.GetGlobalLogicalClock()
+	// var GlobalClockTime = function.GetGlobalLogicalClock()
 	var GetLocalHost = function.GetLocalHost()
 	// if didn't find instance, create a new one
 	if instance.InstanceId == "" {
@@ -32,7 +32,7 @@ func InitInstanceInformation(LocalPeerId string) string {
 
 		instance.InstanceId = instanceId
 		instance.LocalPeerId = LocalPeerId
-		instance.GlobalClockTime = GlobalClockTime
+		//instance.GlobalClockTime = GlobalClockTime
 		instance.LocalHost = GetLocalHost
 		instance.CreatedAt = time.Now()
 		instance.UpdatedAt = time.Now()
@@ -41,7 +41,7 @@ func InitInstanceInformation(LocalPeerId string) string {
 
 	} else {
 		instance.LocalPeerId = LocalPeerId
-		instance.GlobalClockTime = GlobalClockTime + 1
+		//instance.GlobalClockTime = GlobalClockTime + 1
 		instance.UpdatedAt = time.Now()
 		//update instance information LocalPeerId and GlobalClockTime
 		repository.UpdateInstanceInformation(instance)

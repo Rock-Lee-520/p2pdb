@@ -1,10 +1,10 @@
 package entity
 
 type Instance struct {
-	LocalPeerId     string
-	InstanceId      string
-	LocalHost       string
-	GlobalClockTime int64
+	LocalPeerId string
+	InstanceId  string
+	LocalHost   string
+	// GlobalClockTime int64
 	LocalPublicKey  string
 	LocalPrivateKey string
 }
@@ -37,10 +37,10 @@ func (i *Instance) SetLocalHost(localHost string) {
 	i.LocalHost = localHost
 }
 
-func (i *Instance) GetGlobalClockTime() int64 {
-	return i.GlobalClockTime
-}
+// func (i *Instance) GetGlobalClockTime() int64 {
+// 	return i.GlobalClockTime
+// }
 
-func (i *Instance) SetGlobalClockTime(globalClockTime int64) {
-	i.GlobalClockTime = globalClockTime
-}
+// func (i *Instance) SetGlobalClockTime(globalClockTime int64) {
+// 	i.GlobalClockTime = globalClockTime
+// }

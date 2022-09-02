@@ -16,7 +16,7 @@ func GetDatabaseInformation(databaseName string) *entity.Database {
 	var databaseId = databaseEntity.GetNewDatabaseId(databaseName)
 	databaseEntity.SetDatabaseId(databaseId)
 
-	var dbinfo = repository.FindDatabaseInformationTable(databaseId)
+	var dbinfo = repository.FindDatabaseInformation(databaseId)
 	databaseEntity.SetDatabaseId(dbinfo.GetDatabaseId())
 	databaseEntity.SetDatabaseName(dbinfo.GetDatabaseName())
 	databaseEntity.SetInstanceId(dbinfo.GetLocalInstanceId())
@@ -29,18 +29,19 @@ func SaveDatabaseInformation(databaseName string, instanceId string) string {
 	var databaseId = databaseEntity.GetNewDatabaseId(databaseName)
 	databaseEntity.SetDatabaseId(databaseId)
 
-	var dbinfo = repository.FindDatabaseInformationTable(databaseId)
+	var dbinfo = repository.FindDatabaseInformation(databaseId)
 
 	//entity convert PO
 	var databasePO = &PO.DatabaseInfomation{}
 	databasePO.SetDatabaseId(databaseEntity.GetDatabaseId())
 	databasePO.SetDatabaseName(databaseEntity.GetDatabaseName())
-	databasePO.SetLocalInstanceId(databaseEntity.GetInstanceId())
-	databasePO.SetLogicalClock(databaseEntity.GetLogicalClock())
+	databasePO.SetLocalInstanceId(instanceId)
 
 	if dbinfo.GetDatabaseId() == "" {
+		databasePO.SetLogicalClock(databaseEntity.GetLogicalClock())
 		repository.InsertDatabaseInformation(databasePO)
 	} else {
+		databasePO.SetLogicalClock(dbinfo.GetLogicalClock() + 1)
 		repository.UpdateDatabaseInformation(databasePO)
 	}
 

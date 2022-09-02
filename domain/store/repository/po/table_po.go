@@ -7,12 +7,12 @@ type TableInfomation struct {
 	DatabaseId      string `gorm:"column:database_id"`
 	TableName       string `gorm:"column:table_name"`
 	LocalInstanceId string `gorm:"column:local_instance_id"`
-	LogicalClock    int64  `gorm:"column:clock_time"`
+	LogicalClock    int64  `gorm:"column:logical_clock"`
 	Version         int64  `gorm:"column:version"`
 	Schema          string `gorm:"column:schema"`
 }
 
-func (instance *TableInfomation) GetTablePrimaryId() string {
+func (instance *TableInfomation) GetTablePrimary() string {
 	return "table_id"
 }
 

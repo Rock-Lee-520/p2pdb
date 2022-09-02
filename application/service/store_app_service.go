@@ -30,7 +30,7 @@ func AddTableRecord(data commonEntity.Data) {
 	tableEntity.SetTableId(tableEntity.GetNewTableId(data.GetTableName()))
 	tableEntity.SetTableName(data.GetTableName())
 	tableEntity.SetLocalInstanceId(databaseEntity.GetInstanceId())
-	//tableEntity.SetLogicalClock()
-	//StoreService.AddTableRecordInTableInformation(databaseInformation)
+	tableEntity.SetLogicalClock(databaseEntity.GetLogicalClock())
+	StoreService.SaveTableInformation(*tableEntity)
 	log.Debug("call AddTableRecord method end ")
 }

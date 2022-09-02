@@ -42,13 +42,13 @@ func ExecuteLogFunc(message event.Message) {
 		service.DropStoteLogTable(newData)
 	case value_object.StoreInsertEvent:
 		function.JsonDecode(message.Data, &newData)
-		service.InsertStoreLog(newData, value_object.StoreInsertEvent)
+		service.AddStoreLog(newData, value_object.StoreInsertEvent)
 	case value_object.StoreDeleteEvent:
 		function.JsonDecode(message.Data, &newData)
-		service.InsertStoreLog(newData, value_object.StoreDeleteEvent)
+		service.AddStoreLog(newData, value_object.StoreDeleteEvent)
 	case value_object.StoreUpdateEvent:
 		function.JsonDecode(message.Data, &newData)
-		service.InsertStoreLog(newData, value_object.StoreUpdateEvent)
+		service.AddStoreLog(newData, value_object.StoreUpdateEvent)
 	}
 	log.Debug(newData)
 

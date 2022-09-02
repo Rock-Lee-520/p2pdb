@@ -3,12 +3,12 @@ package po
 // Database  information_schema definition
 type InstanceInformation struct {
 	BaseColumn
-	InstanceId      string `gorm:"column:instance_id;primary_key"`
-	LocalPeerId     string `gorm:"column:local_peer_id"`
-	LocalHost       string `gorm:"column:local_host"`
-	GlobalClockTime int64  `gorm:"column:global_clock_time"`
-	LocalPublicKey  int64  `gorm:"column:local_public_key"`
-	LocalPrivateKey int64  `gorm:"column:local_private_key"`
+	InstanceId  string `gorm:"column:instance_id;primary_key"`
+	LocalPeerId string `gorm:"column:local_peer_id"`
+	LocalHost   string `gorm:"column:local_host"`
+	// GlobalClockTime int64  `gorm:"column:global_clock_time"`
+	LocalPublicKey  int64 `gorm:"column:local_public_key"`
+	LocalPrivateKey int64 `gorm:"column:local_private_key"`
 }
 
 func (instance *InstanceInformation) GetInstancePrimaryId() string {

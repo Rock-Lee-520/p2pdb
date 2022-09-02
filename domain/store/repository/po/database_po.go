@@ -9,7 +9,7 @@ type DatabaseInfomation struct {
 	LocalInstanceId string `gorm:"column:local_instance_id"`
 }
 
-func (instance *DatabaseInfomation) GetDatabasePrimaryId() string {
+func (instance *DatabaseInfomation) GetDatabasePrimary() string {
 	return "database_id"
 }
 
