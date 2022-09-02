@@ -19,6 +19,10 @@ func DropStoteLogTable(data commonEntity.Data) {
 	logService.RemoveLogTable(data.GetTableName(), data.GetDatabaseName())
 }
 
+func RenameStoteLogTable(data commonEntity.Data) {
+	//logService.RemoveLogTable(data.GetTableName(), data.GetDatabaseName())
+}
+
 func AddStoreLog(data commonEntity.Data, operation string) {
 	log.Info("call InsertStoreLog method start")
 	var nodeEntity = assembleNodeEntity()

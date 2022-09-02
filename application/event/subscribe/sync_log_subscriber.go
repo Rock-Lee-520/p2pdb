@@ -40,12 +40,20 @@ func ExecuteLogFunc(message event.Message) {
 	case value_object.StoreDropTableEvent:
 		function.JsonDecode(message.Data, &newData)
 		service.DropStoteLogTable(newData)
+
+	case value_object.StoreAlterTableRenameEvent:
+		function.JsonDecode(message.Data, &newData)
+		service.RenameStoteLogTable(newData)
+		service.ChangeTableRecord(newData)
+
 	case value_object.StoreInsertEvent:
 		function.JsonDecode(message.Data, &newData)
 		service.AddStoreLog(newData, value_object.StoreInsertEvent)
+
 	case value_object.StoreDeleteEvent:
 		function.JsonDecode(message.Data, &newData)
 		service.AddStoreLog(newData, value_object.StoreDeleteEvent)
+
 	case value_object.StoreUpdateEvent:
 		function.JsonDecode(message.Data, &newData)
 		service.AddStoreLog(newData, value_object.StoreUpdateEvent)

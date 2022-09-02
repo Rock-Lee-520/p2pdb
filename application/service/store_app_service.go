@@ -17,6 +17,10 @@ func InitStore(instanceId string) {
 	StoreService.SaveDatabaseInformation(databaseName, instanceId)
 }
 
+func ChangeTableRecord(data commonEntity.Data) {
+
+}
+
 func AddTableRecord(data commonEntity.Data) {
 	log.Debug("call AddTableRecord method start ")
 
