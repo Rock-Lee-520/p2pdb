@@ -4,7 +4,7 @@
 
 # P2PDB <small>kkguan</small>
 
-> decentralized distributed peer-to-peer database for web3.0
+> decentralized distributed peer-to-peer database for web3
 
 
 
