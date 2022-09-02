@@ -1,6 +1,6 @@
 * background
 
-  * [Project introduction](zh-cn/README.md)
+  * [Project introduction](en/README.md)
   * [White book](zh-cn/whitebook.md)
   * [Contribution guide](en/CONTRIBUTING.md)
   * [Term](zh-cn/background/term.md)
