@@ -23,6 +23,11 @@ go mod tidy
 ```
 
 
+> 复制项目根目录下的.env_example  文件为.env文件
+```shell
+cp  ./.env_example  ./.env 
+```
+
 
 > 启动一个 P2PDB 实例
 
