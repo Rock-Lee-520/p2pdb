@@ -22,7 +22,7 @@
 English | [中文](./README-CN.md)
 
 ### Introduction
-P2PDB is a decentralized, distributed, peer-to-peer database for web3. The eventually consistent algorithm was implemented using  [Merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf).  It uses IPFS Pubsub to automatically sync databases with peers and uses IPFS libp2p to build  a decentralized p2p  network, it's a relational  database that uses CRDT, POW, POS for conflict resolution. P2PDB vision is to build a decentralized database of industrial grade , making P2PDB an outstanding choice for local-first web applications, decentralized applications (DAPP) and blockchain applications,  it's developed based on [whitebook](docs/zh-cn/whitebook.md).
+P2PDB is a decentralized, distributed, peer-to-peer database for web3. eventually consistent algorithm was implemented using  [Merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf).  It uses IPFS Pubsub to automatically sync databases with peers and uses IPFS libp2p to build  a decentralized p2p  network, it's a relational  database that uses CRDT, POW, POS for conflict resolution. P2PDB vision is to build a decentralized database of industrial grade , making P2PDB an outstanding choice for local-first web applications, decentralized applications (DAPP) and blockchain applications,  it's developed based on [whitebook](docs/zh-cn/whitebook.md).
 
 ### Using the tutorial
 [tutorial](https://rock-liyi.github.io/p2pdb/)
