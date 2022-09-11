@@ -18,11 +18,11 @@ func FindDatabaseInformation(DatabaseId string) *PO.DatabaseInfomation {
 func UpdateDatabaseInformation(databasePO *PO.DatabaseInfomation) bool {
 	db = InitDB()
 	databasePO.UpdatedAt = time.Now()
-	err := db.Where(databasePO.GetDatabasePrimary()+" = ?", databasePO.DatabaseId).Updates(databasePO)
-	if err != nil {
-		log.Error(err)
-		return false
-	}
+	//err := db.Where(databasePO.GetDatabasePrimary()+" = ?", databasePO.DatabaseId).Updates(databasePO)
+	//if err != nil {
+	//	log.Error(err)
+	//	return false
+	//}
 	return true
 }
 

@@ -5,6 +5,7 @@ import (
 	discovery "github.com/Rock-liyi/p2pdb-discovery"
 	PS "github.com/Rock-liyi/p2pdb-pubsub"
 	"github.com/Rock-liyi/p2pdb/infrastructure/core/pubsub"
+	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
 )
 
 var PubSub PS.PubSub
@@ -25,8 +26,17 @@ func InitPubSub() string {
 	// Create a peer discovery service using the Kad DHT : 创建一个节点路由发现方式
 	routingdiscovery := discovery.NewRoutingDiscovery(dht)
 	//discovery.NewDiscoveryFactory().Create();
-	PubSub = pubsub.InitPubSub(ctx, host, routingdiscovery)
+	PubSub = pubsub.InitPubSub(ctx, host, routingdiscovery, topicType)
 	Publish("init", "peerID:"+host.ID().String()+" | start success")
+	log.Debug("========================================================")
+	log.Debug("========================================================")
+
+	for _, peer := range dht.RoutingTable().ListPeers() {
+		log.Debug("peer:" + peer.String())
+	}
+
+	log.Debug("========================================================")
+	log.Debug("========================================================")
 	return host.ID().String()
 }
 

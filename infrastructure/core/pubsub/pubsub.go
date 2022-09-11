@@ -15,10 +15,6 @@ import (
 
 var PubSub PS.PubSub
 
-var topicType = "p2pdb"
-
-const Address string = "/ip4/0.0.0.0/tcp/0"
-
-func InitPubSub(ctx context.Context, host host.Host, Routingdiscovery *discovery.RoutingDiscovery) PS.PubSub {
+func InitPubSub(ctx context.Context, host host.Host, Routingdiscovery *discovery.RoutingDiscovery, topicType string) PS.PubSub {
 	return PubSub.InitPubSub(ctx, topicType, host, Routingdiscovery)
 }
