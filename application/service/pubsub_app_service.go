@@ -37,5 +37,5 @@ func GetPubSub() PS.PubSub {
 
 // Publish message to other nodes
 func Publish(topic string, data interface{}) {
-	PubSub.Pub(PS.DataMessage{Type: topic, Data: "123"})
+	PubSub.Pub(PS.DataMessage{Type: topic, Data: data})
 }
