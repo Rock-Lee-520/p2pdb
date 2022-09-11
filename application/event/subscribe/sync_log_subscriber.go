@@ -13,18 +13,19 @@ import (
 var PubSub PS.PubSub
 
 func init() {
-	PubSub = service.GetPubSub()
+	// TODO: 暂时注释掉了，这里应该在pubsub模块初始化完成后，才执行
+	//PubSub = service.GetPubSub()
 
 	//	debug.Dump("new event.Driver======")
 	//d := new(event.Driver)
-	for i := 0; i < len(value_object.StoreEventType); i++ {
-		//println(common_event.StoreEventType[i])
-		// Call the event, and all of the registered functions with the same name are called
-		event.RegisterSyncEvent(value_object.StoreEventType[i], ExecuteLogFunc)
-
-		// Register the global events on the OnSkill again
-		//event.RegisterSyncEvent(common_event.StoreEventType[i], event.GlobalSyncEvent)
-	}
+	//for i := 0; i < len(value_object.StoreEventType); i++ {
+	//	//println(common_event.StoreEventType[i])
+	//	// Call the event, and all of the registered functions with the same name are called
+	//	event.RegisterSyncEvent(value_object.StoreEventType[i], ExecuteLogFunc)
+	//
+	//	// Register the global events on the OnSkill again
+	//	//event.RegisterSyncEvent(common_event.StoreEventType[i], event.GlobalSyncEvent)
+	//}
 }
 
 func ExecuteLogFunc(message event.Message) {

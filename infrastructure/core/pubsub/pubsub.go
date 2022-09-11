@@ -1,9 +1,10 @@
 package pubsub
 
 import (
-	discovery "github.com/Rock-liyi/p2pdb-discovery"
+	"context"
 	PS "github.com/Rock-liyi/p2pdb-pubsub"
-	"github.com/Rock-liyi/p2pdb/infrastructure/util/log"
+	"github.com/libp2p/go-libp2p-core/host"
+	discovery "github.com/libp2p/go-libp2p-discovery"
 )
 
 // func Publish(topic string, data interface{}) {
@@ -18,13 +19,6 @@ var topicType = "p2pdb"
 
 const Address string = "/ip4/0.0.0.0/tcp/0"
 
-func InitPubSub() PS.PubSub {
-
-	host, err := discovery.NewDiscoveryFactory().Create(Address)
-	if err != nil {
-		panic(err)
-	}
-	log.Debug("start init PubSub module")
-	PubSub = PubSub.InitPubSub(topicType, host)
-	return PubSub
+func InitPubSub(ctx context.Context, host host.Host, Routingdiscovery *discovery.RoutingDiscovery) PS.PubSub {
+	return PubSub.InitPubSub(ctx, topicType, host, Routingdiscovery)
 }
