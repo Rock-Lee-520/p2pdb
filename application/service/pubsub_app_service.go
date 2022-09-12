@@ -26,7 +26,7 @@ func InitPubSub() string {
 	// Create a peer discovery service using the Kad DHT : 创建一个节点路由发现方式
 	routingdiscovery := discovery.NewRoutingDiscovery(dht)
 	//discovery.NewDiscoveryFactory().Create();
-	PubSub = pubsub.InitPubSub(ctx, host, routingdiscovery, topicType)
+	PubSub = pubsub.InitPubSub(ctx, host, routingdiscovery, topicType, dht)
 	Publish("init", "peerID:"+host.ID().String()+" | start success")
 	log.Debug("========================================================")
 	log.Debug("========================================================")

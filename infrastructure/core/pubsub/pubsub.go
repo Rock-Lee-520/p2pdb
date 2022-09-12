@@ -5,6 +5,7 @@ import (
 	PS "github.com/Rock-liyi/p2pdb-pubsub"
 	"github.com/libp2p/go-libp2p-core/host"
 	discovery "github.com/libp2p/go-libp2p-discovery"
+	dht "github.com/libp2p/go-libp2p-kad-dht"
 )
 
 // func Publish(topic string, data interface{}) {
@@ -15,6 +16,6 @@ import (
 
 var PubSub PS.PubSub
 
-func InitPubSub(ctx context.Context, host host.Host, Routingdiscovery *discovery.RoutingDiscovery, topicType string) PS.PubSub {
-	return PubSub.InitPubSub(ctx, topicType, host, Routingdiscovery)
+func InitPubSub(ctx context.Context, host host.Host, Routingdiscovery *discovery.RoutingDiscovery, topicType string, dht *dht.IpfsDHT) PS.PubSub {
+	return PubSub.InitPubSub(ctx, topicType, host, Routingdiscovery, dht)
 }
