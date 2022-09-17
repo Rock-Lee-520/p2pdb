@@ -7,7 +7,7 @@ type Node struct {
 	LogicalClock int64  `json:"logicalClock"`
 	LastNodeId   string `json:"lastNodeId"`
 	Data         Data   `json:"data"`
-	Link         Link   `json:"Links"`
+	Link         []Link   `json:"Links"`
 }
 
 func NewNode() *Node {
