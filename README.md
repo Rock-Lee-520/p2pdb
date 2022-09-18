@@ -28,6 +28,16 @@ P2PDB is a decentralized, distributed, peer-to-peer database for web3. eventuall
 [tutorial](https://rock-liyi.github.io/p2pdb/)
 
 
+### Thanks
+Thanks  to these excellent organizations 
+
+- [libp2p](https://github.com/libp2p) 
+- [ipfs](https://github.com/ipfs)
+- [dolthub](https://github.com/dolthub)
+- [berty](https://github.com/berty/go-ipfs-log)
+
+
+
 ### Licensing
 P2PDB is licensed under the  Apache License Version 2.0,See LICENSE for the full license text.
 
@@ -39,7 +49,7 @@ Apache License Version 2.0 see http://www.apache.org/licenses/LICENSE-2.0.html
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Thanks goes to these wonderful people :
+Thanks  to these wonderful people :
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
