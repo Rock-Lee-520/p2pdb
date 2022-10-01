@@ -84,8 +84,8 @@ github.com/Rock-liyi/p2pdb-store v0.1.6/go.mod h1:BDxaWCViejGs8SRlnbXS2OwSibvBKF
 github.com/Rock-liyi/p2pdb-store v0.1.7/go.mod h1:PbT9bko8/GD8h4Q/I9V56Zn6cp3QpYZUhzBDAYFSwko=
 github.com/Rock-liyi/p2pdb-store v0.1.8/go.mod h1:mgCOQ44ycqrL6PMHUVXYqlvCiaBMnbUJ4VudECCdGe4=
 github.com/Rock-liyi/p2pdb-store v0.1.10/go.mod h1:ckwZBxp9BhTFuS8/JFgLZnhpZhj107iEBFIq+Mn2cl4=
-github.com/Rock-liyi/p2pdb-store v0.1.15 h1:TnzyOuWSJAk4tJWf58vhYH7Chv4Tn6VxWlm+AgN4oVw=
-github.com/Rock-liyi/p2pdb-store v0.1.15/go.mod h1:1ADEsLMn9VND1Z07UAVOYIaPqM6qBIZUf+QgygfbmCU=
+github.com/Rock-liyi/p2pdb-store v0.1.16 h1:DoEQF3aZOX6bq1Bsk1qJgOqMv29V9Y8t1ls1Zrqe4h8=
+github.com/Rock-liyi/p2pdb-store v0.1.16/go.mod h1:1ADEsLMn9VND1Z07UAVOYIaPqM6qBIZUf+QgygfbmCU=
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
 github.com/Shopify/sarama v1.30.0/go.mod h1:zujlQQx1kzHsh4jfV1USnptCQrHAEZ2Hk8fTKCulPVs=
 github.com/Shopify/toxiproxy v2.1.4+incompatible/go.mod h1:OXgGpZ6Cli1/URJOF1DMxUHB2q5Ap20/P/eIdh4G0pI=
@@ -171,6 +171,8 @@ github.com/btcsuite/snappy-go v1.0.0/go.mod h1:8woku9dyThutzjeg+3xrA5iCpBRH8XEEg
 github.com/btcsuite/websocket v0.0.0-20150119174127-31079b680792/go.mod h1:ghJtEyQwv5/p4Mg4C0fgbePVuGr935/5ddU9Z3TmDRY=
 github.com/btcsuite/winsvc v1.0.0/go.mod h1:jsenWakMcC0zFBFurPLEAyrnc/teJEM1O46fmI40EZs=
 github.com/buger/jsonparser v0.0.0-20181115193947-bf1c66bbce23/go.mod h1:bbYlZJ7hK1yFx9hf58LP0zeX7UjIGs20ufpu3evjr+s=
+github.com/bwmarrin/snowflake v0.3.0 h1:xm67bEhkKh6ij1790JB83OujPR5CzNe8QuQqAgISZN0=
+github.com/bwmarrin/snowflake v0.3.0/go.mod h1:NdZxfVWX+oR6y2K0o6qAYv6gIOP9rjG0/E9WsDpxqwE=
 github.com/caarlos0/env/v6 v6.9.3 h1:Tyg69hoVXDnpO5Qvpsu8EoquarbPyQb+YwExWHP8wWU=
 github.com/caarlos0/env/v6 v6.9.3/go.mod h1:hvp/ryKXKipEkcuYjs9mI4bBCg+UI0Yhgm5Zu0ddvwc=
 github.com/casbin/casbin v1.7.0/go.mod h1:c67qKN6Oum3UF5Q1+BByfFxkwKvhwW57ITjqwtzR1KE=
