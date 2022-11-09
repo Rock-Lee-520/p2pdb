@@ -51,10 +51,8 @@ P2PDB,一个为了web3而生的去中心化、分布式、点对点数据库、�
 <!-- - :black_square_button:  `p2pdb-cdc`: 基于数据库事务日志Change Data Capture(CDC)技术，作为一种更为优雅和先进的实时数据同步方案，广泛用于增量数据集成中，用于进一步扩展消息的使用方式,内置了一个消息队列,可通过webhook的方式监听数据的变动,支持Websocket协议链接,将来计划对接到Kafka、RabbitMq、Nsq、Nats等主流的消息队列,实现更广泛的数据消费应用，同时它也是一个具备扩展性的模块，可以根据该模块提供的接口，进行二次开发，以满足更多的业务场景。 -->
 
 
-—— [跟ipfs的关系](https://www.ipfs.io/)    
-
-> ipfs协议 用于构建分布式低延迟的消息传输网络，而P2PDB 使用ipfs协议实现网络通信、数据传输等能力。
-
+### 生态
+- :white_check_mark:  `p2pdb-desktop`: [p2pdb-desktop](https://github.com/Rock-liyi/p2pdb-desktop) 一个便捷使用p2pdb的可视化桌面应用程序，包含经典的去中心化聊天、社交、邮件等应用例子,同时提供简易的监控及SQL查询控制面板
 
 
 ### 目标
