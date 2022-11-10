@@ -52,7 +52,10 @@ P2PDB,一个为了web3而生的去中心化、分布式、点对点数据库、�
 
 
 ### 生态
-- :white_check_mark:  `p2pdb-desktop`: [p2pdb-desktop](https://github.com/Rock-liyi/p2pdb-desktop) 一个便捷使用p2pdb的可视化桌面应用程序，包含经典的去中心化聊天、社交、邮件等应用例子,同时提供简易的监控及SQL查询控制面板
+- :black_square_button:  `p2pdb-desktop`: [p2pdb-desktop](https://github.com/Rock-liyi/p2pdb-desktop) 一个便捷使用p2pdb的可视化桌面应用程序，包含经典的去中心化聊天、社交、邮件等应用例子,同时提供简易的监控及SQL查询控制面板
+
+
+- :black_square_button:  `p2pdb-ethereum `: [p2pdb-ethereum ](https://github.com/Rock-liyi/p2pdb-ethereum) 一个实验性的项目,p2pdb负责实时索引以太坊数据,通过SQL查询以太坊的数据
 
 
 ### 目标

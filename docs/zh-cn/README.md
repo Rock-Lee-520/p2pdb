@@ -25,6 +25,13 @@
 P2PDB,一个为了web3而生的去中心化、分布式、点对点数据库、它是传统数据库技术与区块链技术的结合,最终数据一致性算法基于[merker-CRDT](https://research.protocol.ai/blog/2019/a-new-lab-for-resilient-networks-research/PL-TechRep-merkleCRDT-v0.1-Dec30.pdf)论文实现,它使用IPFS-libp2p构建去中心化网络和IPFS-pubsub与对等节点同步数据。它是一个使用CRDT、POW、POS解决数据一致性冲突的关系型数据库,P2PDB愿景是打造一个工业级别的去中心化数据库，使P2PDB 成为离线应用程序，去中心化应用程序(dApps)、和区块链应用程序数据存储的绝佳选择, P2PDB基于[白皮书](docs/zh-cn/whitebook.md)实现
 
 
+
+### 生态
+- :black_square_button:  `p2pdb-desktop`: [p2pdb-desktop](https://github.com/Rock-liyi/p2pdb-desktop) 一个便捷使用p2pdb的可视化桌面应用程序，包含经典的去中心化聊天、社交、邮件等应用例子,同时提供简易的监控及SQL查询控制面板
+
+
+- :black_square_button:  `p2pdb-ethereum `: [p2pdb-ethereum ](https://github.com/Rock-liyi/p2pdb-ethereum) 一个实验性的项目,p2pdb负责实时索引以太坊数据,通过SQL查询以太坊的数据
+
 ### 目标
  这个数据库的目标是：
 

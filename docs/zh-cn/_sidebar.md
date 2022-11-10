@@ -30,6 +30,11 @@
   * [store](zh-cn/p2pdb-store/introduce.md)
   <!-- * [cdc](zh-cn/p2pdb-cdc/introduce.md) -->
 
+* 生态
+  * [desktop](https://github.com/Rock-liyi/p2pdb-desktop)
+  * [ethereum](https://github.com/Rock-liyi/p2pdb-ethereum)
+
+
 * 架构设计
     * [数据库设计](zh-cn/entity/persistence.md)
     * [DDD分层设计](zh-cn/architecture/DDD.md)
