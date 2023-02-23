@@ -84,12 +84,6 @@ Thanks  to these excellent organizations
 - [dolthub](https://github.com/dolthub)
 - [berty](https://github.com/berty/go-ipfs-log)
 
-
-### Licensing
-P2PDB is licensed under the  Apache License Version 2.0,See LICENSE for the full license text.
-
-Apache License Version 2.0 see http://www.apache.org/licenses/LICENSE-2.0.html
-
 Explanation: Due to the code used in this project, such as IPFS and Libp2p, some of the referenced code follows the relevant code protocols. Thanks to Protocol Labs for their contribution to Web3.0. The remaining codes referenced in independent modules or using codes are included in the LICENSE of independent modules with reference instructions.
 
 ###  Reference description
