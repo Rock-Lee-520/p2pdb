@@ -28,6 +28,26 @@ P2PDB is a decentralized, distributed, peer-to-peer relational database for web3
 [tutorial](https://rock-liyi.github.io/p2pdb/)
 
 
+### Core module
+
+- :white_check_mark: p2pdb-server: p2pdb-server is a server side of mysql syntax, compatible with 90%mysql syntax, and can use any kind of mysql client connection, including compatibility of PHP, JAVA, GO, RUBY, PYTHON and other mainstream languages
+
+
+- :white_check_mark: p2pdb-log: an immutable log component based on the merker-crdt protocol. P2pdb-log is a log component that only allows additional writes and cannot be tampered with. Implementation of operation-based conflict-free replication data structure (CRDT) and Merkle DAG (directed acyclic graph). If all P2PDB database types do not meet your needs and / or you need case-specific functionality, you can easily use the log module to implement the database you want
+
+
+- :white_check_mark: p2pdb-pubsub: message broadcast component based on libp2p-pubsub for active data transmission in peer nodes. It adopts Gossip gossip broadcast algorithm and has a built-in message queue, which can listen for data changes through webhook and support Websocket protocol links. In the future, it plans to dock to Kafka, RabbitMq, Nsq, Nats and other mainstream message queues to achieve a wider range of data consumption applications. At the same time, it is also a scalable module. The secondary development can be carried out according to the interface provided by the module to meet more business scenarios.
+
+
+- :black_square_button:  a component used to judge the consistency of message order based on protocols such as crdt,ot, which is mainly used when events have no causality (concurrency). As a module for full order judgment, it integrates commonly used sequence judgment rules. If the built-in rules cannot be satisfied, you can also add new protocols according to the module specification.
+
+
+- :white_check_mark: p2pdb-discovery: p2pdb-discovery is the service discovery registration of the peer node, which is used to retrieve the peer node, and is implemented by the mdns module based on libp2p.
+
+
+- :white_check_mark: p2pdb-store: p2pdb-store for actual data storage module, similar to mysql data storage, provide index retrieval, data addition, deletion, modification and query, this is an abstract module, the purpose is in the future if the current storage engine can not meet your storage needs, you can provide more DB drivers such as clickhouse, postgresql, TDngine and other databases, currently provide memory storage (development mode use) as well as file storage (production use).
+
+
 ### Goal
 
 The goal of this database is:
@@ -93,7 +113,7 @@ p2pdb is a project from 0 to 1, and also one of the earliest research projects i
 
 ### Maintenance instructions
 
-Currently, the kkguan organization is maintaining the P2PDB project. Due to certain considerations, the repository is temporarily in private status. Note that the project is still in a rapid iteration phase, which means that most of the APIs are at risk of being refactored. It can currently be used for learning and research purposes, but it is not recommended for production use. The development team will do their best to push out version 1.0.0, but we cannot predict when a stable version will be released.
+Currently, the kkguan organization is maintaining the P2PDB project. Due to certain considerations, the repository is temporarily in private status. Note that the project is still in a rapid iteration phase, which means that most of the API are at risk of being refactored. It can currently be used for learning and research purposes, but it is not recommended for production use. The development team will do their best to push out version 1.0.0, but we cannot predict when a stable version will be released.
 
 
 

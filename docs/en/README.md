@@ -92,7 +92,7 @@ p2pdb is a project from 0 to 1, and also one of the earliest research projects i
 
 ### Maintenance instructions
 
-Currently, the kkguan organization is maintaining the P2PDB project. Due to certain considerations, the repository is temporarily in private status. Note that the project is still in a rapid iteration phase, which means that most of the APIs are at risk of being refactored. It can currently be used for learning and research purposes, but it is not recommended for production use. The development team will do their best to push out version 1.0.0, but we cannot predict when a stable version will be released.
+Currently, the kkguan organization is maintaining the P2PDB project. Due to certain considerations, the repository is temporarily in private status. Note that the project is still in a rapid iteration phase, which means that most of the API are at risk of being refactored. It can currently be used for learning and research purposes, but it is not recommended for production use. The development team will do their best to push out version 1.0.0, but we cannot predict when a stable version will be released.
 
 
 
