@@ -39,7 +39,7 @@ P2PDB is a decentralized, distributed, peer-to-peer relational database for web3
 - :white_check_mark: p2pdb-pubsub: message broadcast component based on libp2p-pubsub for active data transmission in peer nodes. It adopts Gossip gossip broadcast algorithm and has a built-in message queue, which can listen for data changes through webhook and support Websocket protocol links. In the future, it plans to dock to Kafka, RabbitMq, Nsq, Nats and other mainstream message queues to achieve a wider range of data consumption applications. At the same time, it is also a scalable module. The secondary development can be carried out according to the interface provided by the module to meet more business scenarios.
 
 
-- :black_square_button:  a component used to judge the consistency of message order based on protocols such as crdt,ot, which is mainly used when events have no causality (concurrency). As a module for full order judgment, it integrates commonly used sequence judgment rules. If the built-in rules cannot be satisfied, you can also add new protocols according to the module specification.
+- :black_square_button: p2pdb-consistency:  a component used to judge the consistency of message order based on protocols such as crdt,ot, which is mainly used when events have no causality (concurrency). As a module for full order judgment, it integrates commonly used sequence judgment rules. If the built-in rules cannot be satisfied, you can also add new protocols according to the module specification.
 
 
 - :white_check_mark: p2pdb-discovery: p2pdb-discovery is the service discovery registration of the peer node, which is used to retrieve the peer node, and is implemented by the mdns module based on libp2p.
